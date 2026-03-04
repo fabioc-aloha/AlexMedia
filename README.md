@@ -219,7 +219,7 @@ AlexVideos/
 ├── generate-3d-print.js       # 3D print service integration (6 services)
 ├── package.json
 ├── .env                       # REPLICATE_API_TOKEN (not committed)
-├── docs/                      # Per-script documentation
+├── docs/                      # Per-script documentation & workflow guides
 │   ├── generate-video.md
 │   ├── generate-image.md
 │   ├── generate-voice.md
@@ -230,7 +230,11 @@ AlexVideos/
 │   ├── generate-edit-video.md
 │   ├── generate-3d-print.md
 │   ├── 3d-printing-services-guide.md
-│   └── 3d-design-to-print-workflow.md
+│   ├── 3d-design-to-print-workflow.md
+│   ├── video-production-workflow.md
+│   ├── image-creation-workflow.md
+│   ├── audio-production-workflow.md
+│   └── emoji-sticker-workflow.md
 └── output/                    # Generated media + JSON reports
 ```
 
