@@ -2,7 +2,7 @@
 
 # From Idea to Physical Object — The Complete 3D Design-to-Print Workflow
 
-A step-by-step manual covering the full pipeline: concept → reference image → AI-generated 3D model → print-ready file → slicing → physical print. Uses the AlexVideos CLI toolkit throughout.
+A step-by-step manual covering the full pipeline: concept → reference image → AI-generated 3D model → print-ready file → slicing → physical print. Uses the AlexMedia CLI toolkit throughout.
 
 ---
 

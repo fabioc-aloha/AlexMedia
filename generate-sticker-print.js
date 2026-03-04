@@ -284,7 +284,7 @@ function printifyHeaders() {
   return {
     Authorization: `Bearer ${token}`,
     "Content-Type": "application/json",
-    "User-Agent": "AlexVideos/1.0",
+    "User-Agent": "AlexMedia/1.0",
   };
 }
 

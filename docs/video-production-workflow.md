@@ -2,7 +2,7 @@
 
 # From Script to Screen — The Complete Video Production Workflow
 
-A step-by-step manual covering the full pipeline: concept → reference image → AI video → edit & enhance → soundtrack → final delivery. Uses the AlexVideos CLI toolkit throughout.
+A step-by-step manual covering the full pipeline: concept → reference image → AI video → edit & enhance → soundtrack → final delivery. Uses the AlexMedia CLI toolkit throughout.
 
 ---
 

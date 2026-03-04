@@ -1,6 +1,6 @@
 <div align="center">
 
-![AlexVideos](assets/banner.png)
+![AlexMedia](assets/banner.png)
 
 **CLI toolkit for generating and editing media via [Replicate](https://replicate.com) — 83 AI models + 6 online 3D print services + 6 sticker print services, one CLI.**
 
@@ -211,7 +211,7 @@ All scripts save results to `./media/` with:
 ## Project Structure
 
 ```
-AlexVideos/
+AlexMedia/
 ├── generate-video.js          # Video generation (17 models)
 ├── generate-image.js          # Image generation (14 models)
 ├── generate-voice.js          # TTS & voice cloning (15 models)

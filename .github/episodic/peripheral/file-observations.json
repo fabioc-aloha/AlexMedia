@@ -8,11 +8,21 @@
   "stalledFiles": [
     "github/episodic/peripheral/file-observations.json",
     "README.md",
+    "docs/3d-design-to-print-workflow.md",
+    "docs/audio-production-workflow.md",
     "docs/emoji-sticker-workflow.md",
-    "docs/generate-sticker-print.md",
-    "generate-sticker-print.js",
-    "media/"
+    "docs/image-creation-workflow.md",
+    "docs/sticker-print-production-workflow.md",
+    "docs/video-production-workflow.md",
+    "generate-3d-print.js",
+    "generate-3d.js"
   ],
-  "todoHotspots": [],
-  "lastUpdated": 1772652973071
+  "todoHotspots": [
+    {
+      "file": "assets/banner-sticker-print.png",
+      "todoCount": 1,
+      "scannedAt": 1772653566374
+    }
+  ],
+  "lastUpdated": 1772653566374
 }

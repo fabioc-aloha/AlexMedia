@@ -2,7 +2,7 @@
 
 # From Design to Doorstep — The Complete Sticker & Print Production Workflow
 
-A step-by-step manual covering the full pipeline: concept → AI artwork → pre-press prep → service selection → ordering → proof → delivery. Uses the AlexVideos CLI toolkit throughout.
+A step-by-step manual covering the full pipeline: concept → AI artwork → pre-press prep → service selection → ordering → proof → delivery. Uses the AlexMedia CLI toolkit throughout.
 
 ---
 

@@ -274,7 +274,7 @@ async function shapewaysUpload(token, fileInfo, opts) {
   const postData = JSON.stringify({
     fileName: fileInfo.name,
     file: encodeURIComponent(base64),
-    description: `Uploaded via AlexVideos generate-3d-print.js`,
+    description: `Uploaded via AlexMedia generate-3d-print.js`,
     hasRightsToModel: 1,
     acceptTermsAndConditions: 1,
   });

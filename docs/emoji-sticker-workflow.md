@@ -2,7 +2,7 @@
 
 # From Idea to Pack — The Complete Emoji & Sticker Workflow
 
-A step-by-step manual covering the full pipeline: concept → generate → edit & clean → organize → deliver. Uses the AlexVideos CLI toolkit throughout.
+A step-by-step manual covering the full pipeline: concept → generate → edit & clean → organize → deliver. Uses the AlexMedia CLI toolkit throughout.
 
 ---
 

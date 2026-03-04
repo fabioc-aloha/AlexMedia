@@ -2,7 +2,7 @@
 
 # From Script to Soundtrack — The Complete Audio Production Workflow
 
-A step-by-step manual covering the full pipeline: script → voiceover → music → mix → deliver. Uses the AlexVideos CLI toolkit throughout.
+A step-by-step manual covering the full pipeline: script → voiceover → music → mix → deliver. Uses the AlexMedia CLI toolkit throughout.
 
 ---
 

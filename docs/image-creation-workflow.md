@@ -2,7 +2,7 @@
 
 # From Concept to Canvas — The Complete Image Creation Workflow
 
-A step-by-step manual covering the full pipeline: concept → generate → edit & enhance → upscale → deliver. Uses the AlexVideos CLI toolkit throughout.
+A step-by-step manual covering the full pipeline: concept → generate → edit & enhance → upscale → deliver. Uses the AlexMedia CLI toolkit throughout.
 
 ---
 
