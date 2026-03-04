@@ -1,47 +1,47 @@
 {
   "$schema": "../SYNAPSE-SCHEMA.json",
-  "schemaVersion": "2.0.0",
   "skillId": "anti-hallucination",
-  "version": "1.1.0",
+  "version": "1.2.0",
+  "lastUpdated": "2026-03-04",
   "inheritance": "inheritable",
   "connections": [
     {
       "id": "confidence-calibration",
       "target": ".github/skills/appropriate-reliance/SKILL.md",
-      "relationship": "Complement",
       "strength": 0.9,
-      "description": "Appropriate reliance provides confidence calibration framework"
+      "description": "Appropriate reliance provides confidence calibration framework",
+      "type": "COMPLEMENT"
     },
     {
       "id": "honest-uncertainty",
       "target": ".github/instructions/alex-core.instructions.md",
-      "relationship": "Implements",
       "strength": 0.9,
-      "description": "Core identity principle: empirical honesty"
+      "description": "Core identity principle: empirical honesty",
+      "type": "IMPLEMENTS"
     },
     {
       "id": "capability-boundaries",
       "target": ".github/skills/m365-agent-debugging/SKILL.md",
-      "relationship": "Extends",
       "strength": 0.7,
-      "description": "M365 debugging includes platform limitation awareness"
+      "description": "M365 debugging includes platform limitation awareness",
+      "type": "EXTENDS"
     },
     {
       "id": "error-recovery",
       "target": ".github/skills/error-recovery-patterns/SKILL.md",
-      "relationship": "Collaborates",
       "strength": 0.7,
-      "description": "Error recovery when hallucination is caught"
+      "description": "Error recovery when hallucination is caught",
+      "type": "COLLABORATES"
     },
     {
       "id": "grounded-factual",
       "target": ".github/instructions/empirical-validation.instructions.md",
-      "relationship": "Implements",
       "strength": 0.9,
-      "description": "Empirical validation prevents fabricated claims"
+      "description": "Empirical validation prevents fabricated claims",
+      "type": "IMPLEMENTS"
     }
   ],
-  "activationTriggers": [
+  "activationContexts": [
     "hallucination",
     "made up",
     "invented",
@@ -50,5 +50,6 @@
     "that's not real",
     "you're wrong",
     "that doesn't work"
-  ]
+  ],
+  "schemaVersion": "2.0.0"
 }

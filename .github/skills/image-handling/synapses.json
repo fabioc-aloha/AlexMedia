@@ -1,8 +1,8 @@
 {
-  "skill": "image-handling",
-  "inheritance": "inheritable",
   "$schema": "../SYNAPSE-SCHEMA.json",
-  "schemaVersion": "2.0.0",
+  "skillId": "image-handling",
+  "lastUpdated": "2026-03-04",
+  "inheritance": "inheritable",
   "connections": [
     {
       "target": ".github/skills/svg-graphics/SKILL.md",
@@ -55,16 +55,9 @@
       "when": "generating illustrations for documents or books",
       "yields": "Illustration principles, contextual placement, width guidelines",
       "bidirectional": true
-    },
-    {
-      "target": ".github/skills/ai-generated-readme-banners/SKILL.md",
-      "type": "enables",
-      "strength": 0.9,
-      "when": "generating README banners that need exact pixel dimensions (e.g. 1536x512)",
-      "yields": "Banner resize pipeline: magick input -resize WxH^ -gravity Center -extent WxH output.png; ideoturbo as preferred text model (ideoqual fails silently)",
-      "bidirectional": true
     }
   ],
+  "schemaVersion": "2.0.0",
   "triggers": [
     "PNG",
     "JPEG",

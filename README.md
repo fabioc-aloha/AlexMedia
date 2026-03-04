@@ -86,20 +86,20 @@ node generate-video.js --help
 | `veo3fast` | Google Veo 3.1 Fast | $0.10–0.15/sec |
 | `veo3` | Google Veo 3.1 | $0.20–0.40/sec |
 | `grok` | xAI Grok Imagine Video | $0.05/sec |
-| `gen45` | Luma Gen4.5 | $0.32/sec |
-| `kling` | Kling v2.1 Pro | $0.17–0.22/sec |
-| `kling26` | Kling v2.6 Master | $0.17–0.22/sec |
-| `kling3omni` | Kling v3 Omni | $0.17–0.22/sec |
+| `gen45` | Gen-4.5 (Runway) | $0.12/sec |
+| `kling` | Kling v3 | $0.17–0.22/sec |
+| `kling26` | Kling v2.6 | $0.17–0.22/sec |
+| `kling3omni` | Kling v3 Omni | variable |
 | `sora` | OpenAI Sora 2 | $0.10/sec |
 | `sora2pro` | OpenAI Sora 2 Pro | $0.30–0.50/sec |
-| `seedance` | ByteDance Seedance 1.0 | $0.06/sec |
-| `seedpro` | ByteDance Seedance 1.0 Pro | $0.15/sec |
-| `pixverse` | PixVerse v4.5 | $0.05/sec |
-| `hailuo` | MiniMax Hailuo | variable |
-| `hailuo23` | MiniMax Hailuo 2.3 | variable |
-| `ray2` | Luma Ray 2 | $0.30/sec |
-| `rayflash` | Luma Ray 2 Flash | $0.025/sec |
-| `wan` | Wan 2.1 | per-second GPU |
+| `seedance` | Seedance 1 Lite | $0.036/sec |
+| `seedpro` | Seedance 1 Pro | $0.15/sec |
+| `pixverse` | PixVerse v5.6 | variable |
+| `hailuo` | Hailuo-02 | variable |
+| `hailuo23` | Hailuo-2.3 | variable |
+| `ray2` | Ray 2 (Luma) | $0.18/sec |
+| `rayflash` | Ray Flash 2 (Luma) | $0.06/sec |
+| `wan` | WAN 2.5 Fast | $0.068/sec |
 
 ### Image Generation (14)
 
@@ -107,18 +107,18 @@ node generate-video.js --help
 |-----|-------|------|
 | `nanapro` | Nano Banana Pro | per-second GPU |
 | `gptimage` | GPT-Image-1 | $0.02–0.19/image |
-| `imagen4` | Google Imagen 4 | $0.03/image |
+| `imagen4` | Google Imagen 4 | $0.04/image |
 | `imagen4u` | Google Imagen 4 Ultra | $0.06/image |
 | `imagen4f` | Google Imagen 4 Fast | $0.02/image |
-| `flux2max` | Flux 2 Max | $0.08/image |
-| `flux2pro` | Flux 2 Pro | $0.06/image |
-| `seedream` | ByteDance SeedDream 3.0 | $0.03/image |
-| `grok` | xAI Grok 2 Image | $0.07/image |
-| `ideoturbo` | Ideogram V3 Turbo | $0.02/image |
-| `ideoqual` | Ideogram V3 Quality | $0.08/image |
-| `recraft` | Recraft V3 SVG | $0.04/image |
-| `minimax` | MiniMax Image 01 | $0.02/image |
-| `photon` | Luma Photon | $0.03/image |
+| `flux2max` | FLUX 2 Max | variable |
+| `flux2pro` | FLUX 2 Pro | variable |
+| `seedream` | Seedream 4.5 | $0.04/image |
+| `grok` | xAI Grok Image | $0.02/image |
+| `ideoturbo` | Ideogram v3 Turbo | $0.03/image |
+| `ideoqual` | Ideogram v3 Quality | $0.09/image |
+| `recraft` | Recraft v4 | $0.04/image |
+| `minimax` | MiniMax Image-01 | $0.01/image |
+| `photon` | Photon Flash (Luma) | variable |
 
 ### Voice / TTS (15)
 
@@ -174,33 +174,33 @@ node generate-video.js --help
 
 | Key | Model | Cost |
 |-----|-------|------|
-| `nana` | Nano Inpaint | per-second GPU |
-| `pedit` | InstructPix2Pix | per-second GPU |
-| `kontext` | Flux Kontext Pro | $0.03/image |
-| `kontextmax` | Flux Kontext Max | $0.05/image |
-| `fillpro` | Flux Fill Pro | $0.05/image |
-| `eraser` | Object Eraser | per-second GPU |
-| `genfill` | Generative Fill | per-second GPU |
-| `expand` | Image Outpainter | per-second GPU |
-| `bggen` | Flux Background Gen | $0.04/image |
-| `restore` | CodeFormer | per-second GPU |
-| `rembg` | Background Remover | per-second GPU |
-| `upscale` | Real-ESRGAN | per-second GPU |
+| `nana` | Nano Banana | $0.039/image |
+| `pedit` | P-Image-Edit | $0.01/image |
+| `kontext` | FLUX Kontext Pro | $0.04/image |
+| `kontextmax` | FLUX Kontext Max | variable |
+| `fillpro` | FLUX Fill Pro | $0.05/image |
+| `eraser` | Bria Eraser | $0.04/image |
+| `genfill` | Bria GenFill | variable |
+| `expand` | Bria Expand | $0.04/image |
+| `bggen` | Bria Background Gen | $0.04/image |
+| `restore` | FLUX Restore | $0.04/image |
+| `rembg` | Bria Remove BG | variable |
+| `upscale` | Real-ESRGAN | variable |
 
 ### Video Editing (10)
 
 | Key | Model / Engine | Cost |
 |-----|---------------|------|
-| `modify` | MiniMax Video-01 Live | $0.035/sec |
-| `reframe` | FFmpeg (local) | free |
-| `trim` | FFmpeg (local) | free |
-| `merge` | FFmpeg (local) | free |
-| `avmerge` | FFmpeg (local) | free |
-| `extract` | FFmpeg (local) | free |
-| `frames` | FFmpeg (local) | free |
-| `upscale` | Clarity Upscaler | per-second GPU |
-| `caption` | AutoCaption | per-second GPU |
-| `utils` | FFmpeg (local) | free |
+| `modify` | Luma Modify | variable |
+| `reframe` | Luma Reframe | $0.06/sec |
+| `trim` | Trim Video | <$0.001 |
+| `merge` | Video Merge | variable |
+| `avmerge` | Audio-Video Merge | <$0.003 |
+| `extract` | Extract Audio | variable |
+| `frames` | Frame Extractor | <$0.001 |
+| `upscale` | Real-ESRGAN Video | ~$0.46 |
+| `caption` | AutoCaption | ~$0.07 |
+| `utils` | Video Utils | <$0.002 |
 
 ## Output
 
@@ -252,7 +252,7 @@ AlexMedia/
 - [@gltf-transform/core](https://www.npmjs.com/package/@gltf-transform/core) ^4.3.0 — GLB parsing for STL conversion
 - [form-data](https://www.npmjs.com/package/form-data) — Multipart uploads to 3D print services
 - [open](https://www.npmjs.com/package/open) — Browser handoff for print service uploads
-- [FFmpeg](https://ffmpeg.org/) — Required for video editing operations (local processing)
+- [FFmpeg](https://ffmpeg.org/) — Optional, for local video processing (most editing runs via Replicate)
 
 ## License
 

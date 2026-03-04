@@ -1,5 +1,7 @@
 {
-  "skill": "testing-strategies",
+  "$schema": "../SYNAPSE-SCHEMA.json",
+  "skillId": "testing-strategies",
+  "lastUpdated": "2026-03-04",
   "inheritance": "inheritable",
   "connections": [
     {
@@ -104,6 +106,5 @@
     "test first",
     "red green refactor"
   ],
-  "$schema": "../SYNAPSE-SCHEMA.json",
   "schemaVersion": "2.0.0"
 }

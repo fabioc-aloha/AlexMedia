@@ -1,51 +1,9 @@
 {
   "$schema": "../../schemas/synapse-schema-v2.json",
-  "schemaVersion": "2.0.0",
   "skillId": "vscode-configuration-validation",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "lastUpdated": "2026-03-04",
   "inheritance": "heir:vscode",
-  "triggers": {
-    "problemContext": [
-      "VS Code extension configuration errors",
-      "Settings not persisting",
-      "Unable to write to User Settings",
-      "Command not found in Command Palette",
-      "Unregistered configuration key"
-    ],
-    "fileTypes": [
-      "package.json (VS Code extension manifest)",
-      "*.ts (using vscode.workspace.getConfiguration)",
-      "*.ts (using vscode.commands.registerCommand)"
-    ],
-    "keywords": [
-      "configuration validation",
-      "manifest validation",
-      "package.json validation",
-      "command registration",
-      "settings registration",
-      "getConfiguration",
-      "workspace.update",
-      "registerCommand",
-      "version badge sync",
-      "README badge",
-      "multi-file version consistency"
-    ]
-  },
-  "yields": {
-    "capabilities": [
-      "Automated manifest validation script",
-      "Configuration key registration verification",
-      "Command registration cross-reference",
-      "Graceful degradation pattern for dynamic configs",
-      "Pre-release quality gate"
-    ],
-    "outputs": [
-      "Validation report (errors/warnings)",
-      "Configuration registration fixes",
-      "Try-catch wrappers for dynamic keys",
-      "Updated package.json with missing declarations"
-    ]
-  },
   "connections": [
     {
       "skills": [
@@ -98,6 +56,49 @@
       ]
     }
   ],
+  "schemaVersion": "2.0.0",
+  "triggers": {
+    "problemContext": [
+      "VS Code extension configuration errors",
+      "Settings not persisting",
+      "Unable to write to User Settings",
+      "Command not found in Command Palette",
+      "Unregistered configuration key"
+    ],
+    "fileTypes": [
+      "package.json (VS Code extension manifest)",
+      "*.ts (using vscode.workspace.getConfiguration)",
+      "*.ts (using vscode.commands.registerCommand)"
+    ],
+    "keywords": [
+      "configuration validation",
+      "manifest validation",
+      "package.json validation",
+      "command registration",
+      "settings registration",
+      "getConfiguration",
+      "workspace.update",
+      "registerCommand",
+      "version badge sync",
+      "README badge",
+      "multi-file version consistency"
+    ]
+  },
+  "yields": {
+    "capabilities": [
+      "Automated manifest validation script",
+      "Configuration key registration verification",
+      "Command registration cross-reference",
+      "Graceful degradation pattern for dynamic configs",
+      "Pre-release quality gate"
+    ],
+    "outputs": [
+      "Validation report (errors/warnings)",
+      "Configuration registration fixes",
+      "Try-catch wrappers for dynamic keys",
+      "Updated package.json with missing declarations"
+    ]
+  },
   "metadata": {
     "created": "2026-02-15",
     "domain": "VS Code extension development",
