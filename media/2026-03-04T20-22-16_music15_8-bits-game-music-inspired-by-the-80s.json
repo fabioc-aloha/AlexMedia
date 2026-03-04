@@ -1,0 +1,21 @@
+{
+  "prompt": "8 bits game music inspired by the 80s",
+  "model": "minimax/music-1.5",
+  "modelName": "MiniMax Music 1.5",
+  "seed": null,
+  "format": null,
+  "lyrics": "[verse]\\nLa la la\\nClaudia is my Therapist\\n Headstart!!!",
+  "duration": null,
+  "lengthMs": null,
+  "vocals": false,
+  "referenceFiles": {
+    "song": null,
+    "voice": null,
+    "instrumental": null
+  },
+  "timestamp": "2026-03-04T20:22:16.657Z",
+  "elapsed": "15.8s",
+  "fileSize": "0.15MB",
+  "outputFile": "2026-03-04T20-22-16_music15_8-bits-game-music-inspired-by-the-80s.mp3",
+  "audioUrl": "https://replicate.delivery/xezq/pSvfiOCzcs1e8E6FPLlrxmYg0292oB5z5utbnYVeJXYxzIbsA/tmpat_22qrf.mp3"
+}

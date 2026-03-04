@@ -136,23 +136,15 @@ const MODELS = {
     },
   },
   avmerge: {
-    id: "lucataco/video-audio-merge",
-    name: "Audio-Video Merge",
+    id: "local/ffmpeg",
+    name: "Audio-Video Merge (local FFmpeg)",
     needsPrompt: false,
     needsVideo: true,
     needsAudio: true,
     outputType: "video",
-    cost: "<$0.003",
-    buildInput: (prompt, videoUri, audioUri, opts) => ({
-      video_file: videoUri,
-      audio_file: audioUri,
-      duration_mode: "video",
-      replace_audio: true,
-      audio_volume: 1,
-      output_format: opts.format || "mp4",
-      video_codec: "h264",
-      audio_codec: "aac",
-    }),
+    local: true, // Runs via ffmpeg-static, no Replicate call
+    cost: "free",
+    buildInput: (prompt, videoUri, audioUri, opts) => ({ videoUri, audioUri }),
   },
   extract: {
     id: "lucataco/extract-audio",
@@ -506,12 +498,12 @@ async function main() {
     process.exit(1);
   }
 
-  if (!process.env.REPLICATE_API_TOKEN) {
+  if (!modelDef.local && !process.env.REPLICATE_API_TOKEN) {
     console.error("Missing REPLICATE_API_TOKEN in .env file");
     process.exit(1);
   }
 
-  const replicate = new Replicate({ auth: process.env.REPLICATE_API_TOKEN });
+  const replicate = modelDef.local ? null : new Replicate({ auth: process.env.REPLICATE_API_TOKEN });
   const opts = { aspect, mode, start, end, duration, resolution, task, format, firstFrame, extraVideos: null };
 
   // Ensure output directory
@@ -547,6 +539,44 @@ async function main() {
   console.log(`   Output:   ${modelDef.outputType}\n`);
 
   const startTime = Date.now();
+
+  // ── Local avmerge: ffmpeg-static ────────────────────────────────
+  if (modelDef.local && modelKey === "avmerge") {
+    let ffmpegPath;
+    try {
+      ffmpegPath = require("ffmpeg-static");
+    } catch {
+      console.error("❌ ffmpeg-static not installed. Run: npm install ffmpeg-static --save-dev");
+      process.exit(1);
+    }
+    const { execFileSync } = require("child_process");
+    const timestamp = new Date().toISOString().replace(/[:.]/g, "-").slice(0, 19);
+    const videoBase = path.basename(video, path.extname(video));
+    const outFilename = `${timestamp}_avmerge_${videoBase.slice(0, 40)}.mp4`;
+    const outPath = path.join(outputDir, outFilename);
+    const resolvedVideo = path.resolve(video);
+    const resolvedAudio = path.resolve(audio);
+    console.log("⏳ Merging audio + video with local FFmpeg...");
+    execFileSync(ffmpegPath, [
+      "-y", "-i", resolvedVideo, "-i", resolvedAudio,
+      "-c:v", "copy", "-c:a", "aac", "-ac", "2", "-ar", "44100",
+      "-map", "0:v:0", "-map", "1:a:0",
+      "-shortest", outPath,
+    ], { stdio: "inherit" });
+    const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
+    const fileSize = (fs.statSync(outPath).size / (1024 * 1024)).toFixed(2);
+    const report = {
+      model: "local/ffmpeg", modelName: "Audio-Video Merge (local FFmpeg)",
+      inputVideo: path.basename(video), inputAudio: path.basename(audio),
+      timestamp: new Date().toISOString(), elapsed: `${elapsed}s`, fileSize: `${fileSize}MB`,
+      outputFile: outFilename,
+    };
+    fs.writeFileSync(path.join(outputDir, outFilename.replace(".mp4", ".json")), JSON.stringify(report, null, 2));
+    console.log(`\n✅ Video saved!`);
+    console.log(`   File: media/${outFilename} (${fileSize} MB)`);
+    console.log(`   Time: ${elapsed}s`);
+    return;
+  }
 
   try {
     const input = modelDef.buildInput(prompt, videoUri, audioUri, opts);

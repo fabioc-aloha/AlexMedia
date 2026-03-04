@@ -97,7 +97,7 @@ const MODELS = {
     minDuration: 1,
     maxDuration: 15,
     defaultDuration: 5,
-    hasAudio: true,
+    hasAudio: false, // i2v mode outputs empty audio shell — no actual audio data generated
     supportsImage: true,
     cost: "$0.05/sec",
     buildInput: (prompt, duration, imageUri, opts) => {

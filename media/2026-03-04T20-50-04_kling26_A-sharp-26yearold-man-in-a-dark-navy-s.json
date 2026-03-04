@@ -1,0 +1,16 @@
+{
+  "prompt": "A sharp 26-year-old man in a dark navy suit looking directly into the camera, speaking confidently about artificial intelligence innovations in 2026: reasoning models, autonomous AI agents, and multimodal AI. Professional studio lighting, broadcast delivery.",
+  "model": "kwaivgi/kling-v2.6",
+  "modelName": "Kling v2.6",
+  "duration": 5,
+  "aspectRatio": "default",
+  "resolution": "default",
+  "negativePrompt": null,
+  "mode": "image-to-video",
+  "referenceImage": "media/2026-03-04T20-30-43_nanapro_Alex-Finch-sharp-intelligent-features.jpg",
+  "timestamp": "2026-03-04T20:50:04.613Z",
+  "elapsed": "130.1s",
+  "fileSize": "8.07MB",
+  "outputFile": "2026-03-04T20-50-04_kling26_A-sharp-26yearold-man-in-a-dark-navy-s.mp4",
+  "videoUrl": "https://replicate.delivery/xezq/ESqiN4EwQ5IOMteDqBYdxuMf8SfqUGndD3pB6PRLMfEqPT2YB/tmppp40pi88.mp4"
+}

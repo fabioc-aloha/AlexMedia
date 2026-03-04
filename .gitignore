@@ -1,3 +1,5 @@
 node_modules/
 .env
 *.vsix
+# Visual memory — contains base64-encoded reference photos (PII)
+.github/skills/visual-memory/visual-memory/visual-memory.json

@@ -6,11 +6,33 @@
     "generate-music.js"
   ],
   "stalledFiles": [
-    "github/config/alex-manifest.json",
-    "README.md",
-    "media/2026-03-04T19-47-52_ideoturbo_ultrawide-cinematic-banner-for-AlexMed.json",
-    "media/2026-03-04T19-47-52_ideoturbo_ultrawide-cinematic-banner-for-AlexMed.png"
+    "github/episodic/peripheral/file-observations.json",
+    "docs/generate-edit-video.md",
+    "docs/generate-video.md",
+    "generate-3d.js",
+    "generate-edit-video.js",
+    "generate-video.js",
+    "package-lock.json",
+    "package.json",
+    "alex-reference.png",
+    "media/2026-03-04T20-22-16_music15_8-bits-game-music-inspired-by-the-80s.json"
   ],
-  "todoHotspots": [],
-  "lastUpdated": 1772654563905
+  "todoHotspots": [
+    {
+      "file": "media/alex-ai-2026-final.mp4",
+      "todoCount": 4,
+      "scannedAt": 1772658327470
+    },
+    {
+      "file": "media/2026-03-04T20-53-42_kling26_A-sharp-26yearold-man-in-a-dark-navy-s.mp4",
+      "todoCount": 4,
+      "scannedAt": 1772658327470
+    },
+    {
+      "file": "media/2026-03-04T20-31-37_grok_alex-ai-2026-stereo.mp4",
+      "todoCount": 2,
+      "scannedAt": 1772658327470
+    }
+  ],
+  "lastUpdated": 1772658327470
 }

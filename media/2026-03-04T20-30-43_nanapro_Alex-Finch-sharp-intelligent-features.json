@@ -1,0 +1,22 @@
+{
+  "prompt": "Alex Finch, sharp intelligent features, distinctive analytical eyes, determined jawline, characteristic half-smile, 26-year-old adult, established features, confident bearing, professional demeanor, wearing a sharp tailored dark navy business suit with white dress shirt and silk tie, professional portrait, soft studio lighting, clean neutral background, photorealistic",
+  "model": "google/nano-banana-pro",
+  "modelName": "Nano Banana Pro",
+  "aspectRatio": "default",
+  "resolution": "default",
+  "style": null,
+  "outputFormat": "default",
+  "seed": null,
+  "count": 1,
+  "mode": "image-to-image",
+  "referenceImage": "alex-reference.png",
+  "timestamp": "2026-03-04T20:30:43.528Z",
+  "elapsed": "44.2s",
+  "files": [
+    {
+      "name": "2026-03-04T20-30-43_nanapro_Alex-Finch-sharp-intelligent-features.jpg",
+      "size": "0.45MB",
+      "url": "https://replicate.delivery/xezq/lNm8Tf1MyDSqISXWguj0ff7ngH7YeAjDKeAd6npZzvFecIZjF/tmpl76agfef.jpeg"
+    }
+  ]
+}

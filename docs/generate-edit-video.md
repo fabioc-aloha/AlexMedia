@@ -58,7 +58,7 @@ node generate-edit-video.js --model caption --video ./clip.mp4
 | `reframe` | `luma/reframe-video` | Luma Reframe | $0.06/sec |
 | `trim` | `lucataco/trim-video` | Trim Video | <$0.001 |
 | `merge` | `lucataco/video-merge` | Video Merge | variable |
-| `avmerge` | `lucataco/video-audio-merge` | Audio-Video Merge | <$0.003 |
+| `avmerge` | local (ffmpeg-static) | Audio-Video Merge | free |
 | `extract` | `lucataco/extract-audio` | Extract Audio | variable |
 | `frames` | `lucataco/frame-extractor` | Frame Extractor | <$0.001 |
 | `upscale` | `lucataco/real-esrgan-video` | Real-ESRGAN Video | ~$0.46 |
@@ -89,7 +89,7 @@ node generate-edit-video.js --model caption --video ./clip.mp4
 ### Video Processing (Replicate)
 - **trim** — Trim Video: extract segment by start/end times
 - **merge** — Video Merge: concatenate video files
-- **avmerge** — Audio-Video Merge: combine audio track with video
+- **avmerge** — Audio-Video Merge: combine audio track with video (runs locally via ffmpeg-static, no Replicate call)
 - **extract** — Extract Audio: strip audio from video file
 - **frames** — Frame Extractor: export frames as images
 - **utils** — Video Utils: miscellaneous video operations (convert, etc.)
@@ -106,5 +106,6 @@ node generate-edit-video.js --model caption --video ./clip.mp4
 - **reframe** requires `--aspect` (e.g. `9:16`, `16:9`, `1:1`)
 - **trim** requires `--start` and optionally `--end` or `--duration`
 - **merge** requires `--extra` with the path to the second video
-- **avmerge** requires `--audio` with the audio track to overlay
+- **avmerge** requires `--audio` with the audio track to overlay; outputs stereo AAC 44100 Hz (ensures compatibility across all players including browsers)
+- **avmerge runs locally** via `ffmpeg-static` — no Replicate API call, no cost, no network required
 - Output saved to `./media/` with appropriate extension + JSON report

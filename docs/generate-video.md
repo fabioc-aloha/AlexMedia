@@ -75,4 +75,34 @@ node generate-video.js "Sunset scene" --aspect 9:16 --resolution 1080p
 - **Audio**: Models marked "auto" generate synchronized audio automatically; Kling v3 supports optional `generate_audio`
 - **Duration**: Fixed values (e.g., 5/9) mean only those exact values are accepted; ranges (e.g., 3–15) accept any integer in range
 - **Aspect ratios**: Sora models use "portrait"/"landscape" internally (mapped from 9:16/16:9)
+- **`grok` audio**: Grok i2v writes an empty audio container but generates zero audio samples — `hasAudio` is `false`; use `avmerge` to add speech post-generation
+- **`veo3fast` real-person photos**: May flag reference images of real people; use aged/stylized images instead
 - Output saved to `./media/` with JSON report
+
+## Talking-Head Video Workflow
+
+Proven pipeline for generating a person speaking to camera with synchronized speech:
+
+```bash
+# Step 1 — Age-progress reference photo to target age (if needed)
+node generate-image.js "A sharp 26-year-old man in a dark navy suit, sharp intelligent features, professional studio lighting" --model nanapro --image alex-reference.png
+
+# Step 2 — Generate video with Kling v2.6 (best motion quality for talking-head i2v)
+node generate-video.js "A sharp 26-year-old man in a dark navy suit looking directly into camera, speaking to the audience about [topic]. Calm, confident, broadcast-quality delivery. Professional studio lighting." --model kling26 --image <aged-image.jpg> --duration 10
+
+# Step 3 — Generate speech with ElevenLabs
+node generate-voice.js "[script text]" --model elevenv3
+
+# Step 4 — Merge video + speech (outputs stereo AAC)
+node generate-edit-video.js --model avmerge --video <video.mp4> --audio <speech.mp3>
+```
+
+**Model selection notes:**
+- `kling26` — best overall motion quality for talking-head i2v
+- `grok` — best lip sync, but no native audio (requires post-merge with `avmerge`)
+- `veo3fast` / `sora` — may flag real-person reference photos
+
+**Prompt pattern for best results:**
+> *"A sharp [age]-year-old [description] looking directly into camera, speaking to the audience about [topic]. Calm, confident, broadcast-quality delivery. Professional studio lighting."*
+
+**Playback note:** VS Code's built-in media player does not reliably play audio in MP4 files. Always verify in VLC or a browser.

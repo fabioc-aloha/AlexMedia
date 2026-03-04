@@ -1,0 +1,21 @@
+{
+  "prompt": "8 bits game music inspired by the 80s",
+  "model": "minimax/music-1.5",
+  "modelName": "MiniMax Music 1.5",
+  "seed": null,
+  "format": null,
+  "lyrics": "[verse]\\nLa la la\\nClaudia is my Therapist\\n Headstart!!!",
+  "duration": null,
+  "lengthMs": null,
+  "vocals": false,
+  "referenceFiles": {
+    "song": null,
+    "voice": null,
+    "instrumental": null
+  },
+  "timestamp": "2026-03-04T14:38:41.788Z",
+  "elapsed": "42.5s",
+  "fileSize": "1.56MB",
+  "outputFile": "2026-03-04T14-38-41_music15_metallica-inspired-rock.mp3",
+  "audioUrl": "https://replicate.delivery/xezq/ADnn4IetdKU4Eqf4O9EQrnzklnYdIgR2v7owdYbHNA7xXfasA/tmpd4_zgati.mp3"
+}

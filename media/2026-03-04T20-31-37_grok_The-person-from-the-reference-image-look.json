@@ -1,0 +1,16 @@
+{
+  "prompt": "The person from the reference image looking directly into the camera and speaking confidently about artificial intelligence innovations of 2026: reasoning models, autonomous agents, multimodal AI combining vision and language, and real-time video generation. Professional broadcast studio, warm key lighting, soft bokeh background, clear synchronized speech and natural lip movement, high-energy engaging delivery.",
+  "model": "xai/grok-imagine-video",
+  "modelName": "Grok Video",
+  "duration": 10,
+  "aspectRatio": "default",
+  "resolution": "default",
+  "negativePrompt": null,
+  "mode": "image-to-video",
+  "referenceImage": "media/2026-03-04T20-30-43_nanapro_Alex-Finch-sharp-intelligent-features.jpg",
+  "timestamp": "2026-03-04T20:31:37.518Z",
+  "elapsed": "39.9s",
+  "fileSize": "7.34MB",
+  "outputFile": "2026-03-04T20-31-37_grok_The-person-from-the-reference-image-look.mp4",
+  "videoUrl": "https://replicate.delivery/xezq/VcgKmjMevtyVSyuMGbuQP6rwnuaeBd34TDfIUMnHfqrfUksxC/tmp2dzyt8wh.mp4"
+}
