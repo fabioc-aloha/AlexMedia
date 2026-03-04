@@ -15,9 +15,10 @@ A step-by-step manual covering the full pipeline: concept → reference image �
 5. [Phase 4 — Video Editing & Enhancement](#phase-4--video-editing--enhancement)
 6. [Phase 5 — Audio & Soundtrack](#phase-5--audio--soundtrack)
 7. [Phase 6 — Final Assembly & Delivery](#phase-6--final-assembly--delivery)
-8. [End-to-End Pipeline Examples](#end-to-end-pipeline-examples)
-9. [Troubleshooting](#troubleshooting)
-10. [Model Selection Guide](#model-selection-guide)
+8. [Phase 7 — Publishing & Distribution](#phase-7--publishing--distribution)
+9. [End-to-End Pipeline Examples](#end-to-end-pipeline-examples)
+10. [Troubleshooting](#troubleshooting)
+11. [Model Selection Guide](#model-selection-guide)
 
 ---
 
@@ -30,7 +31,8 @@ flowchart LR
     B --> C["3. GENERATE<br/><br/>AI video<br/>from text/image"]
     C --> D["4. EDIT<br/><br/>Trim, reframe,<br/>upscale, caption"]
     D --> E["5. AUDIO<br/><br/>Voiceover,<br/>music, SFX"]
-    E --> F["6. DELIVER<br/><br/>Merge, export,<br/>publish"]
+    E --> F["6. DELIVER<br/><br/>Merge, export,<br/>finalize"]
+    F --> G["7. PUBLISH<br/><br/>Upload, optimize,<br/>distribute"]
 
     A -.- A1(["Text editor /<br/>shot list"])
     B -.- B1(["generate-image.js<br/>generate-edit-image.js"])
@@ -38,6 +40,7 @@ flowchart LR
     D -.- D1(["generate-edit-video.js<br/>10 models"])
     E -.- E1(["generate-voice.js<br/>generate-music.js"])
     F -.- F1(["generate-edit-video.js<br/>avmerge / merge"])
+    G -.- G1(["YouTube · TikTok<br/>Instagram · X · LinkedIn"])
 
     style A fill:#7CB9E8,color:#24292f
     style B fill:#B39DDB,color:#24292f
@@ -45,12 +48,14 @@ flowchart LR
     style D fill:#A5D6A7,color:#24292f
     style E fill:#EF9A9A,color:#24292f
     style F fill:#F48FB1,color:#24292f
+    style G fill:#FFE082,color:#24292f
     style A1 fill:#B0BEC5,color:#24292f,stroke:#7CB9E8
     style B1 fill:#B0BEC5,color:#24292f,stroke:#B39DDB
     style C1 fill:#B0BEC5,color:#24292f,stroke:#FFAB91
     style D1 fill:#B0BEC5,color:#24292f,stroke:#A5D6A7
     style E1 fill:#B0BEC5,color:#24292f,stroke:#EF9A9A
     style F1 fill:#B0BEC5,color:#24292f,stroke:#F48FB1
+    style G1 fill:#B0BEC5,color:#24292f,stroke:#FFE082
 ```
 
 ---
@@ -456,6 +461,322 @@ node generate-edit-video.js --model merge --video ./media/shot1.mp4 --extra ./me
 | Instagram Feed | 1:1 or 4:5 | 60 min | 1080p | MP4 |
 | Twitter/X | 16:9 or 1:1 | 2 min 20s (free) | 1080p | MP4 |
 | LinkedIn | 16:9 or 1:1 | 10 min | 1080p | MP4 |
+
+---
+
+## Phase 7 — Publishing & Distribution
+
+Your final video is ready. This phase covers exporting the right format for each platform, writing effective metadata, and a repeatable publishing workflow.
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'edgeLabelBackground': '#ffffff'}}}%%
+flowchart TD
+    A["Final MP4<br/><br/>Merged, mastered,<br/>at full resolution"] --> B{"Aspect Ratio?"}
+    B -->|"16:9"| C["Landscape<br/><br/>YouTube · LinkedIn<br/>Twitter/X · Facebook"]
+    B -->|"9:16"| D["Vertical<br/><br/>TikTok · Reels<br/>YouTube Shorts · Snapchat"]
+    B -->|"1:1"| E["Square<br/><br/>Instagram Feed<br/>LinkedIn · Twitter/X"]
+    C --> F["Upload & Optimize<br/><br/>Title · Description<br/>Tags · Thumbnail"]
+    D --> F
+    E --> F
+    F --> G["Schedule or Publish<br/><br/>Best time per platform<br/>Cross-post strategy"]
+
+    style A fill:#FFE082,color:#24292f
+    style B fill:#B0BEC5,color:#24292f
+    style C fill:#7CB9E8,color:#24292f
+    style D fill:#B39DDB,color:#24292f
+    style E fill:#FFAB91,color:#24292f
+    style F fill:#A5D6A7,color:#24292f
+    style G fill:#F48FB1,color:#24292f
+```
+
+### 7a. Pre-Publish Checklist
+
+Before uploading anywhere:
+
+- [ ] Final export is MP4, H.264, AAC audio
+- [ ] File under platform size limit
+- [ ] Thumbnail prepared (1280×720 for landscape, 1080×1920 for vertical)
+- [ ] Title written (hook in first 60 characters)
+- [ ] Description written with links, timestamps, and keywords
+- [ ] Tags / hashtags ready per platform
+- [ ] Captions/subtitles file (SRT) exported if needed
+- [ ] Call-to-action decided (subscribe, link, follow, buy)
+
+### 7b. Platform Specifications & Upload Guide
+
+#### YouTube
+
+| Setting | Long-Form | Shorts |
+|---------|-----------|--------|
+| Aspect ratio | 16:9 | 9:16 |
+| Max duration | 12 hours | 60 seconds |
+| Max file size | 256 GB | 256 GB |
+| Resolution | 1080p–4K | 1080×1920 |
+| Format | MP4 (H.264) | MP4 (H.264) |
+| Thumbnail | 1280×720 JPG/PNG | Auto-generated |
+
+**Upload steps:**
+1. Go to [studio.youtube.com](https://studio.youtube.com) → **Create → Upload video**
+2. Upload MP4 file; while processing, fill in metadata:
+   - **Title**: Include primary keyword near the start (≤ 100 chars)
+   - **Description**: Full details in first 3 lines (shown before "more"); add timestamps, links
+   - **Tags**: 5–15 relevant tags; first tag = main keyword
+   - **Category**: Select the most relevant category
+   - **Thumbnail**: Upload custom 1280×720 image (16:9)
+3. Set **Visibility**: Public / Unlisted / Scheduled
+4. For Shorts: title must include `#Shorts`, or upload via the Shorts tab
+
+**Optimization tips:**
+- Front-load the hook in the first 3 seconds
+- Add chapters via timestamps in the description (`0:00 Intro`)
+- Turn on auto-translated captions; upload SRT for accuracy
+- Premiere for long videos to build hype before release
+
+---
+
+#### TikTok
+
+| Setting | Video |
+|---------|-------|
+| Aspect ratio | 9:16 (preferred), 1:1, 16:9 |
+| Max duration | 60 minutes (desktop upload) |
+| Max file size | 4 GB |
+| Resolution | 1080×1920 recommended |
+| Format | MP4 or MOV |
+
+**Upload steps:**
+1. Go to [tiktok.com/upload](https://www.tiktok.com/upload) (desktop) or use the app
+2. Upload video → add **caption** (up to 4000 chars with hashtags)
+3. Add **cover** frame (thumbnail)
+4. Set **Who can view**: Everyone / Friends / Only me
+5. Toggle **Allow comments**, **Duet**, **Stitch** as desired
+6. Schedule or post immediately
+
+**Optimization tips:**
+- Use 3–5 trending hashtags + 2–3 niche hashtags
+- First 1–2 seconds must stop the scroll; hook immediately
+- Caption should complement video, not describe it
+- Post natively via app for algorithm preference
+- Optimal lengths by content: tutorials 60–90s, stories 15–30s
+
+---
+
+#### Instagram
+
+**Reels** (short-form, primary discovery format):
+
+| Setting | Reels |
+|---------|-------|
+| Aspect ratio | 9:16 |
+| Max duration | 15 minutes (≤ 90 seconds recommended for reach) |
+| Max file size | 1 GB |
+| Resolution | 1080×1920 |
+| Format | MP4 or MOV |
+| Cover image | 420×654 px (displayed on profile grid) |
+
+**Feed Videos** (longer-form or square):
+
+| Setting | Feed Video |
+|---------|------------|
+| Aspect ratio | 1:1, 4:5, or 16:9 |
+| Max duration | 60 minutes |
+| Max file size | 4 GB |
+| Resolution | 1080×1350 (4:5 recommended) |
+| Format | MP4 |
+
+**Upload steps:**
+1. Open Instagram app → **+ → Reel** or **Post**
+2. Select video; trim in app or upload pre-edited
+3. Add **caption** (up to 2200 chars; only first ~125 chars show before "more")
+4. Add **hashtags** (up to 30; use inline or in comment)
+5. **Tag people** and **add location** if relevant
+6. Select **cover** frame or upload custom
+7. Cross-post to Facebook if desired
+
+**Optimization tips:**
+- Reels get far more reach than feed posts in the current algorithm
+- Use closed captions — 80% of users watch without sound
+- First frame should be visually striking (acts as thumbnail)
+- 5–10 targeted hashtags outperforms 30 generic ones
+- Aspect ratio 4:5 (1080×1350) fills more screen on feed
+
+---
+
+#### Twitter / X
+
+| Setting | Free Tier | Premium |
+|---------|-----------|----------|
+| Max duration | 2 min 20 s | 40 minutes |
+| Max file size | 512 MB | 8 GB |
+| Resolution | Up to 1920×1200 | Up to 1920×1200 |
+| Format | MP4 or MOV | MP4 or MOV |
+
+**Upload steps:**
+1. Compose a new post → click the **media icon**
+2. Select MP4; add up to 4 videos in one post
+3. Write post text (≤ 280 chars; Premium: 25,000 chars with premium formatting)
+4. Add **alt text** to the video for accessibility
+5. Post or Schedule
+
+**Optimization tips:**
+- Keep free-tier content under 2:20; trim with `generate-edit-video.js --model trim`
+- Native video outperforms link-only posts significantly
+- Vertical crops to 1:1 in-feed; landscape shows best at 16:9
+- Add subtitles — auto-captions available on the platform
+
+---
+
+#### LinkedIn
+
+| Setting | Video |
+|---------|-------|
+| Aspect ratio | 1:2.4 to 2.4:1 (16:9 or 1:1 recommended) |
+| Max duration | 10 minutes |
+| Max file size | 5 GB |
+| Resolution | 1080p recommended |
+| Format | MP4 |
+
+**Upload steps:**
+1. Start a post → click **Media → Video**
+2. Upload MP4 (up to 5 GB)
+3. Add a **title** for the video (shown in notifications)
+4. Write **post text** — LinkedIn rewards text-first posts; put video at end
+5. Add **hashtags** (3–5 professional ones)
+6. Select **Who can see**: Anyone / Connections / Group
+
+**Optimization tips:**
+- Professional tone; clearly state value in first line of post
+- Square (1:1) or landscape (16:9) performs best in feed
+- Add captions — LinkedIn's auto-captions can be edited
+- Optimal length: 1–2 minutes for best engagement
+- Post on Tuesday–Thursday mornings for peak B2B audience
+
+---
+
+#### Facebook
+
+| Setting | Feed / Reels |
+|---------|-------------|
+| Aspect ratio | 16:9, 9:16, 1:1 |
+| Max duration | 240 minutes |
+| Max file size | 10 GB |
+| Resolution | 1080p |
+| Format | MP4 or MOV |
+
+**Upload steps:**
+1. Compose a post → **Photo/Video** → select MP4
+2. Add caption, hashtags, and location
+3. For Reels: use Creator Studio or the app Reels tab
+4. Set audience and schedule or post
+
+---
+
+#### YouTube Shorts / TikTok / Reels — Simultaneous Posting
+
+All three platforms use **9:16 vertical, 1080×1920, MP4**. One export works for all three. The only differences are metadata and caption length:
+
+```bash
+# Export vertical clip at correct spec for all short-form platforms
+node generate-edit-video.js --model reframe --video ./final.mp4 --aspect 9:16
+```
+
+Then upload the same file to TikTok, Instagram Reels, and YouTube Shorts sequentially.
+
+### 7c. Cross-Posting Strategy
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'edgeLabelBackground': '#ffffff'}}}%%
+flowchart LR
+    Master["Master Export<br/><br/>1080p · 16:9<br/>Full quality MP4"]
+    Master --> YT["YouTube<br/>16:9 · Long-form<br/>Shorts: 9:16 clip"]
+    Master --> LI["LinkedIn<br/>16:9 or 1:1<br/>≤ 10 min"]
+    Master --> FB["Facebook<br/>16:9 or 1:1<br/>≤ 240 min"]
+    Master --> Vert["Vertical Reframe<br/><br/>9:16 · 1080×1920<br/>trimmed ≤ 90s"]
+    Vert --> TT["TikTok"]
+    Vert --> IG["Instagram Reels"]
+    Vert --> YTS["YouTube Shorts"]
+    Master --> X["Twitter / X<br/>16:9 or 1:1<br/>≤ 2:20 (free)"]
+
+    style Master fill:#FFE082,color:#24292f
+    style Vert fill:#B39DDB,color:#24292f
+    style YT fill:#EF9A9A,color:#24292f
+    style LI fill:#7CB9E8,color:#24292f
+    style FB fill:#7CB9E8,color:#24292f
+    style TT fill:#F48FB1,color:#24292f
+    style IG fill:#F48FB1,color:#24292f
+    style YTS fill:#F48FB1,color:#24292f
+    style X fill:#A5D6A7,color:#24292f
+```
+
+**Workflow:**
+```bash
+# 1. Master export (already done in Phase 6)
+# e.g. ./media/final_video.mp4 at 1920×1080
+
+# 2. Create vertical cut for short-form platforms
+node generate-edit-video.js --model reframe --video ./media/final_video.mp4 --aspect 9:16
+
+# 3. Trim vertical to 60–90s for Reels/TikTok/Shorts
+node generate-edit-video.js --model trim --video ./media/*reframe*.mp4 --start 0 --end 90
+
+# 4. Create square version for LinkedIn/feed if needed
+node generate-edit-video.js --model reframe --video ./media/final_video.mp4 --aspect 1:1
+```
+
+### 7d. Thumbnail Creation
+
+A strong thumbnail can double click-through rate. Every platform benefits from a custom thumbnail.
+
+| Platform | Size | Format | Notes |
+|----------|------|--------|-------|
+| YouTube | 1280×720 | JPG/PNG ≤ 2MB | Most important; shown in search results |
+| TikTok | 1080×1920 | JPG/PNG | Cover frame from video or custom |
+| Instagram Reels | 420×654 | JPG | Shown on profile grid |
+| LinkedIn | 1200×627 | JPG/PNG | Shown in feed preview |
+| Twitter/X | 1280×720 | JPG/PNG ≤ 5MB | Shown as card preview |
+
+```bash
+# Extract a specific frame as a thumbnail
+ffmpeg -i ./media/final_video.mp4 -ss 00:00:03 -frames:v 1 ./media/thumbnail.png
+
+# Generate an AI image as a custom thumbnail
+node generate-image.js "cinematic title card, bright colors, bold text space" --model flux2pro --width 1280 --height 720
+```
+
+### 7e. Publishing Checklist
+
+#### YouTube
+- [ ] Title ≤ 100 chars, keyword-first
+- [ ] Description: hook first 3 lines, timestamps, links
+- [ ] Custom thumbnail uploaded (1280×720)
+- [ ] Tags: 5–15, first = main keyword
+- [ ] End screen and cards added (in Studio)
+- [ ] Captions/subtitles uploaded or auto-generated
+- [ ] Category and language set
+
+#### TikTok
+- [ ] Caption with 3–5 trending hashtags
+- [ ] Cover frame selected
+- [ ] Duration ≤ 90s for max reach
+- [ ] Duet/Stitch permissions set
+
+#### Instagram Reels
+- [ ] Caption ≤ 2200 chars; hook in first 125 chars
+- [ ] Cover frame selected
+- [ ] 5–10 hashtags added
+- [ ] Location tag added if relevant
+- [ ] Shared to Facebook if desired
+
+#### LinkedIn
+- [ ] Post text states value clearly in first line
+- [ ] Video title added
+- [ ] 3–5 professional hashtags
+- [ ] Captions enabled
+
+#### Twitter / X
+- [ ] Content fits in 2:20 (free tier) or trimmed
+- [ ] Post text is punchy; link in reply if needed
+- [ ] Alt text added to video
 
 ---
 
