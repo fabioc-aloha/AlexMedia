@@ -9,20 +9,30 @@
     "github/episodic/peripheral/file-observations.json",
     "README.md",
     "docs/generate-3d.md",
-    "docs/generate-edit-image.md",
-    "docs/generate-edit-video.md",
-    "docs/generate-emoji.md",
-    "docs/generate-image.md",
-    "docs/generate-music.md",
-    "docs/generate-video.md",
-    "docs/generate-voice.md"
+    "generate-3d.js",
+    "package-lock.json",
+    "package.json",
+    "assets/banner-3d-print.png",
+    "docs/3d-design-to-print-workflow.md",
+    "docs/3d-printing-services-guide.md",
+    "docs/generate-3d-print.md"
   ],
   "todoHotspots": [
     {
+      "file": "assets/banner-3d-print.png",
+      "todoCount": 2,
+      "scannedAt": 1772650253079
+    },
+    {
+      "file": "output/2026-03-04T17-51-08_ideoturbo_Ultrawide-cinematic-banner-futuristic.png",
+      "todoCount": 2,
+      "scannedAt": 1772650253079
+    },
+    {
       "file": "assets/banner-video.png",
       "todoCount": 2,
-      "scannedAt": 1772642085657
+      "scannedAt": 1772650253079
     }
   ],
-  "lastUpdated": 1772642085657
+  "lastUpdated": 1772650253079
 }

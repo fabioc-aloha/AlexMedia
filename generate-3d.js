@@ -52,6 +52,8 @@
  *   --prompt <str>       Text prompt (rodin, also positional arg)
  *   --bbox <w,h,l>       Bounding box condition (rodin)
  *   --addons <a,b>       Addons comma-separated (rodin)
+ *   --stl                Convert output to STL (3D printer format)
+ *   --3mf                Reserved for future 3MF support
  */
 
 require("dotenv").config();
@@ -60,6 +62,7 @@ const fs = require("fs");
 const path = require("path");
 const https = require("https");
 const http = require("http");
+const { NodeIO } = require("@gltf-transform/core");
 
 // ── Image to Data URI Helper ───────────────────────────────────────
 function imageToDataUri(imagePath) {
@@ -97,6 +100,7 @@ const MODELS = {
     cost: "per-second GPU",
     supportsImage: true,
     supportsText: false,
+    nativeStl: false,
     outputType: "structured", // { model_file, color_video, gaussian_ply, ... }
     buildInput: (prompt, imageUri, opts) => {
       const input = {
@@ -129,6 +133,7 @@ const MODELS = {
     cost: "$0.40/output",
     supportsImage: true,
     supportsText: true,
+    nativeStl: true, // geometry_file_format supports stl, obj, glb, fbx, usdz
     outputType: "uri",
     buildInput: (prompt, imageUri, opts) => {
       const input = {};
@@ -155,6 +160,7 @@ const MODELS = {
     cost: "per-second GPU",
     supportsImage: true,
     supportsText: false,
+    nativeStl: false, // file_type supports glb, obj only
     outputType: "structured", // { mesh_paint }
     buildInput: (prompt, imageUri, opts) => {
       const input = {};
@@ -176,6 +182,7 @@ const MODELS = {
     cost: "per-second GPU",
     supportsImage: true,
     supportsText: false,
+    nativeStl: true, // file_type supports glb, obj, ply, stl
     outputType: "uri",
     buildInput: (prompt, imageUri, opts) => {
       const input = {};
@@ -203,6 +210,7 @@ const MODELS = {
     cost: "per-second GPU",
     supportsImage: false,
     supportsText: true,
+    nativeStl: false, // outputs renders only, no mesh
     outputType: "uri-array", // uri[]
     buildInput: (prompt, imageUri, opts) => {
       const input = { prompt };
@@ -220,6 +228,7 @@ const MODELS = {
     cost: "per-second GPU",
     supportsImage: true,
     supportsText: true,
+    nativeStl: false, // outputs obj mesh or renders
     outputType: "uri-array", // uri[]
     buildInput: (prompt, imageUri, opts) => {
       const input = {};
@@ -278,6 +287,8 @@ function parseArgs() {
     ss_steps: null,
     slat_steps: null,
     slat_guidance: null,
+    // 3D printing
+    stl: false,
   };
 
   const positional = [];
@@ -315,6 +326,7 @@ function parseArgs() {
       case "--bbox": result.bbox = args[++i]; break;
       case "--addons": result.addons = args[++i]; break;
       case "--prompt": result.prompt = args[++i]; break;
+      case "--stl": result.stl = true; break;
       case "--front": result.front = args[++i]; break;
       case "--back": result.back = args[++i]; break;
       case "--left": result.left = args[++i]; break;
@@ -388,8 +400,90 @@ async function runWithRetry(replicate, modelId, input, maxRetries = 3) {
   }
 }
 
+// ── GLB → STL Conversion ───────────────────────────────────────────
+async function convertGlbToStl(glbPath, stlPath) {
+  const io = new NodeIO();
+  const document = await io.read(glbPath);
+  const root = document.getRoot();
+
+  // Collect all triangle data from all meshes
+  const allTriangles = [];
+
+  for (const mesh of root.listMeshes()) {
+    for (const primitive of mesh.listPrimitives()) {
+      const positionAccessor = primitive.getAttribute("POSITION");
+      if (!positionAccessor) continue;
+
+      const positions = positionAccessor.getArray();
+      const indexAccessor = primitive.getIndices();
+
+      let indices;
+      if (indexAccessor) {
+        indices = indexAccessor.getArray();
+      } else {
+        // Non-indexed geometry: sequential indices
+        indices = new Uint32Array(positions.length / 3);
+        for (let i = 0; i < indices.length; i++) indices[i] = i;
+      }
+
+      // Extract triangles
+      for (let i = 0; i < indices.length; i += 3) {
+        const i0 = indices[i], i1 = indices[i + 1], i2 = indices[i + 2];
+        const ax = positions[i0 * 3], ay = positions[i0 * 3 + 1], az = positions[i0 * 3 + 2];
+        const bx = positions[i1 * 3], by = positions[i1 * 3 + 1], bz = positions[i1 * 3 + 2];
+        const cx = positions[i2 * 3], cy = positions[i2 * 3 + 1], cz = positions[i2 * 3 + 2];
+
+        // Compute face normal via cross product
+        const ux = bx - ax, uy = by - ay, uz = bz - az;
+        const vx = cx - ax, vy = cy - ay, vz = cz - az;
+        let nx = uy * vz - uz * vy;
+        let ny = uz * vx - ux * vz;
+        let nz = ux * vy - uy * vx;
+        const len = Math.sqrt(nx * nx + ny * ny + nz * nz);
+        if (len > 0) { nx /= len; ny /= len; nz /= len; }
+
+        allTriangles.push({ nx, ny, nz, ax, ay, az, bx, by, bz, cx, cy, cz });
+      }
+    }
+  }
+
+  // Write binary STL
+  const headerSize = 80;
+  const triangleCount = allTriangles.length;
+  const bufferSize = headerSize + 4 + triangleCount * 50; // 50 bytes per triangle
+  const buffer = Buffer.alloc(bufferSize);
+
+  // Header (80 bytes, can be anything)
+  buffer.write("Binary STL generated by AlexVideos generate-3d.js", 0, "ascii");
+
+  // Triangle count (uint32 LE)
+  buffer.writeUInt32LE(triangleCount, headerSize);
+
+  let offset = headerSize + 4;
+  for (const tri of allTriangles) {
+    buffer.writeFloatLE(tri.nx, offset); offset += 4;
+    buffer.writeFloatLE(tri.ny, offset); offset += 4;
+    buffer.writeFloatLE(tri.nz, offset); offset += 4;
+    buffer.writeFloatLE(tri.ax, offset); offset += 4;
+    buffer.writeFloatLE(tri.ay, offset); offset += 4;
+    buffer.writeFloatLE(tri.az, offset); offset += 4;
+    buffer.writeFloatLE(tri.bx, offset); offset += 4;
+    buffer.writeFloatLE(tri.by, offset); offset += 4;
+    buffer.writeFloatLE(tri.bz, offset); offset += 4;
+    buffer.writeFloatLE(tri.cx, offset); offset += 4;
+    buffer.writeFloatLE(tri.cy, offset); offset += 4;
+    buffer.writeFloatLE(tri.cz, offset); offset += 4;
+    buffer.writeUInt16LE(0, offset); offset += 2; // attribute byte count
+  }
+
+  fs.writeFileSync(stlPath, buffer);
+  const sizeMB = (buffer.length / (1024 * 1024)).toFixed(2);
+  return { triangles: triangleCount, sizeMB };
+}
+
 // ── Get Extension from URL ─────────────────────────────────────────
 function getExtFromUrl(url, fallback = "glb") {
+  if (url.includes(".stl")) return "stl";
   if (url.includes(".glb")) return "glb";
   if (url.includes(".obj")) return "obj";
   if (url.includes(".ply")) return "ply";
@@ -417,11 +511,14 @@ function showHelp() {
   console.log("  --model <name>       3D model (default: trellis)");
   console.log("  --image <path>       Input image (local file or URL)");
   console.log("  --seed <n>           Random seed");
-  console.log("  --format <str>       Output format (glb, obj)");
+  console.log("  --format <str>       Output format (glb, obj, stl)");
   console.log("  --faces <n>          Target face count for simplification");
   console.log("  --steps <n>          Inference steps");
   console.log("  --guidance <n>       Guidance scale/strength");
   console.log("  --nobg               Remove image background");
+  console.log("\n3D Printing Options:");
+  console.log("  --stl                Convert output to STL (universal 3D printer format)");
+  console.log("                       Native: rodin, hunyuan2mv | Converted: trellis, hunyuan");
   console.log("\nTRELLIS Options:");
   console.log("  --texture <n>        Texture size (512-2048, default: 1024)");
   console.log("  --simplify <n>       Mesh simplification (0.9-0.98)");
@@ -495,6 +592,22 @@ async function main() {
 
   const replicate = new Replicate({ auth: process.env.REPLICATE_API_TOKEN });
 
+  // Handle --stl flag: set native format or mark for post-processing
+  let convertToStl = false;
+  if (opts.stl) {
+    if (modelDef.nativeStl) {
+      opts.format = "stl";
+      console.log(`🖨️  STL mode: ${modelDef.name} supports native STL output`);
+    } else {
+      convertToStl = true;
+      console.log(`🖨️  STL mode: Will convert ${modelDef.name} output (GLB → STL) after download`);
+    }
+  } else if (opts.format === "stl" && !modelDef.nativeStl) {
+    convertToStl = true;
+    opts.format = null; // Don't pass unsupported format to API
+    console.log(`🖨️  STL requested: Will convert ${modelDef.name} output (GLB → STL) after download`);
+  }
+
   // Ensure output directory
   const outputDir = path.join(__dirname, "output");
   if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir);
@@ -521,6 +634,7 @@ async function main() {
   if (opts.quality) console.log(`   Quality:  ${opts.quality}`);
   if (opts.steps != null) console.log(`   Steps:    ${opts.steps}`);
   if (opts.guidance != null) console.log(`   Guidance: ${opts.guidance}`);
+  if (opts.stl) console.log(`   STL:      ${modelDef.nativeStl ? "native" : "GLB\u2192STL conversion"}`);
   console.log("");
 
   const startTime = Date.now();
@@ -602,6 +716,39 @@ async function main() {
       throw new Error("No downloadable files found in model output");
     }
 
+    // Post-processing: convert GLB/OBJ files to STL for 3D printing
+    if (convertToStl) {
+      const convertibleExts = ["glb"];
+      const convertedFiles = [];
+
+      for (const file of savedFiles) {
+        const ext = path.extname(file.filename).slice(1).toLowerCase();
+        if (!convertibleExts.includes(ext)) continue;
+
+        const srcPath = path.join(outputDir, file.filename);
+        const stlFilename = file.filename.replace(/\.glb$/i, ".stl");
+        const stlPath = path.join(outputDir, stlFilename);
+
+        console.log(`🔄 Converting ${file.filename} → STL...`);
+        try {
+          const result = await convertGlbToStl(srcPath, stlPath);
+          const stlSize = (fs.statSync(stlPath).size / (1024 * 1024)).toFixed(2);
+          convertedFiles.push({
+            filename: stlFilename,
+            fileSize: stlSize,
+            type: (file.type || "") + "_stl",
+            url: file.url,
+            triangles: result.triangles,
+          });
+          console.log(`   ✅ STL: ${result.triangles.toLocaleString()} triangles (${stlSize} MB)`);
+        } catch (convErr) {
+          console.warn(`   ⚠️ STL conversion failed for ${file.filename}: ${convErr.message}`);
+        }
+      }
+
+      savedFiles.push(...convertedFiles);
+    }
+
     const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
 
     // Save generation report
@@ -618,6 +765,7 @@ async function main() {
       quality: opts.quality || null,
       steps: opts.steps ?? null,
       guidance: opts.guidance ?? null,
+      stlConversion: convertToStl || false,
       timestamp: new Date().toISOString(),
       elapsed: `${elapsed}s`,
       files: savedFiles.map((f) => ({

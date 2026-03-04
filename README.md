@@ -2,7 +2,7 @@
 
 ![AlexVideos](assets/banner.png)
 
-**CLI toolkit for generating and editing media via [Replicate](https://replicate.com) — 84 AI models, one CLI.**
+**CLI toolkit for generating and editing media via [Replicate](https://replicate.com) — 83 AI models + 6 online 3D print services, one CLI.**
 
 </div>
 
@@ -30,10 +30,11 @@ Get your token at [replicate.com/account/api-tokens](https://replicate.com/accou
 | `generate-image.js` | 14 | Text/image-to-image generation | [docs/generate-image.md](docs/generate-image.md) |
 | `generate-voice.js` | 15 | Text-to-speech & voice cloning | [docs/generate-voice.md](docs/generate-voice.md) |
 | `generate-music.js` | 5 | AI music generation | [docs/generate-music.md](docs/generate-music.md) |
-| `generate-3d.js` | 6 | Text/image-to-3D model generation | [docs/generate-3d.md](docs/generate-3d.md) |
+| `generate-3d.js` | 6 | Text/image-to-3D model generation (STL for 3D printing) | [docs/generate-3d.md](docs/generate-3d.md) |
 | `generate-emoji.js` | 4 | Custom emoji/sticker generation | [docs/generate-emoji.md](docs/generate-emoji.md) |
-| `generate-edit-image.js` | 13 | Image editing & enhancement | [docs/generate-edit-image.md](docs/generate-edit-image.md) |
+| `generate-edit-image.js` | 12 | Image editing & enhancement | [docs/generate-edit-image.md](docs/generate-edit-image.md) |
 | `generate-edit-video.js` | 10 | Video editing & processing | [docs/generate-edit-video.md](docs/generate-edit-video.md) |
+| `generate-3d-print.js` | 6 services | Upload to online 3D printing services & get quotes | [docs/generate-3d-print.md](docs/generate-3d-print.md) |
 
 ## Quick Start
 
@@ -61,6 +62,9 @@ node generate-edit-image.js --model rembg --image ./photo.jpg
 
 # Edit a video (trim)
 node generate-edit-video.js --model trim --video ./clip.mp4 --start 5 --end 15
+
+# Get 3D printing quotes
+node generate-3d-print.js --file ./model.stl --service all
 ```
 
 Every script supports `--help` for full usage info:
@@ -162,7 +166,7 @@ node generate-video.js --help
 | `fluxico` | Flux Emoji | per-second GPU |
 | `kontextemoji` | Flux Kontext Max | $0.05/image |
 
-### Image Editing (13)
+### Image Editing (12)
 
 | Key | Model | Cost |
 |-----|-------|------|
@@ -210,8 +214,9 @@ AlexVideos/
 ├── generate-music.js          # Music generation (5 models)
 ├── generate-3d.js             # 3D model generation (6 models)
 ├── generate-emoji.js          # Emoji generation (4 models)
-├── generate-edit-image.js     # Image editing (13 models)
+├── generate-edit-image.js     # Image editing (12 models)
 ├── generate-edit-video.js     # Video editing (10 models)
+├── generate-3d-print.js       # 3D print service integration (6 services)
 ├── package.json
 ├── .env                       # REPLICATE_API_TOKEN (not committed)
 ├── docs/                      # Per-script documentation
@@ -222,7 +227,10 @@ AlexVideos/
 │   ├── generate-3d.md
 │   ├── generate-emoji.md
 │   ├── generate-edit-image.md
-│   └── generate-edit-video.md
+│   ├── generate-edit-video.md
+│   ├── generate-3d-print.md
+│   ├── 3d-printing-services-guide.md
+│   └── 3d-design-to-print-workflow.md
 └── output/                    # Generated media + JSON reports
 ```
 
@@ -230,6 +238,9 @@ AlexVideos/
 
 - [replicate](https://www.npmjs.com/package/replicate) ^1.4.0 — Replicate API client
 - [dotenv](https://www.npmjs.com/package/dotenv) ^17.3.1 — Environment variable loading
+- [@gltf-transform/core](https://www.npmjs.com/package/@gltf-transform/core) ^4.3.0 — GLB parsing for STL conversion
+- [form-data](https://www.npmjs.com/package/form-data) — Multipart uploads to 3D print services
+- [open](https://www.npmjs.com/package/open) — Browser handoff for print service uploads
 - [FFmpeg](https://ffmpeg.org/) — Required for video editing operations (local processing)
 
 ## License
