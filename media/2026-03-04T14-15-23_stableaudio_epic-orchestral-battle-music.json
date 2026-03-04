@@ -1,0 +1,21 @@
+{
+  "text": "epic orchestral battle music",
+  "model": "stability-ai/stable-audio-2.5",
+  "modelName": "Stable Audio 2.5",
+  "type": "music",
+  "voice": null,
+  "speed": null,
+  "seed": null,
+  "emotion": null,
+  "language": null,
+  "format": null,
+  "lyrics": null,
+  "duration": 120,
+  "mode": null,
+  "referenceAudio": null,
+  "timestamp": "2026-03-04T14:15:24.605Z",
+  "elapsed": "8.1s",
+  "fileSize": "1.83MB",
+  "outputFile": "2026-03-04T14-15-23_stableaudio_epic-orchestral-battle-music.mp3",
+  "audioUrl": "https://replicate.delivery/xezq/L50hjFzVen0FXCKZVRsooeE8Dcscydg867IZvNPLJyf2De1YB/tmptdxudb4z.mp3"
+}

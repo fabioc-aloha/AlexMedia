@@ -1,0 +1,21 @@
+{
+  "prompt": "metallica inspired rock",
+  "model": "minimax/music-1.5",
+  "modelName": "MiniMax Music 1.5",
+  "seed": null,
+  "format": null,
+  "lyrics": "[verse]\\nLa la la\\nClaudia is my Therapist. Headstart!!!",
+  "duration": null,
+  "lengthMs": null,
+  "vocals": false,
+  "referenceFiles": {
+    "song": null,
+    "voice": null,
+    "instrumental": null
+  },
+  "timestamp": "2026-03-04T14:30:15.899Z",
+  "elapsed": "20.5s",
+  "fileSize": "0.27MB",
+  "outputFile": "2026-03-04T14-30-15_music15_metallica-inspired-rock.mp3",
+  "audioUrl": "https://replicate.delivery/xezq/w3eWADWJzqxWBqq57p4Zbm7HvGGAYaGTfnlkA7HR0MP3PfasA/tmpjmivrk1h.mp3"
+}

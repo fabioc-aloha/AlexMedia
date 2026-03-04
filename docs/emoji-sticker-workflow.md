@@ -13,9 +13,10 @@ A step-by-step manual covering the full pipeline: concept → generate → edit 
 3. [Phase 2 — Emoji Generation](#phase-2--emoji-generation)
 4. [Phase 3 — Editing & Cleanup](#phase-3--editing--cleanup)
 5. [Phase 4 — Pack Assembly & Delivery](#phase-4--pack-assembly--delivery)
-6. [End-to-End Pipeline Examples](#end-to-end-pipeline-examples)
-7. [Troubleshooting](#troubleshooting)
-8. [Model Selection Guide](#model-selection-guide)
+6. [Phase 5 — Physical Sticker Production](#phase-5--physical-sticker-production)
+7. [End-to-End Pipeline Examples](#end-to-end-pipeline-examples)
+8. [Troubleshooting](#troubleshooting)
+9. [Model Selection Guide](#model-selection-guide)
 
 ---
 
@@ -27,20 +28,24 @@ flowchart LR
     A["1. CONCEPT<br/><br/>Theme, style,<br/>emotion map"] --> B["2. GENERATE<br/><br/>AI emoji<br/>from prompts"]
     B --> C["3. EDIT<br/><br/>Clean up,<br/>remove BG, fix"]
     C --> D["4. DELIVER<br/><br/>Pack, resize,<br/>export"]
+    D --> E["5. PRINT<br/><br/>Physical<br/>stickers"]
 
     A -.- A1(["Style guide<br/>emotion list"])
     B -.- B1(["generate-emoji.js<br/>4 models"])
     C -.- C1(["generate-edit-image.js<br/>rembg / upscale"])
     D -.- D1(["Batch export<br/>platform formats"])
+    E -.- E1(["generate-sticker-print.js<br/>6 services"])
 
     style A fill:#7CB9E8,color:#24292f
     style B fill:#B39DDB,color:#24292f
     style C fill:#FFAB91,color:#24292f
     style D fill:#A5D6A7,color:#24292f
+    style E fill:#F48FB1,color:#24292f
     style A1 fill:#B0BEC5,color:#24292f,stroke:#7CB9E8
     style B1 fill:#B0BEC5,color:#24292f,stroke:#B39DDB
     style C1 fill:#B0BEC5,color:#24292f,stroke:#FFAB91
     style D1 fill:#B0BEC5,color:#24292f,stroke:#A5D6A7
+    style E1 fill:#B0BEC5,color:#24292f,stroke:#F48FB1
 ```
 
 ---
@@ -335,6 +340,87 @@ emoji-pack/
 
 ---
 
+## Phase 5 — Physical Sticker Production
+
+Turn your digital emoji and sticker designs into real, physical stickers using `generate-sticker-print.js`.
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'edgeLabelBackground': '#ffffff'}}}%%
+flowchart TD
+    A["Digital Artwork<br/><br/>PNG with transparency<br/>300 DPI, clean edges"] --> B{"API Token<br/>Available?"}
+    B -->|Yes| C["API Upload<br/><br/>Printify / Printful<br/>auto-catalog + pricing"]
+    B -->|No| D["Browser Handoff<br/><br/>StickerMule / StickerApp<br/>StickerGiant / Redbubble"]
+    C --> E["Browse Catalog<br/><br/>Sticker blueprints<br/>print providers"]
+    E --> F["Order<br/><br/>Select variant,<br/>quantity, shipping"]
+    D --> F
+
+    style A fill:#F48FB1,color:#24292f
+    style B fill:#FFE082,color:#24292f
+    style C fill:#B39DDB,color:#24292f
+    style D fill:#7CB9E8,color:#24292f
+    style E fill:#FFAB91,color:#24292f
+    style F fill:#A5D6A7,color:#24292f
+```
+
+### 5a. Prepare Artwork for Print
+
+Your digital emoji needs adjustments for physical production:
+
+| Requirement | Digital Emoji | Print-Ready |
+|---|---|---|
+| Resolution | 128–512 px | 900+ px (300 DPI at 3") |
+| Background | Transparent PNG | Transparent PNG (die-cut) |
+| Bleed | None | 1/8" (3mm) bleed area |
+| Color | sRGB | CMYK preferred |
+| Edges | Clean | Clean + safe zone margin |
+
+```bash
+# Upscale emoji to print resolution (2x)
+node generate-edit-image.js --model upscale --image ./media/*sdxlemoji*.png
+
+# Ensure background is removed
+node generate-edit-image.js --model rembg --image ./media/*upscale*.png
+```
+
+### 5b. Choose a Sticker Type
+
+| Type | Best For | Service Recommendation |
+|---|---|---|
+| Die-cut | Individual stickers shaped to your design | StickerMule, Printify |
+| Kiss-cut | Sticker packs on backing sheets | StickerApp, StickerMule |
+| Vinyl | Outdoor/waterproof use | StickerGiant, StickerApp |
+| Holographic | Special effects, collectibles | StickerMule |
+| Clear | Windows, glass surfaces | StickerMule, StickerApp |
+| Sheets | Multiple designs per sheet, economy | StickerApp, Printify |
+
+### 5c. Order via CLI
+
+```bash
+# Quick start — get links to all 6 services
+node generate-sticker-print.js --file ./media/*rembg*.png --service all
+
+# Upload to Printify via API and browse sticker catalog
+node generate-sticker-print.js --file ./media/*rembg*.png --service printify
+
+# Order die-cut stickers from StickerMule (opens browser)
+node generate-sticker-print.js --file ./media/*rembg*.png --service stickermule --type die-cut
+
+# List available sticker products
+node generate-sticker-print.js --list --service printify
+```
+
+### 5d. Production Checklist
+
+- [ ] Artwork is 300+ DPI at target print size
+- [ ] Transparent PNG for die-cut / clear stickers
+- [ ] 1/8" bleed added around design
+- [ ] Important elements inside safe zone (1/16" from cut)
+- [ ] Sticker type selected (die-cut, kiss-cut, vinyl, etc.)
+- [ ] Quantity determined (most services have minimums)
+- [ ] Service selected based on type, quality, and budget
+
+---
+
 ## End-to-End Pipeline Examples
 
 ### Example 1 — Discord Server Emoji Pack (12 emojis)
@@ -482,4 +568,4 @@ Get-ChildItem ./media/*rembg*.png | ForEach-Object {
 
 ---
 
-*See also: [generate-emoji.md](generate-emoji.md) · [generate-edit-image.md](generate-edit-image.md)*
+*See also: [generate-emoji.md](generate-emoji.md) · [generate-edit-image.md](generate-edit-image.md) · [generate-sticker-print.md](generate-sticker-print.md)*

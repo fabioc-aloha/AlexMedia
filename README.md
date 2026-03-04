@@ -2,7 +2,7 @@
 
 ![AlexVideos](assets/banner.png)
 
-**CLI toolkit for generating and editing media via [Replicate](https://replicate.com) — 83 AI models + 6 online 3D print services, one CLI.**
+**CLI toolkit for generating and editing media via [Replicate](https://replicate.com) — 83 AI models + 6 online 3D print services + 6 sticker print services, one CLI.**
 
 </div>
 
@@ -35,6 +35,7 @@ Get your token at [replicate.com/account/api-tokens](https://replicate.com/accou
 | `generate-edit-image.js` | 12 | Image editing & enhancement | [docs/generate-edit-image.md](docs/generate-edit-image.md) |
 | `generate-edit-video.js` | 10 | Video editing & processing | [docs/generate-edit-video.md](docs/generate-edit-video.md) |
 | `generate-3d-print.js` | 6 services | Upload to online 3D printing services & get quotes | [docs/generate-3d-print.md](docs/generate-3d-print.md) |
+| `generate-sticker-print.js` | 6 services | Order physical stickers & prints from production services | [docs/generate-sticker-print.md](docs/generate-sticker-print.md) |
 
 ## Quick Start
 
@@ -65,6 +66,9 @@ node generate-edit-video.js --model trim --video ./clip.mp4 --start 5 --end 15
 
 # Get 3D printing quotes
 node generate-3d-print.js --file ./model.stl --service all
+
+# Order physical stickers
+node generate-sticker-print.js --file ./sticker.png --service all --type die-cut
 ```
 
 Every script supports `--help` for full usage info:
@@ -217,6 +221,7 @@ AlexVideos/
 ├── generate-edit-image.js     # Image editing (12 models)
 ├── generate-edit-video.js     # Video editing (10 models)
 ├── generate-3d-print.js       # 3D print service integration (6 services)
+├── generate-sticker-print.js  # Sticker print production (6 services)
 ├── package.json
 ├── .env                       # REPLICATE_API_TOKEN (not committed)
 ├── docs/                      # Per-script documentation & workflow guides
@@ -229,6 +234,7 @@ AlexVideos/
 │   ├── generate-edit-image.md
 │   ├── generate-edit-video.md
 │   ├── generate-3d-print.md
+│   ├── generate-sticker-print.md
 │   ├── 3d-printing-services-guide.md
 │   ├── 3d-design-to-print-workflow.md
 │   ├── video-production-workflow.md

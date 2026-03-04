@@ -1,0 +1,21 @@
+{
+  "text": "dark mystery in a cathedral",
+  "model": "stability-ai/stable-audio-2.5",
+  "modelName": "Stable Audio 2.5",
+  "type": "music",
+  "voice": null,
+  "speed": null,
+  "seed": null,
+  "emotion": null,
+  "language": null,
+  "format": null,
+  "lyrics": null,
+  "duration": 120,
+  "mode": null,
+  "referenceAudio": null,
+  "timestamp": "2026-03-04T14:18:23.000Z",
+  "elapsed": "8.3s",
+  "fileSize": "1.83MB",
+  "outputFile": "2026-03-04T14-18-22_stableaudio_dark-mystery-in-a-cathedral.mp3",
+  "audioUrl": "https://replicate.delivery/xezq/Quilcne1gWRZACzI46zXi9aidQ175DHJkgozjhjf4EfdJe1YB/tmp_vedrizg.mp3"
+}

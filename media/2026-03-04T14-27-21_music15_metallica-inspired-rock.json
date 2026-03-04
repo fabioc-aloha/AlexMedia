@@ -1,0 +1,21 @@
+{
+  "prompt": "metallica inspired rock",
+  "model": "minimax/music-1.5",
+  "modelName": "MiniMax Music 1.5",
+  "seed": null,
+  "format": null,
+  "lyrics": "[verse]\\nLa la la\\nFeel the beat",
+  "duration": null,
+  "lengthMs": null,
+  "vocals": false,
+  "referenceFiles": {
+    "song": null,
+    "voice": null,
+    "instrumental": null
+  },
+  "timestamp": "2026-03-04T14:27:21.733Z",
+  "elapsed": "53.6s",
+  "fileSize": "2.13MB",
+  "outputFile": "2026-03-04T14-27-21_music15_metallica-inspired-rock.mp3",
+  "audioUrl": "https://replicate.delivery/xezq/TgL5LEbXsMLQBdO0ybCR0Nl66AMquz9Vrou7SHZdJZHSzXjF/tmpadofd4to.mp3"
+}

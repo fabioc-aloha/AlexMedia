@@ -1,0 +1,19 @@
+{
+  "text": "Hello!",
+  "model": "elevenlabs/v3",
+  "modelName": "ElevenLabs v3",
+  "type": "tts",
+  "voice": "Rachel",
+  "speed": null,
+  "seed": null,
+  "emotion": null,
+  "language": null,
+  "format": null,
+  "mode": null,
+  "referenceAudio": null,
+  "timestamp": "2026-03-04T14:22:36.706Z",
+  "elapsed": "1.4s",
+  "fileSize": "0.01MB",
+  "outputFile": "2026-03-04T14-22-36_elevenv3_Hello.mp3",
+  "audioUrl": "https://replicate.delivery/xezq/EAOJGCfQQHyRNKBtScHMZhfPhcQezq5n5GnmZtzayvDYRe1YB/tmpt9_a5y3e.mp3"
+}

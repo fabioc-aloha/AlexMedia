@@ -1,0 +1,21 @@
+{
+  "prompt": "folk style",
+  "model": "minimax/music-1.5",
+  "modelName": "MiniMax Music 1.5",
+  "seed": null,
+  "format": null,
+  "lyrics": "[verse]\\nLa la la\\nClaudia is my Therapist\\n Headstart!!!",
+  "duration": null,
+  "lengthMs": null,
+  "vocals": false,
+  "referenceFiles": {
+    "song": null,
+    "voice": null,
+    "instrumental": null
+  },
+  "timestamp": "2026-03-04T14:52:04.270Z",
+  "elapsed": "35.5s",
+  "fileSize": "1.27MB",
+  "outputFile": "2026-03-04T14-52-03_music15_folk-style.mp3",
+  "audioUrl": "https://replicate.delivery/xezq/x9AXXhVP9rIfECURxY2ugxHwSqTLJG6F5MPzqreZufPmIf1YB/tmpuhbh5_e0.mp3"
+}
