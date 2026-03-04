@@ -8,31 +8,21 @@
   "stalledFiles": [
     "github/episodic/peripheral/file-observations.json",
     "README.md",
-    "docs/generate-3d.md",
-    "generate-3d.js",
-    "package-lock.json",
-    "package.json",
-    "assets/banner-3d-print.png",
     "docs/3d-design-to-print-workflow.md",
     "docs/3d-printing-services-guide.md",
-    "docs/generate-3d-print.md"
+    "docs/audio-production-workflow.md",
+    "docs/emoji-sticker-workflow.md",
+    "docs/generate-3d-print.md",
+    "docs/generate-3d.md",
+    "docs/generate-edit-image.md",
+    "docs/generate-edit-video.md"
   ],
   "todoHotspots": [
     {
-      "file": "assets/banner-3d-print.png",
+      "file": "media/2026-03-04T15-57-13_ideoturbo_Ultrawide-cinematic-banner-Title-text.png",
       "todoCount": 2,
-      "scannedAt": 1772650253079
-    },
-    {
-      "file": "output/2026-03-04T17-51-08_ideoturbo_Ultrawide-cinematic-banner-futuristic.png",
-      "todoCount": 2,
-      "scannedAt": 1772650253079
-    },
-    {
-      "file": "assets/banner-video.png",
-      "todoCount": 2,
-      "scannedAt": 1772650253079
+      "scannedAt": 1772651532960
     }
   ],
-  "lastUpdated": 1772650253079
+  "lastUpdated": 1772651532960
 }

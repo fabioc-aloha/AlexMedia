@@ -73,4 +73,4 @@ node generate-emoji.js "make it blue" --model kontextemoji --image ./emoji.png
 - **Kontext Max**: Image editing model — pass existing emoji via `--image` and describe changes in prompt
 - **SDXL Emoji**: Most configurable with LoRA, scheduler, refiner, and full diffusion controls
 - All models output PNG by default at emoji-friendly sizes
-- Output saved to `./output/` as image file + JSON report
+- Output saved to `./media/` as image file + JSON report

@@ -335,16 +335,16 @@ All 6 services are integrated via `generate-3d-print.js`. For a complete end-to-
 node generate-3d.js "a medieval chess knight piece" --model rodin --stl
 
 # Step 2: Get printing quotes from all services
-node generate-3d-print.js --file ./output/chess-knight.stl --service all
+node generate-3d-print.js --file ./media/chess-knight.stl --service all
 
 # Step 3: Get Sculpteo pricing for a specific material
-node generate-3d-print.js --file ./output/chess-knight.stl --service sculpteo --material white_plastic
+node generate-3d-print.js --file ./media/chess-knight.stl --service sculpteo --material white_plastic
 
 # Step 4: List all available materials at Sculpteo
 node generate-3d-print.js --list --service sculpteo
 
 # Step 5: Open browser-based services for comparison
-node generate-3d-print.js --file ./output/chess-knight.stl --service craftcloud
+node generate-3d-print.js --file ./media/chess-knight.stl --service craftcloud
 ```
 
 For API service details and setup instructions, see [generate-3d-print.md](generate-3d-print.md).

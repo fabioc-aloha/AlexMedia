@@ -609,7 +609,7 @@ async function main() {
   }
 
   // Ensure output directory
-  const outputDir = path.join(__dirname, "output");
+  const outputDir = path.join(__dirname, "media");
   if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir);
 
   // Resolve primary image
@@ -782,10 +782,10 @@ async function main() {
     console.log(`\n✅ 3D generation complete!`);
     for (const f of savedFiles) {
       const typeLabel = f.type ? ` (${f.type})` : "";
-      console.log(`   File: output/${f.filename}${typeLabel} (${f.fileSize} MB)`);
+      console.log(`   File: media/${f.filename}${typeLabel} (${f.fileSize} MB)`);
     }
     console.log(`   Time: ${elapsed}s`);
-    console.log(`   Report: output/${reportFilename}`);
+    console.log(`   Report: media/${reportFilename}`);
   } catch (err) {
     console.error(`\n❌ Generation failed: ${err.message}`);
     if (err.message?.includes("safety") || err.message?.includes("blocked")) {

@@ -200,7 +200,7 @@ node generate-video.js --help
 
 ## Output
 
-All scripts save results to `./output/` with:
+All scripts save results to `./media/` with:
 - The generated/edited media file
 - A JSON report with metadata (model, prompt, parameters, timing, cost)
 
@@ -235,7 +235,7 @@ AlexVideos/
 │   ├── image-creation-workflow.md
 │   ├── audio-production-workflow.md
 │   └── emoji-sticker-workflow.md
-└── output/                    # Generated media + JSON reports
+└── media/                     # Generated media + JSON reports
 ```
 
 ## Dependencies

@@ -75,4 +75,4 @@ node generate-video.js "Sunset scene" --aspect 9:16 --resolution 1080p
 - **Audio**: Models marked "auto" generate synchronized audio automatically; Kling v3 supports optional `generate_audio`
 - **Duration**: Fixed values (e.g., 5/9) mean only those exact values are accepted; ranges (e.g., 3–15) accept any integer in range
 - **Aspect ratios**: Sora models use "portrait"/"landscape" internally (mapped from 9:16/16:9)
-- Output saved to `./output/` with JSON report
+- Output saved to `./media/` with JSON report

@@ -72,4 +72,4 @@ node generate-music.js "cinematic trailer music" --model lyria2 --seed 42
 - **Stable Audio 2.5**: Diffusion-based with controllable steps and CFG scale
 - **ElevenLabs Music**: Duration via `--lengthms` in milliseconds; supports vocals toggle
 - **Lyria 2**: Google's model with negative prompt support
-- Output saved to `./output/` as audio file + JSON report
+- Output saved to `./media/` as audio file + JSON report

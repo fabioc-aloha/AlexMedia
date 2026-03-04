@@ -107,4 +107,4 @@ node generate-edit-video.js --model caption --video ./clip.mp4
 - **trim** requires `--start` and optionally `--end` or `--duration`
 - **merge** requires `--extra` with the path to the second video
 - **avmerge** requires `--audio` with the audio track to overlay
-- Output saved to `./output/` with appropriate extension + JSON report
+- Output saved to `./media/` with appropriate extension + JSON report

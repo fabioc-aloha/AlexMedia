@@ -564,7 +564,7 @@ async function main() {
   const opts = { aspect, resolution, negative };
 
   // Ensure output directory
-  const outputDir = path.join(__dirname, "output");
+  const outputDir = path.join(__dirname, "media");
   if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir);
 
   // Resolve reference image if provided
@@ -647,10 +647,10 @@ async function main() {
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
 
     console.log(`\n✅ Video saved!`);
-    console.log(`   File: output/${filename}`);
+    console.log(`   File: media/${filename}`);
     console.log(`   Size: ${fileSize} MB`);
     console.log(`   Time: ${elapsed}s`);
-    console.log(`   Report: output/${path.basename(reportPath)}`);
+    console.log(`   Report: media/${path.basename(reportPath)}`);
   } catch (err) {
     console.error(`\n❌ Generation failed: ${err.message}`);
     if (err.message?.includes("duration")) {

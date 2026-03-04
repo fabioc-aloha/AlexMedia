@@ -139,16 +139,16 @@ node generate-image.js "aerial view of mountain lake at golden hour, cinematic l
 
 ```bash
 # Remove busy background
-node generate-edit-image.js --model rembg --image ./output/product-shot.png
+node generate-edit-image.js --model rembg --image ./media/product-shot.png
 
 # Replace background with something specific
-node generate-edit-image.js "futuristic lab background with holographic displays" --model bggen --image ./output/portrait.png
+node generate-edit-image.js "futuristic lab background with holographic displays" --model bggen --image ./media/portrait.png
 
 # Upscale for higher-quality video input
-node generate-edit-image.js --model upscale --image ./output/landscape.png --scale 2
+node generate-edit-image.js --model upscale --image ./media/landscape.png --scale 2
 
 # Edit details before animating
-node generate-edit-image.js "add motion blur to the hair" --model kontext --image ./output/portrait.png
+node generate-edit-image.js "add motion blur to the hair" --model kontext --image ./media/portrait.png
 ```
 
 ### 2c. Reference Image Best Practices
@@ -219,16 +219,16 @@ Using a reference image as the starting frame gives you consistency:
 
 ```bash
 # Veo 3.1 — animate a product shot
-node generate-video.js "camera slowly orbits around the product, dramatic lighting" --model veo3 --image ./output/product.png --duration 6
+node generate-video.js "camera slowly orbits around the product, dramatic lighting" --model veo3 --image ./media/product.png --duration 6
 
 # Gen-4.5 (Runway) — character animation
-node generate-video.js "she turns and walks toward camera, wind in hair" --model gen45 --image ./output/portrait.png --duration 8
+node generate-video.js "she turns and walks toward camera, wind in hair" --model gen45 --image ./media/portrait.png --duration 8
 
 # Kling v3 — precise motion control
-node generate-video.js "camera pulls back slowly to reveal the landscape" --model kling --image ./output/landscape.png --duration 10
+node generate-video.js "camera pulls back slowly to reveal the landscape" --model kling --image ./media/landscape.png --duration 10
 
 # Seedance Pro — 1080p output
-node generate-video.js "gentle parallax zoom, clouds moving slowly" --model seedpro --image ./output/scene.png --duration 8
+node generate-video.js "gentle parallax zoom, clouds moving slowly" --model seedpro --image ./media/scene.png --duration 8
 ```
 
 ### 3c. Model Selection Quick Reference
@@ -295,37 +295,37 @@ flowchart TD
 
 ```bash
 # Keep only the best 5 seconds from a longer clip
-node generate-edit-video.js --model trim --video ./output/clip.mp4 --start 2 --end 7
+node generate-edit-video.js --model trim --video ./media/clip.mp4 --start 2 --end 7
 
 # Extract first frame as a thumbnail
-node generate-edit-video.js --model frames --video ./output/clip.mp4 --first-frame
+node generate-edit-video.js --model frames --video ./media/clip.mp4 --first-frame
 ```
 
 ### 4b. Reframe for Different Platforms
 
 ```bash
 # Convert 16:9 to 9:16 for TikTok/Reels (AI-powered smart crop)
-node generate-edit-video.js --model reframe --video ./output/clip.mp4 --aspect 9:16
+node generate-edit-video.js --model reframe --video ./media/clip.mp4 --aspect 9:16
 
 # Convert to 1:1 for Instagram
-node generate-edit-video.js --model reframe --video ./output/clip.mp4 --aspect 1:1
+node generate-edit-video.js --model reframe --video ./media/clip.mp4 --aspect 1:1
 ```
 
 ### 4c. Upscale & Enhance
 
 ```bash
 # AI upscale to 4K
-node generate-edit-video.js --model upscale --video ./output/clip.mp4 --resolution 4k
+node generate-edit-video.js --model upscale --video ./media/clip.mp4 --resolution 4k
 
 # AI style modification
-node generate-edit-video.js "make it look like a 1970s film with warm grain" --model modify --video ./output/clip.mp4
+node generate-edit-video.js "make it look like a 1970s film with warm grain" --model modify --video ./media/clip.mp4
 ```
 
 ### 4d. Add Captions
 
 ```bash
 # Auto-generate burned-in subtitles
-node generate-edit-video.js --model caption --video ./output/clip.mp4
+node generate-edit-video.js --model caption --video ./media/clip.mp4
 ```
 
 ### 4e. Editing Tips
@@ -422,17 +422,17 @@ node generate-music.js "happy corporate jingle, 10 seconds" --model stableaudio 
 
 ```bash
 # Add voiceover/music to your edited video
-node generate-edit-video.js --model avmerge --video ./output/final-video.mp4 --audio ./output/voiceover.mp3
+node generate-edit-video.js --model avmerge --video ./media/final-video.mp4 --audio ./media/voiceover.mp3
 
 # If video already has audio, extract it first
-node generate-edit-video.js --model extract --video ./output/clip-with-audio.mp4
+node generate-edit-video.js --model extract --video ./media/clip-with-audio.mp4
 ```
 
 ### 6b. Concatenate Multiple Clips
 
 ```bash
 # Merge shot 1 + shot 2 into a sequence
-node generate-edit-video.js --model merge --video ./output/shot1.mp4 --extra ./output/shot2.mp4
+node generate-edit-video.js --model merge --video ./media/shot1.mp4 --extra ./media/shot2.mp4
 ```
 
 ### 6c. Delivery Checklist
@@ -468,29 +468,29 @@ node generate-edit-video.js --model merge --video ./output/shot1.mp4 --extra ./o
 node generate-image.js "wireless earbuds floating in air, white background, studio lighting" --model imagen4
 
 # 2. Remove background
-node generate-edit-image.js --model rembg --image ./output/*imagen*.png
+node generate-edit-image.js --model rembg --image ./media/*imagen*.png
 
 # 3. Generate video (vertical for social)
-node generate-video.js "camera orbits around floating earbuds, dramatic lighting reveal, slow motion" --model veo3 --image ./output/*rembg*.png --aspect 9:16 --duration 6
+node generate-video.js "camera orbits around floating earbuds, dramatic lighting reveal, slow motion" --model veo3 --image ./media/*rembg*.png --aspect 9:16 --duration 6
 
 # 4. Generate second shot — lifestyle
 node generate-video.js "person putting in earbuds and smiling, urban setting, natural light" --model veo3fast --aspect 9:16 --duration 4
 
 # 5. Trim the best moments
-node generate-edit-video.js --model trim --video ./output/*veo3_product*.mp4 --start 0 --end 5
-node generate-edit-video.js --model trim --video ./output/*veo3fast_lifestyle*.mp4 --start 1 --end 4
+node generate-edit-video.js --model trim --video ./media/*veo3_product*.mp4 --start 0 --end 5
+node generate-edit-video.js --model trim --video ./media/*veo3fast_lifestyle*.mp4 --start 1 --end 4
 
 # 6. Generate upbeat background music
 node generate-music.js "upbeat electronic pop, energetic, no vocals, 15 seconds" --model stableaudio --duration 15
 
 # 7. Merge clips
-node generate-edit-video.js --model merge --video ./output/*trim_product*.mp4 --extra ./output/*trim_lifestyle*.mp4
+node generate-edit-video.js --model merge --video ./media/*trim_product*.mp4 --extra ./media/*trim_lifestyle*.mp4
 
 # 8. Add music
-node generate-edit-video.js --model avmerge --video ./output/*merge*.mp4 --audio ./output/*stableaudio*.mp3
+node generate-edit-video.js --model avmerge --video ./media/*merge*.mp4 --audio ./media/*stableaudio*.mp3
 
 # 9. Add captions
-node generate-edit-video.js --model caption --video ./output/*avmerge*.mp4
+node generate-edit-video.js --model caption --video ./media/*avmerge*.mp4
 ```
 
 ### Example 2 — 60-Second Explainer Video (YouTube)
@@ -501,13 +501,13 @@ node generate-image.js "modern office with holographic displays, wide shot, cine
 node generate-image.js "close-up of hands typing on futuristic keyboard" --model nanapro --aspect 16:9
 
 # 2. Generate video shots
-node generate-video.js "slow dolly through futuristic office, holographic displays glowing" --model veo3 --image ./output/*office*.png --duration 8
-node generate-video.js "close-up of hands typing, shallow depth of field" --model gen45 --image ./output/*hands*.png --duration 6
+node generate-video.js "slow dolly through futuristic office, holographic displays glowing" --model veo3 --image ./media/*office*.png --duration 8
+node generate-video.js "close-up of hands typing, shallow depth of field" --model gen45 --image ./media/*hands*.png --duration 6
 node generate-video.js "satisfied person leaning back smiling at holographic display" --model veo3fast --duration 6
 
 # 3. Trim each clip to best segment
-node generate-edit-video.js --model trim --video ./output/*office*.mp4 --start 0 --end 8
-node generate-edit-video.js --model trim --video ./output/*hands*.mp4 --start 1 --end 5
+node generate-edit-video.js --model trim --video ./media/*office*.mp4 --start 0 --end 8
+node generate-edit-video.js --model trim --video ./media/*hands*.mp4 --start 1 --end 5
 
 # 4. Generate narration
 node generate-voice.js "Imagine a workspace that adapts to you. With our AI-powered platform, the future of productivity is here. Try it free today." --model mm28hd --voice English_Male_1 --speed 0.95
@@ -516,8 +516,8 @@ node generate-voice.js "Imagine a workspace that adapts to you. With our AI-powe
 node generate-music.js "inspiring corporate ambient, hopeful, modern, no vocals" --model stableaudio --duration 60
 
 # 6. Merge shots → add narration → add music
-node generate-edit-video.js --model merge --video ./output/shot1.mp4 --extra ./output/shot2.mp4
-node generate-edit-video.js --model avmerge --video ./output/*merge*.mp4 --audio ./output/*mm28hd*.mp3
+node generate-edit-video.js --model merge --video ./media/shot1.mp4 --extra ./media/shot2.mp4
+node generate-edit-video.js --model avmerge --video ./media/*merge*.mp4 --audio ./media/*mm28hd*.mp3
 ```
 
 ### Example 3 — Music Video with Lyrics
@@ -528,14 +528,14 @@ node generate-music.js "dreamy synth pop" --model music15 --lyrics "[verse]\nNeo
 
 # 2. Generate visual scenes matching lyrics
 node generate-image.js "person walking alone in rainy neon city at night, cinematic" --model nanapro
-node generate-video.js "person walking through rainy neon streets, puddle reflections, cinematic tracking shot" --model veo3 --image ./output/*neon*.png --duration 8
+node generate-video.js "person walking through rainy neon streets, puddle reflections, cinematic tracking shot" --model veo3 --image ./media/*neon*.png --duration 8
 node generate-video.js "person running through neon lit alley, fast motion, streaking lights" --model kling --duration 8
 
 # 3. Merge clips
-node generate-edit-video.js --model merge --video ./output/*walking*.mp4 --extra ./output/*running*.mp4
+node generate-edit-video.js --model merge --video ./media/*walking*.mp4 --extra ./media/*running*.mp4
 
 # 4. Add the song as audio
-node generate-edit-video.js --model avmerge --video ./output/*merge*.mp4 --audio ./output/*music15*.mp3
+node generate-edit-video.js --model avmerge --video ./media/*merge*.mp4 --audio ./media/*music15*.mp3
 ```
 
 ---

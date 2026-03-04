@@ -317,10 +317,10 @@ node generate-music.js "pop ballad" --model music01 --voicefile ./vocal-ref.mp3 
 
 ```bash
 # Add voiceover to a video
-node generate-edit-video.js --model avmerge --video ./output/video.mp4 --audio ./output/voiceover.mp3
+node generate-edit-video.js --model avmerge --video ./media/video.mp4 --audio ./media/voiceover.mp3
 
 # Add music to a video
-node generate-edit-video.js --model avmerge --video ./output/video.mp4 --audio ./output/music.mp3
+node generate-edit-video.js --model avmerge --video ./media/video.mp4 --audio ./media/music.mp3
 ```
 
 ### 4b. External Mixing (Recommended for Complex Projects)
@@ -405,7 +405,7 @@ node generate-voice.js "Welcome to The Tech Hour, your weekly deep dive into the
 # Export as podcast-intro.mp3
 
 # 4. Use in video if needed
-node generate-edit-video.js --model avmerge --video ./output/intro-animation.mp4 --audio ./mixed/podcast-intro.mp3
+node generate-edit-video.js --model avmerge --video ./media/intro-animation.mp4 --audio ./mixed/podcast-intro.mp3
 ```
 
 ### Example 2 — Explainer Video Narration
@@ -424,7 +424,7 @@ node generate-music.js "light corporate ambient, inspiring, clean, no vocals" --
 # - Export as explainer-audio.mp3
 
 # 4. Merge with video
-node generate-edit-video.js --model avmerge --video ./output/explainer-video.mp4 --audio ./mixed/explainer-audio.mp3
+node generate-edit-video.js --model avmerge --video ./media/explainer-video.mp4 --audio ./mixed/explainer-audio.mp3
 ```
 
 ### Example 3 — Full Song Production
@@ -451,7 +451,7 @@ node generate-music.js "dreamy indie folk, acoustic guitar, female vocals" --mod
 
 # 3. Create a music video to accompany it (see video-production-workflow.md)
 node generate-image.js "girl sitting on porch at twilight, fireflies, warm nostalgic, cinematic" --model nanapro
-node generate-video.js "girl sitting on porch, fireflies floating around, warm golden light, gentle breeze" --model veo3 --image ./output/*porch*.png --duration 8
+node generate-video.js "girl sitting on porch, fireflies floating around, warm golden light, gentle breeze" --model veo3 --image ./media/*porch*.png --duration 8
 ```
 
 ### Example 4 — Multilingual Product Audio

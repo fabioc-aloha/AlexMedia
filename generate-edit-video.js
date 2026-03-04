@@ -515,7 +515,7 @@ async function main() {
   const opts = { aspect, mode, start, end, duration, resolution, task, format, firstFrame, extraVideos: null };
 
   // Ensure output directory
-  const outputDir = path.join(__dirname, "output");
+  const outputDir = path.join(__dirname, "media");
   if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir);
 
   // Resolve input video
@@ -610,10 +610,10 @@ async function main() {
 
     console.log(`\n✅ Output saved!`);
     for (const f of savedFiles) {
-      console.log(`   File: output/${f.filename} (${f.fileSize} MB)`);
+      console.log(`   File: media/${f.filename} (${f.fileSize} MB)`);
     }
     console.log(`   Time: ${elapsed}s`);
-    console.log(`   Report: output/${reportFilename}`);
+    console.log(`   Report: media/${reportFilename}`);
   } catch (err) {
     console.error(`\n❌ Editing failed: ${err.message}`);
     if (err.message?.includes("duration") || err.message?.includes("30 seconds")) {

@@ -527,7 +527,7 @@ async function main() {
   const opts = { aspect, resolution, style, format, seed, count, width, height };
 
   // Ensure output directory
-  const outputDir = path.join(__dirname, "output");
+  const outputDir = path.join(__dirname, "media");
   if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir);
 
   // Resolve reference image if provided
@@ -615,10 +615,10 @@ async function main() {
 
     console.log(`\n✅ Image${savedFiles.length > 1 ? "s" : ""} saved!`);
     for (const f of savedFiles) {
-      console.log(`   File: output/${f.filename} (${f.fileSize} MB)`);
+      console.log(`   File: media/${f.filename} (${f.fileSize} MB)`);
     }
     console.log(`   Time: ${elapsed}s`);
-    console.log(`   Report: output/${reportFilename}`);
+    console.log(`   Report: media/${reportFilename}`);
   } catch (err) {
     console.error(`\n❌ Generation failed: ${err.message}`);
     if (err.message?.includes("safety") || err.message?.includes("blocked")) {

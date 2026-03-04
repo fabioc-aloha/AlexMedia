@@ -136,4 +136,4 @@ node generate-voice.js "Hello" --model qwentts --mode voice_design --voicedesc "
 - **Qwen3 TTS** has 3 modes: custom_voice (preset), voice_clone (reference audio), voice_design (description)
 - **ElevenLabs** models support fine-tuned stability/similarity/style parameters
 - **Kokoro** is minimal — just text, voice, and speed
-- Output saved to `./output/` as audio file + JSON report
+- Output saved to `./media/` as audio file + JSON report

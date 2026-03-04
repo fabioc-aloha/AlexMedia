@@ -98,7 +98,7 @@ node generate-3d.js --model trellis --image ./figurine.png --stl
 - **Rodin**: Most feature-rich with quality levels, PBR materials, T-pose, and face count control
 - **Shap-E**: Fastest/cheapest but lowest quality; good for prototyping
 - **Hunyuan3D**: Good balance of quality and speed with diffusion controls
-- Output saved to `./output/` as 3D model file + JSON report
+- Output saved to `./media/` as 3D model file + JSON report
 
 ## 3D Printing
 
