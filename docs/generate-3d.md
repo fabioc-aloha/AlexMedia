@@ -1,5 +1,7 @@
 # generate-3d.js
 
+![3D Generation](../assets/banner-3d.png)
+
 3D model generation from text prompts and images via Replicate. 6 models producing meshes in GLB, OBJ, PLY, and STL formats.
 
 ## Quick Start

@@ -1,5 +1,7 @@
 # generate-image.js
 
+![Image Generation](../assets/banner-image.png)
+
 Text-to-image generation via Replicate. Supports 14 models with optional image reference, batch generation, and style controls.
 
 ## Quick Start

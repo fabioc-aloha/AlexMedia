@@ -6,8 +6,8 @@
     "generate-music.js"
   ],
   "stalledFiles": [
+    "github/episodic/peripheral/file-observations.json",
     "README.md",
-    "assets/banner.png",
     "docs/generate-3d.md",
     "docs/generate-edit-image.md",
     "docs/generate-edit-video.md",
@@ -19,10 +19,10 @@
   ],
   "todoHotspots": [
     {
-      "file": "output/2026-03-04T14-52-03_music15_folk-style.mp3",
-      "todoCount": 3,
-      "scannedAt": 1772636554852
+      "file": "assets/banner-video.png",
+      "todoCount": 2,
+      "scannedAt": 1772642085657
     }
   ],
-  "lastUpdated": 1772636554852
+  "lastUpdated": 1772642085657
 }

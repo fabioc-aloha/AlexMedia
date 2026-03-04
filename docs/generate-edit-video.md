@@ -1,14 +1,16 @@
 # generate-edit-video.js
 
-Video editing, processing, and manipulation via Replicate and FFmpeg. 10 models covering video modification, reframing, trimming, merging, extraction, upscaling, and captioning.
+![Video Editing](../assets/banner-edit-video.png)
+
+Video editing, processing, and manipulation via Replicate. 10 models covering video modification, reframing, trimming, merging, extraction, upscaling, and captioning — all running on Replicate API.
 
 ## Quick Start
 
 ```bash
-# AI video modification (default)
+# AI video modification (default — Luma Modify)
 node generate-edit-video.js "make it look cinematic" --video ./clip.mp4
 
-# Reframe aspect ratio
+# Reframe aspect ratio (Luma Reframe)
 node generate-edit-video.js --model reframe --video ./clip.mp4 --aspect 9:16
 
 # Trim video
@@ -50,18 +52,18 @@ node generate-edit-video.js --model caption --video ./clip.mp4
 
 ## Models
 
-| Key | Replicate ID / Engine | Name | Cost |
-|-----|----------------------|------|------|
-| `modify` | `minimax/video-01-live` | MiniMax Video-01 Live | $0.035/sec |
-| `reframe` | FFmpeg (local) | Smart Reframe | free (local) |
-| `trim` | FFmpeg (local) | Video Trim | free (local) |
-| `merge` | FFmpeg (local) | Video Merge | free (local) |
-| `avmerge` | FFmpeg (local) | Audio-Video Merge | free (local) |
-| `extract` | FFmpeg (local) | Audio Extract | free (local) |
-| `frames` | FFmpeg (local) | Frame Extract | free (local) |
-| `upscale` | `philz1337x/clarity-upscaler` | Clarity Upscaler | per-second GPU |
-| `caption` | `fictions-ai/autocaption` | AutoCaption | per-second GPU |
-| `utils` | FFmpeg (local) | Video Utilities | free (local) |
+| Key | Replicate ID | Name | Cost |
+|-----|-------------|------|------|
+| `modify` | `luma/modify-video` | Luma Modify | variable |
+| `reframe` | `luma/reframe-video` | Luma Reframe | $0.06/sec |
+| `trim` | `lucataco/trim-video` | Trim Video | <$0.001 |
+| `merge` | `lucataco/video-merge` | Video Merge | variable |
+| `avmerge` | `lucataco/video-audio-merge` | Audio-Video Merge | <$0.003 |
+| `extract` | `lucataco/extract-audio` | Extract Audio | variable |
+| `frames` | `lucataco/frame-extractor` | Frame Extractor | <$0.001 |
+| `upscale` | `lucataco/real-esrgan-video` | Real-ESRGAN Video | ~$0.46 |
+| `caption` | `fictions-ai/autocaption` | AutoCaption | ~$0.07 |
+| `utils` | `nicolascoutureau/video-utils` | Video Utils | <$0.002 |
 
 ## Parameter Support Matrix
 
@@ -80,27 +82,29 @@ node generate-edit-video.js --model caption --video ./clip.mp4
 
 ## Model Categories
 
-### AI-Powered
-- **modify** — MiniMax Video-01 Live: prompt-guided video editing/style transfer
-- **upscale** — Clarity Upscaler: AI-enhanced resolution upscaling
-- **caption** — AutoCaption: automatic subtitle/caption generation
+### AI Video Editing
+- **modify** — Luma Modify: prompt-guided video editing and style transfer
+- **reframe** — Luma Reframe: AI-powered crop/reframe to target aspect ratio
 
-### FFmpeg-Based (Local, Free)
-- **reframe** — Smart Reframe: crop/reframe to target aspect ratio
-- **trim** — Video Trim: extract segment by start/end times
-- **merge** — Video Merge: concatenate two video files
+### Video Processing (Replicate)
+- **trim** — Trim Video: extract segment by start/end times
+- **merge** — Video Merge: concatenate video files
 - **avmerge** — Audio-Video Merge: combine audio track with video
-- **extract** — Audio Extract: strip audio from video file
-- **frames** — Frame Extract: export frames as images
-- **utils** — Video Utilities: miscellaneous FFmpeg operations
+- **extract** — Extract Audio: strip audio from video file
+- **frames** — Frame Extractor: export frames as images
+- **utils** — Video Utils: miscellaneous video operations (convert, etc.)
+
+### Enhancement
+- **upscale** — Real-ESRGAN Video: AI-enhanced resolution upscaling
+- **caption** — AutoCaption: automatic subtitle/caption generation
 
 ## Notes
 
 - **All models require `--video`** — this is an editing script
-- **FFmpeg models** run locally at no cost; only `modify`, `upscale`, and `caption` use Replicate API
-- **modify** uses MiniMax Video-01 Live for AI-driven video transformation; pass `--first-frame` to process only the first frame
+- **All models run via Replicate API** (no local FFmpeg required)
+- **modify** uses Luma Modify for AI-driven video transformation; pass `--first-frame` to process only the first frame
 - **reframe** requires `--aspect` (e.g. `9:16`, `16:9`, `1:1`)
-- **trim** requires both `--start` and `--end` in seconds
+- **trim** requires `--start` and optionally `--end` or `--duration`
 - **merge** requires `--extra` with the path to the second video
 - **avmerge** requires `--audio` with the audio track to overlay
 - Output saved to `./output/` with appropriate extension + JSON report

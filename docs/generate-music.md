@@ -1,5 +1,7 @@
 # generate-music.js
 
+![Music Generation](../assets/banner-music.png)
+
 AI music generation via Replicate. 5 models covering instrumental, vocal tracks, and full songs with lyrics.
 
 ## Quick Start

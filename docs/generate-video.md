@@ -1,5 +1,7 @@
 # generate-video.js
 
+![Video Generation](../assets/banner-video.png)
+
 Text-to-video generation via Replicate. Supports 17 models with optional image-to-video, audio generation, and configurable duration/aspect/resolution.
 
 ## Quick Start

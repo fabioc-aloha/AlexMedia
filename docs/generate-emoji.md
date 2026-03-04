@@ -1,5 +1,7 @@
 # generate-emoji.js
 
+![Emoji Generation](../assets/banner-emoji.png)
+
 AI emoji and sticker generation via Replicate. 4 models for creating custom emoji-style images.
 
 ## Quick Start

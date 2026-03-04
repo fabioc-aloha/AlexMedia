@@ -16,7 +16,6 @@
  *   pedit      — P-Image-Edit (sub 1 second, $0.01, fast/cheap editing)
  *   kontext    — FLUX Kontext Pro (text-based editing, style transfer, object changes)
  *   kontextmax — FLUX Kontext Max (premium text-based editing, better typography)
- *   seededit   — SeedEdit 3.0 (ByteDance, preserves subjects, no mask needed)
  *   fillpro    — FLUX Fill Pro (inpainting/outpainting with mask, $0.05)
  *   eraser     — Bria Eraser (SOTA object removal with mask, $0.04)
  *   genfill    — Bria GenFill (generative fill/add objects with mask+prompt)
@@ -110,21 +109,6 @@ const MODELS = {
         aspect_ratio: opts.aspect || "match_input_image",
         output_format: opts.format || "png",
         safety_tolerance: 2,
-      };
-      if (opts.seed != null) input.seed = opts.seed;
-      return input;
-    },
-  },
-  seededit: {
-    id: "bytedance/seededit-3.0",
-    name: "SeedEdit 3.0",
-    needsPrompt: true,
-    needsMask: false,
-    cost: "variable",
-    buildInput: (prompt, imageUri, maskUri, opts) => {
-      const input = {
-        prompt,
-        image: imageUri,
       };
       if (opts.seed != null) input.seed = opts.seed;
       return input;

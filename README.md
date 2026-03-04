@@ -170,7 +170,6 @@ node generate-video.js --help
 | `pedit` | InstructPix2Pix | per-second GPU |
 | `kontext` | Flux Kontext Pro | $0.03/image |
 | `kontextmax` | Flux Kontext Max | $0.05/image |
-| `seededit` | Seed Edit | per-second GPU |
 | `fillpro` | Flux Fill Pro | $0.05/image |
 | `eraser` | Object Eraser | per-second GPU |
 | `genfill` | Generative Fill | per-second GPU |

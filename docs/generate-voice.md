@@ -1,5 +1,7 @@
 # generate-voice.js
 
+![Voice Synthesis](../assets/banner-voice.png)
+
 Dedicated text-to-speech and voice cloning via Replicate. 15 models spanning MiniMax, Resemble AI, ElevenLabs, Qwen, and Kokoro.
 
 ## Quick Start
