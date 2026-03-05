@@ -7,16 +7,16 @@
   ],
   "stalledFiles": [
     "github/episodic/peripheral/file-observations.json",
-    "generate-3d-print.js",
-    "generate-3d.js",
-    "generate-edit-image.js",
-    "generate-edit-video.js",
-    "generate-emoji.js",
-    "generate-image.js",
-    "generate-music.js",
-    "generate-sticker-print.js",
-    "generate-video.js"
+    "README.md",
+    "docs/3d-design-to-print-workflow.md",
+    "docs/3d-printing-services-guide.md",
+    "docs/audio-production-workflow.md",
+    "docs/emoji-sticker-workflow.md",
+    "docs/generate-3d-print.md",
+    "docs/generate-3d.md",
+    "docs/generate-edit-image.md",
+    "docs/generate-edit-video.md"
   ],
   "todoHotspots": [],
-  "lastUpdated": 1772682372328
+  "lastUpdated": 1772682649891
 }

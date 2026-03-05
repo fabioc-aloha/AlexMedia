@@ -405,7 +405,7 @@ node generate-voice.js "Welcome to The Tech Hour, your weekly deep dive into the
 # Export as podcast-intro.mp3
 
 # 4. Use in video if needed
-node generate-edit-video.js --model avmerge --video ./media/intro-animation.mp4 --audio ./mixed/podcast-intro.mp3
+node generate-edit-video.js --model avmerge --video ./media/video/intro-animation.mp4 --audio ./mixed/podcast-intro.mp3
 ```
 
 ### Example 2 — Explainer Video Narration
@@ -424,7 +424,7 @@ node generate-music.js "light corporate ambient, inspiring, clean, no vocals" --
 # - Export as explainer-audio.mp3
 
 # 4. Merge with video
-node generate-edit-video.js --model avmerge --video ./media/explainer-video.mp4 --audio ./mixed/explainer-audio.mp3
+node generate-edit-video.js --model avmerge --video ./media/video/explainer-video.mp4 --audio ./mixed/explainer-audio.mp3
 ```
 
 ### Example 3 — Full Song Production
@@ -451,7 +451,7 @@ node generate-music.js "dreamy indie folk, acoustic guitar, female vocals" --mod
 
 # 3. Create a music video to accompany it (see video-production-workflow.md)
 node generate-image.js "girl sitting on porch at twilight, fireflies, warm nostalgic, cinematic" --model nanapro
-node generate-video.js "girl sitting on porch, fireflies floating around, warm golden light, gentle breeze" --model veo3 --image ./media/*porch*.png --duration 8
+node generate-video.js "girl sitting on porch, fireflies floating around, warm golden light, gentle breeze" --model veo3 --image ./media/images/*porch*.png --duration 8
 ```
 
 ### Example 4 — Multilingual Product Audio

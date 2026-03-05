@@ -108,4 +108,4 @@ node generate-edit-image.js "make the dress blue" --model kontext --image ./phot
 - **Mask required**: `fillpro` and `eraser` require `--mask`; `nana` and `genfill` optionally accept masks
 - **No prompt needed**: `rembg`, `eraser`, `restore`, and `upscale` work without prompts
 - **Kontext models**: Best for "change X to Y" style instructions while preserving the rest
-- Output saved to `./media/` as image file + JSON report
+- Output saved to `./media/images/` as image file + JSON report

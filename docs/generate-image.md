@@ -74,4 +74,4 @@ node generate-image.js "Logo design" --model recraft --style "flat_design"
 - **Style support**: `ideoturbo` and `ideoqual` accept `--style` for Ideogram-specific styles
 - **Custom dimensions**: `flux2max` and `flux2pro` accept `--width`/`--height` with `--aspect custom`
 - **Image reference**: Used differently per model (input image, style reference, subject reference, etc.)
-- Output saved to `./media/` with JSON report
+- Output saved to `./media/images/` with JSON report

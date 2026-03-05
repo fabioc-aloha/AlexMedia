@@ -108,4 +108,4 @@ node generate-edit-video.js --model caption --video ./clip.mp4
 - **merge** requires `--extra` with the path to the second video
 - **avmerge** requires `--audio` with the audio track to overlay; outputs stereo AAC 44100 Hz (ensures compatibility across all players including browsers)
 - **avmerge runs locally** via `ffmpeg-static` — no Replicate API call, no cost, no network required
-- Output saved to `./media/` with appropriate extension + JSON report
+- Output saved to `./media/video/` with appropriate extension + JSON report

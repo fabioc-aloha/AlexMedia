@@ -121,10 +121,10 @@ Die-cut, kiss-cut, and clear stickers require a transparent background.
 
 ```bash
 # Remove background from AI-generated artwork
-node generate-edit-image.js --model rembg --image ./media/*sdxlemoji*.png
+node generate-edit-image.js --model rembg --image ./media/images/*sdxlemoji*.png
 
 # Clean up edges after removal
-node generate-edit-image.js "clean up rough edges, smooth the outline" --model kontext --image ./media/*rembg*.png
+node generate-edit-image.js "clean up rough edges, smooth the outline" --model kontext --image ./media/images/*rembg*.png
 ```
 
 ### Artwork Design Principles
@@ -179,7 +179,7 @@ AI-generated images are typically 512–1024 px. Always upscale before ordering:
 
 ```bash
 # Upscale 512px emoji to print resolution (4× → 2048px)
-node generate-edit-image.js --model upscale --image ./media/*rembg*.png
+node generate-edit-image.js --model upscale --image ./media/images/*rembg*.png
 
 # 2× upscale for large prints
 node generate-edit-image.js --model upscale --image ./design.png --scale 2
@@ -189,13 +189,13 @@ node generate-edit-image.js --model upscale --image ./design.png --scale 2
 
 ```bash
 # Check current dimensions and effective DPI
-ffprobe -v quiet -print_format json -show_streams ./media/*rembg*.png | findstr "width\|height"
+ffprobe -v quiet -print_format json -show_streams ./media/images/*rembg*.png | findstr "width\|height"
 
 # With ImageMagick
-magick identify -verbose ./media/*rembg*.png | findstr "Geometry\|Resolution\|Print"
+magick identify -verbose ./media/images/*rembg*.png | findstr "Geometry\|Resolution\|Print"
 
 # Resize to specific print dimension at 300 DPI
-magick convert ./media/*rembg*.png -units PixelsPerInch -density 300 -resize 900x900 ./print-ready.png
+magick convert ./media/images/*rembg*.png -units PixelsPerInch -density 300 -resize 900x900 ./print-ready.png
 ```
 
 ### 2c. Adding Bleed
@@ -543,17 +543,17 @@ node generate-emoji.js "$CHAR surprised, white background" --seed 7 --model sdxl
 node generate-emoji.js "$CHAR laughing, white background" --seed 7 --model sdxlemoji --width 512 --height 512
 
 # 2. Remove backgrounds
-Get-ChildItem ./media/*sdxlemoji*.png | ForEach-Object {
+Get-ChildItem ./media/images/*sdxlemoji*.png | ForEach-Object {
     node generate-edit-image.js --model rembg --image $_.FullName
 }
 
 # 3. Upscale to print resolution
-Get-ChildItem ./media/*rembg*.png | ForEach-Object {
+Get-ChildItem ./media/images/*rembg*.png | ForEach-Object {
     node generate-edit-image.js --model upscale --image $_.FullName
 }
 
 # 4. Order die-cut stickers from StickerMule
-node generate-sticker-print.js --file ./media/*upscale*happy*.png --service stickermule --type die-cut --size 3x3 --quantity 50
+node generate-sticker-print.js --file ./media/images/*upscale*happy*.png --service stickermule --type die-cut --size 3x3 --quantity 50
 ```
 
 ---
@@ -565,13 +565,13 @@ node generate-sticker-print.js --file ./media/*upscale*happy*.png --service stic
 node generate-image.js "minimalist geometric mountain logo, flat vector, white background, bold shapes" --model flux2pro --width 1024 --height 1024
 
 # 2. Remove background
-node generate-edit-image.js --model rembg --image ./media/*flux2pro*.png
+node generate-edit-image.js --model rembg --image ./media/images/*flux2pro*.png
 
 # 3. Upscale for 4" × 4" print (at 300 DPI needs 1200px)
-node generate-edit-image.js --model upscale --image ./media/*rembg*.png
+node generate-edit-image.js --model upscale --image ./media/images/*rembg*.png
 
 # 4. Order vinyl stickers
-node generate-sticker-print.js --file ./media/*upscale*.png --service stickerapp --type vinyl --size 4x4 --quantity 100
+node generate-sticker-print.js --file ./media/images/*upscale*.png --service stickerapp --type vinyl --size 4x4 --quantity 100
 ```
 
 ---
@@ -583,11 +583,11 @@ node generate-sticker-print.js --file ./media/*upscale*.png --service stickerapp
 node generate-image.js "anime-style dragon character, vibrant neon colors, black background, glowing effect" --model nanapro --width 512 --height 512
 
 # 2. Prepare for print
-node generate-edit-image.js --model rembg --image ./media/*nanapro*.png
-node generate-edit-image.js --model upscale --image ./media/*rembg*.png
+node generate-edit-image.js --model rembg --image ./media/images/*nanapro*.png
+node generate-edit-image.js --model upscale --image ./media/images/*rembg*.png
 
 # 3. Order holographic stickers (StickerMule is best for this)
-node generate-sticker-print.js --file ./media/*upscale*.png --service stickermule --type holographic --size 3x3 --quantity 50
+node generate-sticker-print.js --file ./media/images/*upscale*.png --service stickermule --type holographic --size 3x3 --quantity 50
 ```
 
 ---
@@ -603,7 +603,7 @@ do
 done
 
 # 2. Remove all backgrounds
-Get-ChildItem ./media/*sdxlemoji*.png | ForEach-Object {
+Get-ChildItem ./media/images/*sdxlemoji*.png | ForEach-Object {
     node generate-edit-image.js --model rembg --image $_.FullName
 }
 
@@ -611,7 +611,7 @@ Get-ChildItem ./media/*sdxlemoji*.png | ForEach-Object {
 # StickerApp lets you upload 6-10 designs to a sheet in their online editor
 
 # 4. Order the sheet
-node generate-sticker-print.js --file ./media/*rembg*rocket*.png --service stickerapp --type sheet
+node generate-sticker-print.js --file ./media/images/*rembg*rocket*.png --service stickerapp --type sheet
 ```
 
 ---

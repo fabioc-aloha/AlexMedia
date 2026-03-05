@@ -212,10 +212,10 @@ Almost all emoji and stickers need transparent backgrounds:
 
 ```bash
 # Remove background for clean sticker
-node generate-edit-image.js --model rembg --image ./media/*emoji*.png
+node generate-edit-image.js --model rembg --image ./media/images/*emoji*.png
 
 # Process all emojis in batch (PowerShell)
-Get-ChildItem ./media/*emoji*.png | ForEach-Object {
+Get-ChildItem ./media/images/*emoji*.png | ForEach-Object {
     node generate-edit-image.js --model rembg --image $_.FullName
 }
 ```
@@ -224,10 +224,10 @@ Get-ChildItem ./media/*emoji*.png | ForEach-Object {
 
 ```bash
 # Fix edges or details with prompt-based editing
-node generate-edit-image.js "clean up the edges, make the outline crisp" --model kontext --image ./media/*rembg*.png
+node generate-edit-image.js "clean up the edges, make the outline crisp" --model kontext --image ./media/images/*rembg*.png
 
 # Upscale if needed for high-DPI displays
-node generate-edit-image.js --model upscale --image ./media/*rembg*.png --scale 2
+node generate-edit-image.js --model upscale --image ./media/images/*rembg*.png --scale 2
 ```
 
 ### 3c. Cleanup Decision Tree
@@ -275,18 +275,18 @@ flowchart TD
 ```bash
 # Resize using ImageMagick (install separately)
 # Discord / Slack — 128×128
-magick convert media/emoji-clean.png -resize 128x128 media/discord/emoji.png
+magick convert media/images/emoji-clean.png -resize 128x128 media/images/discord/emoji.png
 
 # Telegram / WhatsApp — 512×512
-magick convert media/emoji-clean.png -resize 512x512 media/telegram/emoji.png
+magick convert media/images/emoji-clean.png -resize 512x512 media/images/telegram/emoji.png
 
 # Twitch — all 3 required sizes
-magick convert media/emoji-clean.png -resize 28x28 media/twitch/emoji-28.png
-magick convert media/emoji-clean.png -resize 56x56 media/twitch/emoji-56.png
-magick convert media/emoji-clean.png -resize 112x112 media/twitch/emoji-112.png
+magick convert media/images/emoji-clean.png -resize 28x28 media/images/twitch/emoji-28.png
+magick convert media/images/emoji-clean.png -resize 56x56 media/images/twitch/emoji-56.png
+magick convert media/images/emoji-clean.png -resize 112x112 media/images/twitch/emoji-112.png
 
 # Batch resize all (PowerShell + ImageMagick)
-Get-ChildItem ./media/clean/*.png | ForEach-Object {
+Get-ChildItem ./media/images/clean/*.png | ForEach-Object {
     magick convert $_.FullName -resize 128x128 "./media/discord/$($_.Name)"
     magick convert $_.FullName -resize 512x512 "./media/telegram/$($_.Name)"
 }
@@ -296,10 +296,10 @@ Get-ChildItem ./media/clean/*.png | ForEach-Object {
 
 ```bash
 # Convert PNG to WebP for Telegram/WhatsApp
-magick convert media/emoji.png -define webp:lossless=true media/emoji.webp
+magick convert media/images/emoji.png -define webp:lossless=true media/emoji.webp
 
 # Batch convert
-Get-ChildItem ./media/telegram/*.png | ForEach-Object {
+Get-ChildItem ./media/images/telegram/*.png | ForEach-Object {
     magick convert $_.FullName "$($_.DirectoryName)\$($_.BaseName).webp"
 }
 ```
@@ -376,10 +376,10 @@ Your digital emoji needs adjustments for physical production:
 
 ```bash
 # Upscale emoji to print resolution (2x)
-node generate-edit-image.js --model upscale --image ./media/*sdxlemoji*.png
+node generate-edit-image.js --model upscale --image ./media/images/*sdxlemoji*.png
 
 # Ensure background is removed
-node generate-edit-image.js --model rembg --image ./media/*upscale*.png
+node generate-edit-image.js --model rembg --image ./media/images/*upscale*.png
 ```
 
 ### 5b. Choose a Sticker Type
@@ -397,13 +397,13 @@ node generate-edit-image.js --model rembg --image ./media/*upscale*.png
 
 ```bash
 # Quick start — get links to all 6 services
-node generate-sticker-print.js --file ./media/*rembg*.png --service all
+node generate-sticker-print.js --file ./media/images/*rembg*.png --service all
 
 # Upload to Printify via API and browse sticker catalog
-node generate-sticker-print.js --file ./media/*rembg*.png --service printify
+node generate-sticker-print.js --file ./media/images/*rembg*.png --service printify
 
 # Order die-cut stickers from StickerMule (opens browser)
-node generate-sticker-print.js --file ./media/*rembg*.png --service stickermule --type die-cut
+node generate-sticker-print.js --file ./media/images/*rembg*.png --service stickermule --type die-cut
 
 # List available sticker products
 node generate-sticker-print.js --list --service printify
@@ -443,13 +443,13 @@ node generate-emoji.js "$CHAR facepalm, white background" --seed 42 --width 512 
 node generate-emoji.js "$CHAR party horn celebrating, white background" --seed 42 --width 512 --height 512
 
 # 2. Remove backgrounds
-Get-ChildItem ./media/*sdxlemoji*.png | ForEach-Object {
+Get-ChildItem ./media/images/*sdxlemoji*.png | ForEach-Object {
     node generate-edit-image.js --model rembg --image $_.FullName
 }
 
 # 3. Resize to 128×128 for Discord
 New-Item -ItemType Directory -Path ./media/discord -Force
-Get-ChildItem ./media/*rembg*.png | ForEach-Object {
+Get-ChildItem ./media/images/*rembg*.png | ForEach-Object {
     magick convert $_.FullName -resize 128x128 "./media/discord/$($_.Name)"
 }
 
@@ -468,13 +468,13 @@ node generate-emoji.js "fox angry" --model platmoji --width 512 --height 512
 node generate-emoji.js "fox heart eyes" --model platmoji --width 512 --height 512
 
 # 2. Remove backgrounds
-Get-ChildItem ./media/*platmoji*.png | ForEach-Object {
+Get-ChildItem ./media/images/*platmoji*.png | ForEach-Object {
     node generate-edit-image.js --model rembg --image $_.FullName
 }
 
 # 3. Convert to WebP for Telegram
 New-Item -ItemType Directory -Path ./media/telegram -Force
-Get-ChildItem ./media/*rembg*.png | ForEach-Object {
+Get-ChildItem ./media/images/*rembg*.png | ForEach-Object {
     magick convert $_.FullName -resize 512x512 -define webp:lossless=true "./media/telegram/$($_.BaseName).webp"
 }
 
@@ -490,13 +490,13 @@ node generate-emoji.js "make this a thumbs up emoji, white background" --model k
 node generate-emoji.js "make this a thinking emoji, white background" --model kontextemoji --image ./brand/mascot.png
 
 # 2. Clean up
-Get-ChildItem ./media/*kontextemoji*.png | ForEach-Object {
+Get-ChildItem ./media/images/*kontextemoji*.png | ForEach-Object {
     node generate-edit-image.js --model rembg --image $_.FullName
 }
 
 # 3. Resize for Slack (128×128)
 New-Item -ItemType Directory -Path ./media/slack -Force
-Get-ChildItem ./media/*rembg*.png | ForEach-Object {
+Get-ChildItem ./media/images/*rembg*.png | ForEach-Object {
     magick convert $_.FullName -resize 128x128 "./media/slack/$($_.Name)"
 }
 ```

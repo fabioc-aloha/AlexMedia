@@ -171,7 +171,7 @@ node generate-image.js "macro photography of dewdrops on a spider web at sunrise
 node generate-image.js "change the background to a tropical beach at sunset" --model gptimage --image ./input/portrait.png
 
 # Edit with Kontext — precise prompt-based edits
-node generate-edit-image.js "change her dress color to red" --model kontext --image ./media/fashion.png
+node generate-edit-image.js "change her dress color to red" --model kontext --image ./media/images/fashion.png
 ```
 
 ### 2d. Batch Generation
@@ -236,52 +236,52 @@ flowchart TD
 
 ```bash
 # Change specific details without regenerating
-node generate-edit-image.js "change the sky to a dramatic sunset" --model kontext --image ./media/landscape.png
+node generate-edit-image.js "change the sky to a dramatic sunset" --model kontext --image ./media/images/landscape.png
 
 # More powerful edits — Kontext Max
-node generate-edit-image.js "add a crown of flowers to her head" --model kontextmax --image ./media/portrait.png
+node generate-edit-image.js "add a crown of flowers to her head" --model kontextmax --image ./media/images/portrait.png
 
 # Mask-based inpainting — edit only a specific region
-node generate-edit-image.js "replace with a window showing a city view" --model nana --image ./media/room.png --mask ./masks/wall-area.png
+node generate-edit-image.js "replace with a window showing a city view" --model nana --image ./media/images/room.png --mask ./masks/wall-area.png
 
 # Fine detail painting — PEdit
-node generate-edit-image.js "add realistic freckles to the face" --model pedit --image ./media/portrait.png
+node generate-edit-image.js "add realistic freckles to the face" --model pedit --image ./media/images/portrait.png
 ```
 
 ### 3b. Background Operations
 
 ```bash
 # Remove background entirely (transparent PNG)
-node generate-edit-image.js --model rembg --image ./media/product.png
+node generate-edit-image.js --model rembg --image ./media/images/product.png
 
 # Generate new background
-node generate-edit-image.js "professional studio with white cyclorama" --model bggen --image ./media/product.png
+node generate-edit-image.js "professional studio with white cyclorama" --model bggen --image ./media/images/product.png
 
 # Complex background replacement
-node generate-edit-image.js "cozy coffee shop interior with warm lighting" --model bggen --image ./media/portrait.png
+node generate-edit-image.js "cozy coffee shop interior with warm lighting" --model bggen --image ./media/images/portrait.png
 ```
 
 ### 3c. Canvas Extension (Outpainting)
 
 ```bash
 # Extend image to wider aspect ratio
-node generate-edit-image.js "continue the landscape naturally" --model expand --image ./media/square.png --outpaint "left=200,right=200"
+node generate-edit-image.js "continue the landscape naturally" --model expand --image ./media/images/square.png --outpaint "left=200,right=200"
 
 # Extend upward — add sky
-node generate-edit-image.js "dramatic cloudy sky" --model expand --image ./media/scene.png --outpaint "top=300"
+node generate-edit-image.js "dramatic cloudy sky" --model expand --image ./media/images/scene.png --outpaint "top=300"
 ```
 
 ### 3d. Object Removal & Generative Fill
 
 ```bash
 # Remove unwanted objects
-node generate-edit-image.js --model eraser --image ./media/photo.png --mask ./masks/remove-this.png
+node generate-edit-image.js --model eraser --image ./media/images/photo.png --mask ./masks/remove-this.png
 
 # Fill an area with contextual content
-node generate-edit-image.js "a potted plant on a wooden table" --model fillpro --image ./media/room.png --mask ./masks/fill-area.png
+node generate-edit-image.js "a potted plant on a wooden table" --model fillpro --image ./media/images/room.png --mask ./masks/fill-area.png
 
 # Adobe Generative Fill
-node generate-edit-image.js "autumn leaves scattered on ground" --model genfill --image ./media/path.png --mask ./masks/ground.png
+node generate-edit-image.js "autumn leaves scattered on ground" --model genfill --image ./media/images/path.png --mask ./masks/ground.png
 ```
 
 ### 3e. Editing Model Selection
@@ -304,20 +304,20 @@ node generate-edit-image.js "autumn leaves scattered on ground" --model genfill 
 
 ```bash
 # 2x upscale — sharpen and increase resolution
-node generate-edit-image.js --model upscale --image ./media/final.png --scale 2
+node generate-edit-image.js --model upscale --image ./media/images/final.png --scale 2
 
 # 4x upscale for print (300 DPI)
-node generate-edit-image.js --model upscale --image ./media/final.png --scale 4
+node generate-edit-image.js --model upscale --image ./media/images/final.png --scale 4
 ```
 
 ### 4b. Restore & Fix
 
 ```bash
 # Fix compression artifacts, enhance details
-node generate-edit-image.js --model restore --image ./media/compressed.jpg
+node generate-edit-image.js --model restore --image ./media/images/compressed.jpg
 
 # Face enhancement for portraits
-node generate-edit-image.js --model restore --image ./media/portrait.png --face-enhance
+node generate-edit-image.js --model restore --image ./media/images/portrait.png --face-enhance
 ```
 
 ### 4c. Enhancement Decision Tree
@@ -393,13 +393,13 @@ flowchart TD
 node generate-image.js "wireless headphones floating in air, white background, product photography, studio lighting" --model imagen4
 
 # 2. Remove background for transparency
-node generate-edit-image.js --model rembg --image ./media/*imagen4*.png
+node generate-edit-image.js --model rembg --image ./media/images/*imagen4*.png
 
 # 3. Add lifestyle background
-node generate-edit-image.js "modern minimalist desk setup with warm ambient lighting" --model bggen --image ./media/*rembg*.png
+node generate-edit-image.js "modern minimalist desk setup with warm ambient lighting" --model bggen --image ./media/images/*rembg*.png
 
 # 4. Upscale to 1080×1080 quality
-node generate-edit-image.js --model upscale --image ./media/*bggen*.png --scale 2
+node generate-edit-image.js --model upscale --image ./media/images/*bggen*.png --scale 2
 ```
 
 ### Example 2 — Concept Art with Iterative Refinement
@@ -409,13 +409,13 @@ node generate-edit-image.js --model upscale --image ./media/*bggen*.png --scale 
 node generate-image.js "ancient temple hidden in a bioluminescent jungle, concept art, wide establishing shot" --model seedream --count 5
 
 # 2. Pick the best, refine details
-node generate-edit-image.js "add a stone bridge crossing a glowing river in the foreground" --model kontextmax --image ./media/best-concept.png
+node generate-edit-image.js "add a stone bridge crossing a glowing river in the foreground" --model kontextmax --image ./media/images/best-concept.png
 
 # 3. Extend canvas for panoramic view
-node generate-edit-image.js "dense jungle continuing naturally" --model expand --image ./media/*kontext*.png --outpaint "left=400,right=400"
+node generate-edit-image.js "dense jungle continuing naturally" --model expand --image ./media/images/*kontext*.png --outpaint "left=400,right=400"
 
 # 4. Upscale for presentation
-node generate-edit-image.js --model upscale --image ./media/*expand*.png --scale 2
+node generate-edit-image.js --model upscale --image ./media/images/*expand*.png --scale 2
 ```
 
 ### Example 3 — Character Sheet (Multiple Views)
@@ -429,9 +429,9 @@ node generate-image.js "fantasy warrior elf with silver armor, side profile view
 node generate-image.js "fantasy warrior elf with silver armor, back view showing cape, character concept art, white background" --model nanapro --seed 12345
 
 # 3. Remove backgrounds for clean sheet
-node generate-edit-image.js --model rembg --image ./media/*front*.png
-node generate-edit-image.js --model rembg --image ./media/*side*.png
-node generate-edit-image.js --model rembg --image ./media/*back*.png
+node generate-edit-image.js --model rembg --image ./media/images/*front*.png
+node generate-edit-image.js --model rembg --image ./media/images/*side*.png
+node generate-edit-image.js --model rembg --image ./media/images/*back*.png
 ```
 
 ### Example 4 — Blog Banner with Text
@@ -441,7 +441,7 @@ node generate-edit-image.js --model rembg --image ./media/*back*.png
 node generate-image.js "abstract gradient background, deep purple to teal, soft bokeh lights" --model flux2max --aspect 16:9
 
 # 2. Add text overlay (GPT Image excels at text)
-node generate-image.js "add bold white text 'THE FUTURE OF AI' centered on this background" --model gptimage --image ./media/*flux2max*.png
+node generate-image.js "add bold white text 'THE FUTURE OF AI' centered on this background" --model gptimage --image ./media/images/*flux2max*.png
 
 # 3. Alternatively, use Ideogram for typography (ideoturbo — ideoqual fails silently)
 node generate-image.js "blog banner with title 'The Future of AI' in modern sans-serif, gradient purple-teal background" --model ideoturbo --aspect 16:9

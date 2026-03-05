@@ -179,15 +179,15 @@ Combine with `generate-emoji.js` and `generate-edit-image.js` for a full emoji-t
 node generate-emoji.js "happy robot with wrench" --model sdxlemoji
 
 # 2. Remove background for die-cut stickers
-node generate-edit-image.js --model rembg --image ./media/*sdxlemoji*.png
+node generate-edit-image.js --model rembg --image ./media/images/*sdxlemoji*.png
 
 # 3. Order physical stickers from all services
-node generate-sticker-print.js --file ./media/*rembg*.png --service all --type die-cut
+node generate-sticker-print.js --file ./media/images/*rembg*.png --service all --type die-cut
 
 # Full pipeline in one command
 node generate-emoji.js "cute cat" --model sdxlemoji && \
-  node generate-edit-image.js --model rembg --image ./media/*sdxlemoji*.png && \
-  node generate-sticker-print.js --file ./media/*rembg*.png --service stickermule --type die-cut
+  node generate-edit-image.js --model rembg --image ./media/images/*sdxlemoji*.png && \
+  node generate-sticker-print.js --file ./media/images/*rembg*.png --service stickermule --type die-cut
 ```
 
 ## Artwork Preparation Tips

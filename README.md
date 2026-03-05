@@ -204,9 +204,16 @@ node generate-video.js --help
 
 ## Output
 
-All scripts save results to `./media/` with:
-- The generated/edited media file
-- A JSON report with metadata (model, prompt, parameters, timing, cost)
+Scripts save results to typed subfolders under `./media/`:
+
+| Scripts | Output folder |
+|---------|---------------|
+| `generate-image.js`, `generate-edit-image.js`, `generate-emoji.js` | `media/images/` |
+| `generate-video.js`, `generate-edit-video.js` | `media/video/` |
+| `generate-music.js`, `generate-voice.js` | `media/audio/` |
+| `generate-3d.js` | `media/3d/` |
+
+Each output includes the generated file and a JSON report with metadata (model, prompt, parameters, timing, cost).
 
 ## Project Structure
 
@@ -242,7 +249,14 @@ AlexMedia/
 │   ├── image-creation-workflow.md
 │   ├── audio-production-workflow.md
 │   └── emoji-sticker-workflow.md
-└── media/                     # Generated media + JSON reports
+├── media/                     # Generated media (organized by type)
+│   ├── images/                # generate-image, generate-edit-image, generate-emoji
+│   ├── video/                 # generate-video, generate-edit-video
+│   ├── audio/                 # generate-music, generate-voice
+│   └── 3d/                   # generate-3d
+└── projects/                  # Named design projects
+    ├── pen-cup/               # Gothic Spire pen cup concept + assets
+    └── skull-amygdala/        # Split skull amygdala concept + assets
 ```
 
 ## Dependencies

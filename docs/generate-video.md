@@ -77,7 +77,7 @@ node generate-video.js "Sunset scene" --aspect 9:16 --resolution 1080p
 - **Aspect ratios**: Sora models use "portrait"/"landscape" internally (mapped from 9:16/16:9)
 - **`grok` audio**: Grok i2v writes an empty audio container but generates zero audio samples — `hasAudio` is `false`; use `avmerge` to add speech post-generation
 - **`veo3fast` real-person photos**: May flag reference images of real people; use aged/stylized images instead
-- Output saved to `./media/` with JSON report
+- Output saved to `./media/video/` with JSON report
 
 ## Talking-Head Video Workflow
 

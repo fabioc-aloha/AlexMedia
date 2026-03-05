@@ -147,7 +147,7 @@ flowchart TD
     D --> K
     E --> J
 
-    J --> M["./media/*.stl"]
+    J --> M["./media/3d/*.stl"]
     K --> M
 
     style A fill:#7CB9E8,color:#24292f
@@ -196,7 +196,7 @@ The `--stl` flag works in two ways:
 - **Native STL models** (`rodin`, `hunyuan2mv`): Requests STL directly from the API
 - **Other models** (`trellis`, `hunyuan`, etc.): Downloads GLB, then converts locally to STL
 
-Output lands in `./media/` as both the 3D file and a JSON report with generation metadata.
+Output lands in `./media/3d/` as both the 3D file and a JSON report with generation metadata.
 
 ### 2c. Tips for Print-Ready Generation
 
@@ -432,16 +432,16 @@ Skip the printer entirely — upload your STL and get it professionally printed:
 
 ```bash
 # Get instant quotes from all integrated services
-node generate-3d-print.js --file ./media/model.stl --service all
+node generate-3d-print.js --file ./media/3d/model.stl --service all
 
 # Compare pricing on Craftcloud (aggregates 150+ manufacturers)
-node generate-3d-print.js --file ./media/model.stl --service craftcloud
+node generate-3d-print.js --file ./media/3d/model.stl --service craftcloud
 
 # Get specific material pricing from Sculpteo (no account needed)
-node generate-3d-print.js --file ./media/model.stl --service sculpteo --material nylon
+node generate-3d-print.js --file ./media/3d/model.stl --service sculpteo --material nylon
 
 # Budget-friendly printing via PCBWay
-node generate-3d-print.js --file ./media/model.stl --service pcbway
+node generate-3d-print.js --file ./media/3d/model.stl --service pcbway
 ```
 
 **When to use online services:**
@@ -560,9 +560,9 @@ flowchart LR
 ```bash
 # Full pipeline: concept → reference image → 3D model → print quote
 node generate-image.js "geometric desk organizer, white background" --model imagen4
-node generate-edit-image.js --model rembg --image ./media/*imagen*.png
-node generate-3d.js --model trellis --image ./media/*rembg*.png --stl
-node generate-3d-print.js --file ./media/*trellis*.stl --service all
+node generate-edit-image.js --model rembg --image ./media/images/*imagen*.png
+node generate-3d.js --model trellis --image ./media/images/*rembg*.png --stl
+node generate-3d-print.js --file ./media/3d/*trellis*.stl --service all
 ```
 
 ---
@@ -576,10 +576,10 @@ node generate-3d-print.js --file ./media/*trellis*.stl --service all
 node generate-image.js "a cute wizard figurine holding a staff, white background, product photo" --model nanapro
 
 # 2. Clean up the reference
-node generate-edit-image.js --model rembg --image ./media/*nanapro*.png
+node generate-edit-image.js --model rembg --image ./media/images/*nanapro*.png
 
 # 3. Generate 3D model with STL
-node generate-3d.js --model trellis --image ./media/*rembg*.png --stl
+node generate-3d.js --model trellis --image ./media/images/*rembg*.png --stl
 
 # 4. Open STL in PrusaSlicer
 #    - Scale to 35mm tall
@@ -604,8 +604,8 @@ node generate-3d.js "an involute spur gear with 24 teeth" --model rodin --stl --
 # 2. Inspect in Meshmixer → repair if needed → confirm dimensions
 
 # 3. Get production quotes
-node generate-3d-print.js --file ./media/*rodin*.stl --service sculpteo --material nylon
-node generate-3d-print.js --file ./media/*rodin*.stl --service xometry
+node generate-3d-print.js --file ./media/3d/*rodin*.stl --service sculpteo --material nylon
+node generate-3d-print.js --file ./media/3d/*rodin*.stl --service xometry
 
 # 4. Order SLS Nylon PA12 from best-priced service
 #    Expected: $15–40 depending on size
@@ -620,10 +620,10 @@ node generate-image.js "elegant silver ring with Celtic knot pattern, product ph
 node generate-image.js "same ring from side view" --model ideoqual
 
 # 2. Generate high-detail 3D model
-node generate-3d.js --model rodin --image ./media/*ideoqual*.png --stl --quality extra-high --faces 60000
+node generate-3d.js --model rodin --image ./media/images/*ideoqual*.png --stl --quality extra-high --faces 60000
 
 # 3. Upload to Shapeways for precious metal casting
-node generate-3d-print.js --file ./media/*rodin*.stl --service shapeways --material silver
+node generate-3d-print.js --file ./media/3d/*rodin*.stl --service shapeways --material silver
 
 # 4. Order in Sterling Silver via lost-wax casting
 #    Expected: $50–150+ depending on size/weight
@@ -637,7 +637,7 @@ node generate-3d-print.js --file ./media/*rodin*.stl --service shapeways --mater
 node generate-image.js "detailed dragon sculpture, T-pose, white background" --model nanapro
 
 # 2. Generate 3D model
-node generate-3d.js --model rodin --image ./media/*nanapro*.png --stl --quality high --tpose
+node generate-3d.js --model rodin --image ./media/images/*nanapro*.png --stl --quality high --tpose
 
 # 3. In Meshmixer:
 #    - Repair mesh (Analysis → Inspector → Auto Repair)
@@ -713,7 +713,7 @@ node generate-3d.js --model rodin --image ./media/*nanapro*.png --stl --quality 
 ```bash
 # After generating, scale with Node.js inline — example for 120mm tall object
 node -e "
-const fs=require('fs'),src='./media/model.stl',dst='./media/model-print-ready.stl';
+const fs=require('fs'),src='./media/3d/model.stl',dst='./media/3d/model-print-ready.stl';
 const buf=fs.readFileSync(src),n=buf.readUInt32LE(80);
 let mx=0;
 for(let i=0;i<n;i++){const b=84+i*50+12;for(let v=0;v<3;v++){mx=Math.max(mx,Math.abs(buf.readFloatLE(b+v*12)),Math.abs(buf.readFloatLE(b+v*12+4)),Math.abs(buf.readFloatLE(b+v*12+8)))}}
@@ -757,10 +757,10 @@ GENERATE REFERENCE IMAGE
   node generate-image.js "<description>, white background" --model imagen4
 
 REMOVE BACKGROUND
-  node generate-edit-image.js --model rembg --image ./media/<file>.png
+  node generate-edit-image.js --model rembg --image ./media/images/<file>.png
 
 GENERATE 3D MODEL (with STL for printing)
-  node generate-3d.js --model trellis --image ./media/<file>.png --stl
+  node generate-3d.js --model trellis --image ./media/images/<file>.png --stl
   node generate-3d.js --model rodin "<description>" --stl --quality high
 
 INSPECT & REPAIR
@@ -773,7 +773,7 @@ PRINT LOCALLY
   Send G-code to printer via USB / SD / Wi-Fi
 
 PRINT ONLINE
-  node generate-3d-print.js --file ./media/<file>.stl --service all
+  node generate-3d-print.js --file ./media/3d/<file>.stl --service all
 ```
 
 ---

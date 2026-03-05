@@ -150,11 +150,11 @@ Combine with `generate-3d.js` to generate a 3D model and immediately get print q
 ```bash
 # Generate 3D model with STL output, then get quotes
 node generate-3d.js --model rodin --image ./object.png --stl
-node generate-3d-print.js --file ./media/*rodin*.stl --service all
+node generate-3d-print.js --file ./media/3d/*rodin*.stl --service all
 
 # Generate and quote in one pipeline
 node generate-3d.js --model trellis --image ./chair.png --stl && \
-  node generate-3d-print.js --file ./media/*trellis*.stl --service sculpteo
+  node generate-3d-print.js --file ./media/3d/*trellis*.stl --service sculpteo
 ```
 
 ## Supported File Formats
