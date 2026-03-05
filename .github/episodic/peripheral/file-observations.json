@@ -6,38 +6,24 @@
     "generate-music.js"
   ],
   "stalledFiles": [
-    "github/assets/banner.png",
-    "docs/3d-design-to-print-workflow.md",
-    "docs/generate-3d.md",
-    "generate-3d-print.js",
-    "generate-3d.js",
-    "media/2026-03-05T02-44-33_imagen4_a-miniature-Gothic-cathedral-pen-cup-cy.jpg",
-    "media/2026-03-05T02-44-33_imagen4_a-miniature-Gothic-cathedral-pen-cup-cy.json",
-    "media/2026-03-05T03-08-51_trellis_20260305T024433imagen4aminiature.json",
-    "media/2026-03-05T03-08-51_trellis_20260305T024433imagen4aminiature_color_video.mp4",
-    "media/2026-03-05T03-08-51_trellis_20260305T024433imagen4aminiature_model_file.glb"
+    "github/episodic/peripheral/file-observations.json"
   ],
   "todoHotspots": [
     {
       "file": "media/2026-03-05T03-24-35_trellis_20260305T032252imagen4arealistic_model_file.glb",
       "todoCount": 5,
-      "scannedAt": 1772681223973
+      "scannedAt": 1772681815732
     },
     {
       "file": "media/2026-03-05T03-23-05_imagen4_human-skull-split-open-into-two-halves-r.jpg",
       "todoCount": 4,
-      "scannedAt": 1772681223973
+      "scannedAt": 1772681815732
     },
     {
       "file": "media/2026-03-05T03-22-52_imagen4_a-realistic-human-skull-split-along-the.jpg",
       "todoCount": 3,
-      "scannedAt": 1772681223973
-    },
-    {
-      "file": "media/2026-03-05T03-08-51_trellis_20260305T024433imagen4aminiature_model_file.glb",
-      "todoCount": 3,
-      "scannedAt": 1772681223973
+      "scannedAt": 1772681815732
     }
   ],
-  "lastUpdated": 1772681223973
+  "lastUpdated": 1772681815732
 }
