@@ -1,0 +1,16 @@
+{
+  "prompt": "Male gymnast on horizontal bar swings through a series of giants, releases into a massive triple-twisting double tuck dismount, three full twists completed above the mat, feet hit the ground in a clean stick, arena erupts, broadcast side-on slow-motion, chalk cloud",
+  "model": "xai/grok-imagine-video",
+  "modelName": "Grok Video",
+  "duration": 8,
+  "aspectRatio": "default",
+  "resolution": "default",
+  "negativePrompt": null,
+  "mode": "text-to-video",
+  "referenceImage": null,
+  "timestamp": "2026-03-05T04:31:49.667Z",
+  "elapsed": "38.7s",
+  "fileSize": "4.75MB",
+  "outputFile": "2026-03-05T04-31-48_grok_Male-gymnast-on-horizontal-bar-swings-th.mp4",
+  "videoUrl": "https://replicate.delivery/xezq/Sv2dgrhwUmJGKBVdybX88xTriRIaexYg6peLdFU0z6TzkrNWA/tmp14riefpk.mp4"
+}

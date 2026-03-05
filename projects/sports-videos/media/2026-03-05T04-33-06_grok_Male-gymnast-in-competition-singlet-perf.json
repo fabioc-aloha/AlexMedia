@@ -1,0 +1,16 @@
+{
+  "prompt": "Male gymnast in competition singlet performs flairs on the pommel horse, legs swinging wide in sweeping circles, transitions through scissor elements, maintains perfect hip height, hands moving precisely from pommel to pommel, rhythmic and controlled, slow-motion competition broadcast",
+  "model": "xai/grok-imagine-video",
+  "modelName": "Grok Video",
+  "duration": 8,
+  "aspectRatio": "default",
+  "resolution": "default",
+  "negativePrompt": null,
+  "mode": "text-to-video",
+  "referenceImage": null,
+  "timestamp": "2026-03-05T04:33:07.185Z",
+  "elapsed": "37.8s",
+  "fileSize": "2.84MB",
+  "outputFile": "2026-03-05T04-33-06_grok_Male-gymnast-in-competition-singlet-perf.mp4",
+  "videoUrl": "https://replicate.delivery/xezq/NS57wLPHcNodDJCprC4CjU5HHzPOPl3kGUdES6uTvYQg5ajF/tmpq61o0t5m.mp4"
+}

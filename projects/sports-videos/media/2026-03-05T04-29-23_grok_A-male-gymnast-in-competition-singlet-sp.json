@@ -1,0 +1,16 @@
+{
+  "prompt": "A male gymnast in competition singlet sprints the floor exercise diagonal, launches into a round-off double-back layout, body fully extended and parallel to the floor at the apex, sticks the landing with a single step, powerful expression, Olympic arena, broadcast slow-motion",
+  "model": "xai/grok-imagine-video",
+  "modelName": "Grok Video",
+  "duration": 8,
+  "aspectRatio": "default",
+  "resolution": "default",
+  "negativePrompt": null,
+  "mode": "text-to-video",
+  "referenceImage": null,
+  "timestamp": "2026-03-05T04:29:24.848Z",
+  "elapsed": "39.7s",
+  "fileSize": "5.20MB",
+  "outputFile": "2026-03-05T04-29-23_grok_A-male-gymnast-in-competition-singlet-sp.mp4",
+  "videoUrl": "https://replicate.delivery/xezq/HdHKF0bkIhKfAS88nP7vsmfsUSOeUqCGewEPtMZMKJ9FKu2YB/tmpx410sf_v.mp4"
+}

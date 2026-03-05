@@ -1,6 +1,6 @@
 {
-  "version": "6.1.7",
-  "installedAt": "2026-03-05T02:39:14.440Z",
+  "version": "6.1.8",
+  "installedAt": "2026-03-05T13:22:41.379Z",
   "files": {
     ".github/agents/alex-azure.agent.md": {
       "type": "system",
@@ -40,7 +40,7 @@
     },
     ".github/copilot-instructions.md": {
       "type": "system",
-      "checksum": "6de9a526c20c4e72dd4789c848c4cd6f"
+      "checksum": "e6497eee24a903406470034e573ba7ee"
     },
     ".github/instructions/adversarial-oversight.instructions.md": {
       "type": "system",

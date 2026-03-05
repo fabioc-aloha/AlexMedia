@@ -8,6 +8,7 @@
  *   node generate-edit-video.js --video clip.mp4 --model upscale --resolution 4K
  *   node generate-edit-video.js --video clip.mp4 --model caption
  *   node generate-edit-video.js --video clip.mp4 --audio song.mp3 --model avmerge
+ *   node generate-edit-video.js --video episode.mp4 --audio narration.mp3 --music music.mp3 --model audiomix
  *   node generate-edit-video.js --video clip.mp4 --model frames
  *   node generate-edit-video.js --video clip.mp4 --model extract
  *   node generate-edit-video.js --video clip.mp4 --model utils --task reverse
@@ -19,6 +20,7 @@
  *   trim       — Trim Video (cut clips by start/end time or duration)
  *   merge      — Video Merge (concatenate multiple video clips)
  *   avmerge    — Audio-Video Merge (combine video + audio tracks)
+ *   audiomix   — Audio Mixer (blend narration + music with volume control)
  *   extract    — Extract Audio (pull audio track from video as MP3)
  *   frames     — Frame Extractor (extract first or last frame as image)
  *   upscale    — Real-ESRGAN Video (upscale video to FHD/4K)
@@ -28,7 +30,9 @@
  * Options:
  *   --model <name>       Video editing model (default: modify)
  *   --video <path>       Input video file (required, local file or URL)
- *   --audio <path>       Audio file for avmerge model
+ *   --audio <path>       Audio file for avmerge / primary narration for audiomix
+ *   --music <path>       Background music file for audiomix model
+ *   --music-volume <vol> Music volume 0.0–1.0 for audiomix (default: 0.3)
  *   --extra <paths>      Additional video files for merge (comma-separated)
  *   --aspect <ratio>     Target aspect ratio (reframe: 1:1, 9:16, 16:9)
  *   --mode <mode>        Modify mode (adhere_1, flex_1, reimagine_1)
@@ -146,6 +150,17 @@ const MODELS = {
     cost: "free",
     buildInput: (prompt, videoUri, audioUri, opts) => ({ videoUri, audioUri }),
   },
+  audiomix: {
+    id: "local/ffmpeg",
+    name: "Audio Mixer — Narration + Music (local FFmpeg)",
+    needsPrompt: false,
+    needsVideo: true,
+    needsAudio: true,  // --audio = narration/primary track
+    outputType: "video",
+    local: true,
+    cost: "free",
+    buildInput: (prompt, videoUri, audioUri, opts) => ({ videoUri, audioUri }),
+  },
   extract: {
     id: "lucataco/extract-audio",
     name: "Extract Audio",
@@ -236,6 +251,8 @@ function parseArgs() {
     model: "modify",
     video: null,
     audio: null,
+    music: null,
+    musicVolume: 0.3,
     extra: null,
     aspect: null,
     mode: null,
@@ -256,6 +273,10 @@ function parseArgs() {
       result.video = args[++i];
     } else if (args[i] === "--audio" && args[i + 1]) {
       result.audio = args[++i];
+    } else if (args[i] === "--music" && args[i + 1]) {
+      result.music = args[++i];
+    } else if (args[i] === "--music-volume" && args[i + 1]) {
+      result.musicVolume = parseFloat(args[++i]);
     } else if (args[i] === "--extra" && args[i + 1]) {
       result.extra = args[++i];
     } else if ((args[i] === "--aspect" || args[i] === "--ratio") && args[i + 1]) {
@@ -419,6 +440,8 @@ async function main() {
     model: modelKey,
     video,
     audio,
+    music,
+    musicVolume,
     extra,
     aspect,
     mode,
@@ -446,7 +469,9 @@ async function main() {
     console.log("\nOptions:");
     console.log("  --model <name>       Video editor (default: modify)");
     console.log("  --video <path>       Input video file (required)");
-    console.log("  --audio <path>       Audio file (avmerge model)");
+    console.log("  --audio <path>       Audio file for avmerge / narration track for audiomix");
+    console.log("  --music <path>       Background music file for audiomix model");
+    console.log("  --music-volume <vol> Music volume 0.0–1.0 for audiomix (default: 0.3)");
     console.log("  --extra <paths>      Extra videos for merge (comma-separated)");
     console.log("  --aspect <ratio>     Target aspect ratio (reframe: 9:16, 16:9)");
     console.log("  --mode <mode>        Modify mode (adhere_1, flex_1, reimagine_1)");
@@ -469,6 +494,8 @@ async function main() {
     console.log("  node generate-edit-video.js --video clip.mp4 --model upscale --resolution 4K");
     console.log("  node generate-edit-video.js --video clip.mp4 --model caption");
     console.log("  node generate-edit-video.js --video clip.mp4 --audio song.mp3 --model avmerge");
+    console.log("  node generate-edit-video.js --video episode.mp4 --audio narr.mp3 --music bg.mp3 --model audiomix");
+    console.log("  node generate-edit-video.js --video episode.mp4 --audio narr.mp3 --music bg.mp3 --music-volume 0.2 --model audiomix");
     process.exit(1);
   }
 
@@ -504,7 +531,7 @@ async function main() {
   }
 
   const replicate = modelDef.local ? null : new Replicate({ auth: process.env.REPLICATE_API_TOKEN });
-  const opts = { aspect, mode, start, end, duration, resolution, task, format, firstFrame, extraVideos: null };
+  const opts = { aspect, mode, start, end, duration, resolution, task, format, firstFrame, music, musicVolume, extraVideos: null };
 
   // Ensure output directory
   const outputDir = path.join(__dirname, "media/video");
@@ -574,6 +601,69 @@ async function main() {
     fs.writeFileSync(path.join(outputDir, outFilename.replace(".mp4", ".json")), JSON.stringify(report, null, 2));
     console.log(`\n✅ Video saved!`);
     console.log(`   File: media/video/${outFilename} (${fileSize} MB)`);
+    console.log(`   Time: ${elapsed}s`);
+    return;
+  }
+
+  // ── Local audiomix: narration + music blend ──────────────────────
+  if (modelDef.local && modelKey === "audiomix") {
+    if (!audio) {
+      console.error("❌ audiomix requires --audio <narration.mp3> (primary voice track)");
+      process.exit(1);
+    }
+    if (!music) {
+      console.error("❌ audiomix requires --music <music.mp3> (background music track)");
+      process.exit(1);
+    }
+    let ffmpegPath;
+    try {
+      ffmpegPath = require("ffmpeg-static");
+    } catch {
+      console.error("❌ ffmpeg-static not installed. Run: npm install ffmpeg-static --save-dev");
+      process.exit(1);
+    }
+    const { execFileSync } = require("child_process");
+    const volNarr = 1.0;
+    const volMusic = Math.max(0, Math.min(1, musicVolume));
+    const timestamp = new Date().toISOString().replace(/[:.]/g, "-").slice(0, 19);
+    const videoBase = path.basename(video, path.extname(video));
+    const outFilename = `${timestamp}_audiomix_${videoBase.slice(0, 40)}.mp4`;
+    const outPath = path.join(outputDir, outFilename);
+    const resolvedVideo = path.resolve(video);
+    const resolvedAudio = path.resolve(audio);
+    const resolvedMusic = path.resolve(music);
+    console.log(`⏳ Mixing narration (vol=${volNarr}) + music (vol=${volMusic}) with local FFmpeg...`);
+    const filterComplex =
+      `[1:a]volume=${volNarr}[narr];` +
+      `[2:a]volume=${volMusic}[mus];` +
+      `[narr][mus]amix=inputs=2:duration=first:dropout_transition=3[aout]`;
+    execFileSync(ffmpegPath, [
+      "-y",
+      "-i", resolvedVideo,
+      "-i", resolvedAudio,
+      "-i", resolvedMusic,
+      "-filter_complex", filterComplex,
+      "-map", "0:v",
+      "-map", "[aout]",
+      "-c:v", "copy",
+      "-c:a", "aac", "-ac", "2", "-ar", "44100",
+      outPath,
+    ], { stdio: "inherit" });
+    const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
+    const fileSize = (fs.statSync(outPath).size / (1024 * 1024)).toFixed(2);
+    const report = {
+      model: "local/ffmpeg", modelName: "Audio Mixer — Narration + Music",
+      inputVideo: path.basename(video),
+      inputNarration: path.basename(audio),
+      inputMusic: path.basename(music),
+      musicVolume: volMusic,
+      timestamp: new Date().toISOString(), elapsed: `${elapsed}s`, fileSize: `${fileSize}MB`,
+      outputFile: outFilename,
+    };
+    fs.writeFileSync(path.join(outputDir, outFilename.replace(".mp4", ".json")), JSON.stringify(report, null, 2));
+    console.log(`\n✅ Video saved!`);
+    console.log(`   File: media/video/${outFilename} (${fileSize} MB)`);
+    console.log(`   Narration: vol=${volNarr}  |  Music: vol=${volMusic}`);
     console.log(`   Time: ${elapsed}s`);
     return;
   }

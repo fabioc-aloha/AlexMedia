@@ -1,0 +1,16 @@
+{
+  "prompt": "Gymnast in competition leotard runs the vault runway at full speed, round-off onto the springboard, back handspring onto the vault table, explosively blocks and launches into a high double pike rotation, perfect stuck landing, arms raised to the judges, Olympic arena crowd, broadcast side angle slow-motion",
+  "model": "xai/grok-imagine-video",
+  "modelName": "Grok Video",
+  "duration": 8,
+  "aspectRatio": "default",
+  "resolution": "default",
+  "negativePrompt": null,
+  "mode": "text-to-video",
+  "referenceImage": null,
+  "timestamp": "2026-03-05T04:28:04.317Z",
+  "elapsed": "42.2s",
+  "fileSize": "8.42MB",
+  "outputFile": "2026-03-05T04-28-00_grok_Gymnast-in-competition-leotard-runs-the.mp4",
+  "videoUrl": "https://replicate.delivery/xezq/2dsfJkPNAG07Kiz2cXSlYEHFD4oPYsMN6WeK9Ht3YlwOhrNWA/tmpee2px0lp.mp4"
+}

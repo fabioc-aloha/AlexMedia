@@ -1,0 +1,16 @@
+{
+  "prompt": "Women's gymnastics all-around competition: gymnasts in competition leotards competing simultaneously across all four apparatus, vault, uneven bars, balance beam, and floor exercise, Olympic arena at full capacity, scoreboards visible, crowd energy, broadcast multi-angle coverage",
+  "model": "xai/grok-imagine-video",
+  "modelName": "Grok Video",
+  "duration": 8,
+  "aspectRatio": "default",
+  "resolution": "default",
+  "negativePrompt": null,
+  "mode": "text-to-video",
+  "referenceImage": null,
+  "timestamp": "2026-03-05T04:37:42.433Z",
+  "elapsed": "40.3s",
+  "fileSize": "7.31MB",
+  "outputFile": "2026-03-05T04-37-40_grok_Womens-gymnastics-allaround-competitio.mp4",
+  "videoUrl": "https://replicate.delivery/xezq/8HXpOfT0eSj92EW44FfyInF4ENKH4v1NxCmZfYgvTHVKpu2YB/tmpbzkxdj_6.mp4"
+}

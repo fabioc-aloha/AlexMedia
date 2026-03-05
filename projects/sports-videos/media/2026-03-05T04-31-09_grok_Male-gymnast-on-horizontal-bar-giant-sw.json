@@ -1,0 +1,16 @@
+{
+  "prompt": "Male gymnast on horizontal bar, giant swings building speed, releases into a soaring layout Kolman release, full pirouette above the bar, regrasps cleanly, continues to another giant, chalk explodes from hands on regrasp, Olympic gymnastics hall, side camera slow-motion",
+  "model": "xai/grok-imagine-video",
+  "modelName": "Grok Video",
+  "duration": 8,
+  "aspectRatio": "default",
+  "resolution": "default",
+  "negativePrompt": null,
+  "mode": "text-to-video",
+  "referenceImage": null,
+  "timestamp": "2026-03-05T04:31:09.594Z",
+  "elapsed": "37.9s",
+  "fileSize": "3.66MB",
+  "outputFile": "2026-03-05T04-31-09_grok_Male-gymnast-on-horizontal-bar-giant-sw.mp4",
+  "videoUrl": "https://replicate.delivery/xezq/eJercRA7pml6t0evd2KtRplHhZFuLeBMQ0rlgo0OmPYsQu2YB/tmpd73lbomo.mp4"
+}

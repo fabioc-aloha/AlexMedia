@@ -1,0 +1,16 @@
+{
+  "prompt": "Male gymnast in competition singlet on still rings holds a perfect iron cross, arms outstretched horizontally, body rigid and vertical, visible muscle tension in his chest and shoulders, holds for two seconds, then presses to handstand in a single powerful motion, gymnastics arena broadcast angle, chalk dust settling",
+  "model": "xai/grok-imagine-video",
+  "modelName": "Grok Video",
+  "duration": 8,
+  "aspectRatio": "default",
+  "resolution": "default",
+  "negativePrompt": null,
+  "mode": "text-to-video",
+  "referenceImage": null,
+  "timestamp": "2026-03-05T04:29:59.068Z",
+  "elapsed": "33.4s",
+  "fileSize": "2.72MB",
+  "outputFile": "2026-03-05T04-29-58_grok_Male-gymnast-in-competition-singlet-on-s.mp4",
+  "videoUrl": "https://replicate.delivery/xezq/FMTx0P2fayWGSKeYhW2nP38J3qjuZAPirOk758Wf8eCXMu2YB/tmpmmz571gz.mp4"
+}

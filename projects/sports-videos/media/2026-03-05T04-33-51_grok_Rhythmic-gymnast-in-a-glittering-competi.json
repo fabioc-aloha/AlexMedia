@@ -1,0 +1,16 @@
+{
+  "prompt": "Rhythmic gymnast in a glittering competition leotard performs to classical music, spinning ribbon traces sweeping spirals and figure-eights through the air, gymnast body in deep backbend and arabesque, floor exercise carpet, competition arena, elegant broadcast camera",
+  "model": "xai/grok-imagine-video",
+  "modelName": "Grok Video",
+  "duration": 10,
+  "aspectRatio": "default",
+  "resolution": "default",
+  "negativePrompt": null,
+  "mode": "text-to-video",
+  "referenceImage": null,
+  "timestamp": "2026-03-05T04:33:52.970Z",
+  "elapsed": "44.7s",
+  "fileSize": "5.72MB",
+  "outputFile": "2026-03-05T04-33-51_grok_Rhythmic-gymnast-in-a-glittering-competi.mp4",
+  "videoUrl": "https://replicate.delivery/xezq/2tr27Ye3ekgFXEYDS03XwltPGRpZZQK9dCRnWnVMlPjumrNWA/tmpka5wr3zc.mp4"
+}

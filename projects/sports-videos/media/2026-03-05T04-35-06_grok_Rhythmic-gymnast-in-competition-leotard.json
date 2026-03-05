@@ -1,0 +1,16 @@
+{
+  "prompt": "Rhythmic gymnast in competition leotard rolls a ball across outstretched arms and the back of her neck, transitions into a back walkover while the ball rolls the length of her spine, catches it perfectly, arena competition atmosphere, close-up broadcast angle",
+  "model": "xai/grok-imagine-video",
+  "modelName": "Grok Video",
+  "duration": 8,
+  "aspectRatio": "default",
+  "resolution": "default",
+  "negativePrompt": null,
+  "mode": "text-to-video",
+  "referenceImage": null,
+  "timestamp": "2026-03-05T04:35:08.519Z",
+  "elapsed": "34.8s",
+  "fileSize": "4.60MB",
+  "outputFile": "2026-03-05T04-35-06_grok_Rhythmic-gymnast-in-competition-leotard.mp4",
+  "videoUrl": "https://replicate.delivery/xezq/4kchaeQuKWQOTyzAOvwf6j6PMjUfUBVFLWAYZy8ebdOhfctxC/tmp2uvjdvy7.mp4"
+}

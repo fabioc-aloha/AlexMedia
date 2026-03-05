@@ -1,0 +1,16 @@
+{
+  "prompt": "Male gymnast on parallel bars swings to one-arm handstand, executes a Diamidov single arm pirouette at the top, lands back on both bars cleanly, continues flowing swing sequence, competition singlet, arena lighting, slow-motion side broadcast",
+  "model": "xai/grok-imagine-video",
+  "modelName": "Grok Video",
+  "duration": 8,
+  "aspectRatio": "default",
+  "resolution": "default",
+  "negativePrompt": null,
+  "mode": "text-to-video",
+  "referenceImage": null,
+  "timestamp": "2026-03-05T04:32:28.374Z",
+  "elapsed": "37.7s",
+  "fileSize": "3.10MB",
+  "outputFile": "2026-03-05T04-32-28_grok_Male-gymnast-on-parallel-bars-swings-to.mp4",
+  "videoUrl": "https://replicate.delivery/xezq/U6tgpgiwDwrdANeJgDajlK5kE4baOWqlr4ebCSqONTlalrNWA/tmplo0ackgy.mp4"
+}

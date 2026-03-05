@@ -1,0 +1,16 @@
+{
+  "prompt": "Three gymnasts in competition leotards stand on the Olympic gymnastics podium, gold silver bronze positions, bouquets in hand, judges and arena visible behind, crowd applause, national flag rising, broadcast wide shot transitioning to close-ups of each face",
+  "model": "xai/grok-imagine-video",
+  "modelName": "Grok Video",
+  "duration": 8,
+  "aspectRatio": "default",
+  "resolution": "default",
+  "negativePrompt": null,
+  "mode": "text-to-video",
+  "referenceImage": null,
+  "timestamp": "2026-03-05T04:36:27.329Z",
+  "elapsed": "39.8s",
+  "fileSize": "6.50MB",
+  "outputFile": "2026-03-05T04-36-26_grok_Three-gymnasts-in-competition-leotards-s.mp4",
+  "videoUrl": "https://replicate.delivery/xezq/74jsCQwfAqQ5OSvMNDQzANTWHwkjQkZWoZFYAvlxWSwj01GLA/tmpgu519592.mp4"
+}

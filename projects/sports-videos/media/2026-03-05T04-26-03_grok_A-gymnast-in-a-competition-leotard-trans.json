@@ -1,0 +1,16 @@
+{
+  "prompt": "A gymnast in a competition leotard transitions from the low bar to the high bar in a sweeping Shaposhnikova, body arching in a smooth counterswing, regrasps the high bar at the peak of her arc, chalk mist in the arena lights, slow-motion, broadcast side camera",
+  "model": "xai/grok-imagine-video",
+  "modelName": "Grok Video",
+  "duration": 8,
+  "aspectRatio": "default",
+  "resolution": "default",
+  "negativePrompt": null,
+  "mode": "text-to-video",
+  "referenceImage": null,
+  "timestamp": "2026-03-05T04:26:05.704Z",
+  "elapsed": "39.8s",
+  "fileSize": "4.24MB",
+  "outputFile": "2026-03-05T04-26-03_grok_A-gymnast-in-a-competition-leotard-trans.mp4",
+  "videoUrl": "https://replicate.delivery/xezq/WQSFdDSHPGIaGBhfbaGxap1zi34RMBG80iJlaLGBAuItv1GLA/tmppikzxh19.mp4"
+}

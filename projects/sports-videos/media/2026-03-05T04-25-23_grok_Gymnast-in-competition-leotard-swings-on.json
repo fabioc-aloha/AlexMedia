@@ -1,0 +1,16 @@
+{
+  "prompt": "Gymnast in competition leotard swings on the uneven bars at full speed, releases the high bar at the apex, performs a layout Tkatchev, body fully extended horizontal in the air, regrasps cleanly, chalk dust bursts from her hands on regrasp, gymnastics arena spotlights, side-on slow-motion",
+  "model": "xai/grok-imagine-video",
+  "modelName": "Grok Video",
+  "duration": 8,
+  "aspectRatio": "default",
+  "resolution": "default",
+  "negativePrompt": null,
+  "mode": "text-to-video",
+  "referenceImage": null,
+  "timestamp": "2026-03-05T04:25:25.152Z",
+  "elapsed": "38.9s",
+  "fileSize": "3.55MB",
+  "outputFile": "2026-03-05T04-25-23_grok_Gymnast-in-competition-leotard-swings-on.mp4",
+  "videoUrl": "https://replicate.delivery/xezq/oKXIsZYaZqrJBJ2YT50wdtR27NcIlzgqXTaTZX3XmedZv1GLA/tmpnlbffybr.mp4"
+}

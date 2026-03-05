@@ -5,7 +5,14 @@
     "generate-image.js",
     "generate-music.js"
   ],
-  "stalledFiles": [],
+  "stalledFiles": [
+    "github/config/alex-manifest.json",
+    "generate-edit-video.js",
+    "NORTH-STAR.md",
+    "docs/video-series-compilation-workflow.md",
+    "projects/alex-breakfast/",
+    "projects/sports-videos/"
+  ],
   "todoHotspots": [],
-  "lastUpdated": 1772682708765
+  "lastUpdated": 1772717598821
 }

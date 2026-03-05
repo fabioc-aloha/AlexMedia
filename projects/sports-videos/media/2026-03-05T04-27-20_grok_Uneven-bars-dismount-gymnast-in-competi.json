@@ -1,0 +1,16 @@
+{
+  "prompt": "Uneven bars dismount: gymnast in competition leotard swings to release from the high bar, opens to a stretched double layout, two fully open rotations above the mat, sticks the landing with arms outstretched, chalk cloud rising, arena crowd erupts, Olympic venue, side-on broadcast slow-motion",
+  "model": "xai/grok-imagine-video",
+  "modelName": "Grok Video",
+  "duration": 8,
+  "aspectRatio": "default",
+  "resolution": "default",
+  "negativePrompt": null,
+  "mode": "text-to-video",
+  "referenceImage": null,
+  "timestamp": "2026-03-05T04:27:21.956Z",
+  "elapsed": "40.6s",
+  "fileSize": "4.00MB",
+  "outputFile": "2026-03-05T04-27-20_grok_Uneven-bars-dismount-gymnast-in-competi.mp4",
+  "videoUrl": "https://replicate.delivery/xezq/mp57N1zS2ewDGyaDeOnXEGBYT4O2Hc8KrRhr3nwtkjfLBXbsA/tmpyc_rf7y2.mp4"
+}

@@ -1,0 +1,16 @@
+{
+  "prompt": "Rhythmic gymnast in sparkling competition leotard throws both clubs simultaneously high into the arena lights, performs a leap underneath, catches both perfectly, continues into a pirouette series, clubs in continuous motion, competition floor, broadcast slow-motion",
+  "model": "xai/grok-imagine-video",
+  "modelName": "Grok Video",
+  "duration": 8,
+  "aspectRatio": "default",
+  "resolution": "default",
+  "negativePrompt": null,
+  "mode": "text-to-video",
+  "referenceImage": null,
+  "timestamp": "2026-03-05T04:35:46.780Z",
+  "elapsed": "38.1s",
+  "fileSize": "4.03MB",
+  "outputFile": "2026-03-05T04-35-46_grok_Rhythmic-gymnast-in-sparkling-competitio.mp4",
+  "videoUrl": "https://replicate.delivery/xezq/5j6D6tiM1DJYDNjKDRn5YT0r5muncIeRu5JH4FQg62KQ01GLA/tmpaxji84kx.mp4"
+}

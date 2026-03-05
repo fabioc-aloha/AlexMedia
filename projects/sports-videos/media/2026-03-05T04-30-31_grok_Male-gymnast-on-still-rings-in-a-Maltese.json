@@ -1,0 +1,16 @@
+{
+  "prompt": "Male gymnast on still rings in a Maltese cross, body parallel to the floor, arms extended wide, full body horizontal supported only by the rings, extreme tension across the chest and arms visible, holds the position for two counts, arena lighting from above, slow-motion broadcast",
+  "model": "xai/grok-imagine-video",
+  "modelName": "Grok Video",
+  "duration": 8,
+  "aspectRatio": "default",
+  "resolution": "default",
+  "negativePrompt": null,
+  "mode": "text-to-video",
+  "referenceImage": null,
+  "timestamp": "2026-03-05T04:30:31.439Z",
+  "elapsed": "31.9s",
+  "fileSize": "1.77MB",
+  "outputFile": "2026-03-05T04-30-31_grok_Male-gymnast-on-still-rings-in-a-Maltese.mp4",
+  "videoUrl": "https://replicate.delivery/xezq/8nDDuCQYLKJlKtC1rRsr8rUSWhgP2ZNf6eTErMz23b8mjrNWA/tmpbab4cbh0.mp4"
+}

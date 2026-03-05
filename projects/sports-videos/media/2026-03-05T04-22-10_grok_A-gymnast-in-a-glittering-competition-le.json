@@ -1,0 +1,16 @@
+{
+  "prompt": "A gymnast in a glittering competition leotard performs a split leap across the floor exercise mat, legs at 180 degrees and fully pointed, body fully extended at the apex, artistic expression on her face, competition arena spotlights, slow-motion broadcast angle",
+  "model": "xai/grok-imagine-video",
+  "modelName": "Grok Video",
+  "duration": 6,
+  "aspectRatio": "default",
+  "resolution": "default",
+  "negativePrompt": null,
+  "mode": "text-to-video",
+  "referenceImage": null,
+  "timestamp": "2026-03-05T04:22:11.549Z",
+  "elapsed": "32.8s",
+  "fileSize": "2.28MB",
+  "outputFile": "2026-03-05T04-22-10_grok_A-gymnast-in-a-glittering-competition-le.mp4",
+  "videoUrl": "https://replicate.delivery/xezq/5gPriGtImfyhFaWwe1hpZaiPF3qNuFFelCtUB3l8mbDj3WbsA/tmp8yq8njnr.mp4"
+}

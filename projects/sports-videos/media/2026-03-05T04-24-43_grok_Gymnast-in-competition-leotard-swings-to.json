@@ -1,0 +1,16 @@
+{
+  "prompt": "Gymnast in competition leotard swings to the end of the balance beam, launches into a full double-tuck dismount, two tight rotations in the air above the mat, lands stuck with a controlled chest-forward stance, raises arms to the judges, arena crowd reacts, side-on slow-motion",
+  "model": "xai/grok-imagine-video",
+  "modelName": "Grok Video",
+  "duration": 8,
+  "aspectRatio": "default",
+  "resolution": "default",
+  "negativePrompt": null,
+  "mode": "text-to-video",
+  "referenceImage": null,
+  "timestamp": "2026-03-05T04:24:46.091Z",
+  "elapsed": "40.3s",
+  "fileSize": "4.67MB",
+  "outputFile": "2026-03-05T04-24-43_grok_Gymnast-in-competition-leotard-swings-to.mp4",
+  "videoUrl": "https://replicate.delivery/xezq/JHo2A5Cmwf22ZyVm3j8pQ70T0Ff57um1loIQOZma4TRKeWbsA/tmpt0v48hwy.mp4"
+}

@@ -1,0 +1,16 @@
+{
+  "prompt": "A gymnast in a competition leotard performs on the balance beam, executes a series of sharp back walkovers in perfect succession, pointed toes brushing the beam on each pass, competition arena lighting, side-on broadcast close-up, slow-motion",
+  "model": "xai/grok-imagine-video",
+  "modelName": "Grok Video",
+  "duration": 8,
+  "aspectRatio": "default",
+  "resolution": "default",
+  "negativePrompt": null,
+  "mode": "text-to-video",
+  "referenceImage": null,
+  "timestamp": "2026-03-05T04:23:32.407Z",
+  "elapsed": "34.9s",
+  "fileSize": "2.80MB",
+  "outputFile": "2026-03-05T04-23-30_grok_A-gymnast-in-a-competition-leotard-perfo.mp4",
+  "videoUrl": "https://replicate.delivery/xezq/4eu64La0Ew0YSKHBDKJ9aeXGfwVc9eh9uN2CSrGSQwWD0t2YB/tmpt747m5qn.mp4"
+}

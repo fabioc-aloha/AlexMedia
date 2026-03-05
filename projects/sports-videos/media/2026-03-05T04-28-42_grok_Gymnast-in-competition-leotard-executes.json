@@ -1,0 +1,16 @@
+{
+  "prompt": "Gymnast in competition leotard executes an Amanar vault, round-off back handspring onto the table, launches into 2.5 twisting layout, tight twist visible in slow-motion, sticks a powerful landing with bent knees absorbing impact, arena crowd noise, broadcast angle",
+  "model": "xai/grok-imagine-video",
+  "modelName": "Grok Video",
+  "duration": 8,
+  "aspectRatio": "default",
+  "resolution": "default",
+  "negativePrompt": null,
+  "mode": "text-to-video",
+  "referenceImage": null,
+  "timestamp": "2026-03-05T04:28:43.790Z",
+  "elapsed": "39.4s",
+  "fileSize": "4.31MB",
+  "outputFile": "2026-03-05T04-28-42_grok_Gymnast-in-competition-leotard-executes.mp4",
+  "videoUrl": "https://replicate.delivery/xezq/4mZocj9IQV4NHRmttF5madDVgKXddLnWwcNN3he9waJ8w1GLA/tmpj8mxteif.mp4"
+}

@@ -1,0 +1,16 @@
+{
+  "prompt": "Gymnast in competition leotard executes a Pak salto from high bar to low bar, body in a tight hollow position, catches the low bar cleanly, swings through to a handstand pirouette, perfect vertical line at the top, chalk-lit arena, competition crowd visible, slow-motion",
+  "model": "xai/grok-imagine-video",
+  "modelName": "Grok Video",
+  "duration": 8,
+  "aspectRatio": "default",
+  "resolution": "default",
+  "negativePrompt": null,
+  "mode": "text-to-video",
+  "referenceImage": null,
+  "timestamp": "2026-03-05T04:26:40.063Z",
+  "elapsed": "34.2s",
+  "fileSize": "4.02MB",
+  "outputFile": "2026-03-05T04-26-38_grok_Gymnast-in-competition-leotard-executes.mp4",
+  "videoUrl": "https://replicate.delivery/xezq/jbx1VMb9TgbxDVYjqsVPwaY5GeVqrtAIGo98rDjSY77efWbsA/tmprarw3ntc.mp4"
+}

@@ -1,0 +1,16 @@
+{
+  "prompt": "Rhythmic gymnast in competition leotard tosses a hoop high above the floor, executes a split leap, catches the hoop behind her back in a seamless fluid motion, ribbon of movement captured in slow-motion, competition arena, audience visible behind",
+  "model": "xai/grok-imagine-video",
+  "modelName": "Grok Video",
+  "duration": 8,
+  "aspectRatio": "default",
+  "resolution": "default",
+  "negativePrompt": null,
+  "mode": "text-to-video",
+  "referenceImage": null,
+  "timestamp": "2026-03-05T04:34:32.632Z",
+  "elapsed": "38.6s",
+  "fileSize": "4.17MB",
+  "outputFile": "2026-03-05T04-34-32_grok_Rhythmic-gymnast-in-competition-leotard.mp4",
+  "videoUrl": "https://replicate.delivery/xezq/SHFJo5vMUEq2CNky7nNHnoWExEkn6wSssK8FdtfZh5crz1GLA/tmpbpp6nkrn.mp4"
+}

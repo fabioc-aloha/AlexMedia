@@ -1,0 +1,16 @@
+{
+  "prompt": "A gymnast in a competition leotard sprints across the floor exercise mat, launches into a powerful round-off back handspring, soars into a full-twisting double tuck salto, lands perfectly stuck with arms raised, audience applause, Olympic floor exercise venue, broadcast angle",
+  "model": "xai/grok-imagine-video",
+  "modelName": "Grok Video",
+  "duration": 8,
+  "aspectRatio": "default",
+  "resolution": "default",
+  "negativePrompt": null,
+  "mode": "text-to-video",
+  "referenceImage": null,
+  "timestamp": "2026-03-05T04:21:38.594Z",
+  "elapsed": "40.7s",
+  "fileSize": "7.21MB",
+  "outputFile": "2026-03-05T04-21-35_grok_A-gymnast-in-a-competition-leotard-sprin.mp4",
+  "videoUrl": "https://replicate.delivery/xezq/sLyeXpk9pGWOLizuFabUhpOnTPk4elkAKylSF73ndped2WbsA/tmp7_h4qxnk.mp4"
+}

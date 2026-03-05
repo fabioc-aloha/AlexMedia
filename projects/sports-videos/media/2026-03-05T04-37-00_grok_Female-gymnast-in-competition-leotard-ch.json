@@ -1,0 +1,16 @@
+{
+  "prompt": "Female gymnast in competition leotard chalks her hands and grips at the chalk block beside the uneven bars, intense focus on her face, takes a breath, turns and approaches the bar, arena crowd in the background, slow-motion close-up",
+  "model": "xai/grok-imagine-video",
+  "modelName": "Grok Video",
+  "duration": 6,
+  "aspectRatio": "default",
+  "resolution": "default",
+  "negativePrompt": null,
+  "mode": "text-to-video",
+  "referenceImage": null,
+  "timestamp": "2026-03-05T04:37:01.473Z",
+  "elapsed": "33.1s",
+  "fileSize": "2.63MB",
+  "outputFile": "2026-03-05T04-37-00_grok_Female-gymnast-in-competition-leotard-ch.mp4",
+  "videoUrl": "https://replicate.delivery/xezq/3wkLbe3gcLTtE6kuV0xcy97FOx82XedLoxgaEZR8LlMrprNWA/tmpn653oi4h.mp4"
+}

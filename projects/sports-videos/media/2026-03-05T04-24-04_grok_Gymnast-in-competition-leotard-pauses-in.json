@@ -1,0 +1,16 @@
+{
+  "prompt": "Gymnast in competition leotard pauses in a perfect arabesque balance on the balance beam, one leg raised perfectly vertical, arms in elegant first position, holds the pose for two counts, then launches into a side aerial over the beam, competition arena, broadcast quality",
+  "model": "xai/grok-imagine-video",
+  "modelName": "Grok Video",
+  "duration": 8,
+  "aspectRatio": "default",
+  "resolution": "default",
+  "negativePrompt": null,
+  "mode": "text-to-video",
+  "referenceImage": null,
+  "timestamp": "2026-03-05T04:24:05.383Z",
+  "elapsed": "32.9s",
+  "fileSize": "3.03MB",
+  "outputFile": "2026-03-05T04-24-04_grok_Gymnast-in-competition-leotard-pauses-in.mp4",
+  "videoUrl": "https://replicate.delivery/xezq/BbM24qE1mMppI9l3JRIoxyVt5vQs0TtI8zQVZg37BRxY3ajF/tmp7njr5yk7.mp4"
+}

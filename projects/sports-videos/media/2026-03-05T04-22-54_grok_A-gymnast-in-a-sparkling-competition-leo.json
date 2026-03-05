@@ -1,0 +1,16 @@
+{
+  "prompt": "A gymnast in a sparkling competition leotard opens her floor exercise routine with a dramatic pose, launches into a tumbling pass, transitions through balletic choreography, then finishes with a powerful front layout full-twist to perfectly stuck landing, arms extended, Olympic arena, full competition atmosphere",
+  "model": "xai/grok-imagine-video",
+  "modelName": "Grok Video",
+  "duration": 10,
+  "aspectRatio": "default",
+  "resolution": "default",
+  "negativePrompt": null,
+  "mode": "text-to-video",
+  "referenceImage": null,
+  "timestamp": "2026-03-05T04:22:56.895Z",
+  "elapsed": "45.2s",
+  "fileSize": "5.85MB",
+  "outputFile": "2026-03-05T04-22-54_grok_A-gymnast-in-a-sparkling-competition-leo.mp4",
+  "videoUrl": "https://replicate.delivery/xezq/WbfedWSblpgQoUfRGSMpSkvUisGfNOwBm22UbGgQB5o2xt2YB/tmp8sj1n54v.mp4"
+}

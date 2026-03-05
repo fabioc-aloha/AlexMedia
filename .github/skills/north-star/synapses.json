@@ -60,6 +60,13 @@
       "type": "COMPLEMENTS",
       "when": "North Star should be documented and referenced",
       "yields": "See target skill"
+    },
+    {
+      "target": ".github/instructions/animated-episode-workflow.instructions.md",
+      "strength": 0.8,
+      "type": "GUIDES",
+      "when": "Creative projects need strategic decision filters as much as technical projects",
+      "yields": "See target instruction"
     }
   ],
   "activationContexts": [
@@ -72,7 +79,12 @@
     "quality standards",
     "nasa quality",
     "guiding vision",
-    "project alignment"
+    "project alignment",
+    "creative vision",
+    "media project",
+    "content creation",
+    "artistic vision",
+    "creative excellence"
   ],
   "notes": "Ambitious project vision definition and alignment",
   "yields": [
