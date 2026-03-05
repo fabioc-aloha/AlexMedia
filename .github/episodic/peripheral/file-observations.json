@@ -5,18 +5,7 @@
     "generate-image.js",
     "generate-music.js"
   ],
-  "stalledFiles": [
-    "github/episodic/peripheral/file-observations.json",
-    "README.md",
-    "docs/3d-design-to-print-workflow.md",
-    "docs/3d-printing-services-guide.md",
-    "docs/audio-production-workflow.md",
-    "docs/emoji-sticker-workflow.md",
-    "docs/generate-3d-print.md",
-    "docs/generate-3d.md",
-    "docs/generate-edit-image.md",
-    "docs/generate-edit-video.md"
-  ],
+  "stalledFiles": [],
   "todoHotspots": [],
-  "lastUpdated": 1772682649891
+  "lastUpdated": 1772682708765
 }
