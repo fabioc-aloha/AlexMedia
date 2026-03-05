@@ -1,0 +1,22 @@
+{
+  "prompt": "a miniature Gothic cathedral pen cup, cylindrical shape, recursive nested pointed arches on exterior walls, battlemented crown parapet with tiny finials, octagonal plinth base, intricate stone tracery with quatrefoil cutouts, matte dark grey material, white background, product photography, ultra-detailed architectural render, dramatic studio lighting",
+  "model": "google/imagen-4",
+  "modelName": "Imagen 4",
+  "aspectRatio": "1:1",
+  "resolution": "default",
+  "style": null,
+  "outputFormat": "default",
+  "seed": null,
+  "count": 1,
+  "mode": "text-to-image",
+  "referenceImage": null,
+  "timestamp": "2026-03-05T02:44:34.710Z",
+  "elapsed": "8.0s",
+  "files": [
+    {
+      "name": "2026-03-05T02-44-33_imagen4_a-miniature-Gothic-cathedral-pen-cup-cy.jpg",
+      "size": "0.93MB",
+      "url": "https://replicate.delivery/xezq/5JlB51I8Eg5gDFiYHaPhLoJ9fJbgAQhUGxjIKmWI3naJA1GLA/tmpch5umncd.jpg"
+    }
+  ]
+}

@@ -689,6 +689,35 @@ node generate-3d.js --model rodin --image ./media/*nanapro*.png --stl --quality 
 | "Minimum wall thickness" warning | Thin walls below service tolerance | Thicken walls to ≥ 1.0 mm |
 | STL upload rejected | File too large or wrong format | Keep under 100 MB; ensure binary STL (not ASCII) |
 
+### CLI / Script Issues (generate-3d.js)
+
+| Problem | Cause | Solution |
+|---------|-------|----------|
+| `404 Not Found` on predictions | Community model called without version hash | Pin `owner/model:sha256hash` — fetch latest hash from `/v1/models/owner/model/versions` |
+| `url.startsWith is not a function` | Replicate SDK returns `FileOutput` objects, not strings | Normalize via `String(item)` — `FileOutput.toString()` returns the URL |
+| `mesh_mode must be one of Quad, Raw` | `--meshmode Triangle` is invalid for Rodin | Use `--meshmode Quad` (clean topology) or `--meshmode Raw` (max detail) |
+| Sculpteo name too long (422) | Filename stem > 64 chars | Truncate to 64 chars — already fixed in `generate-3d-print.js` |
+
+### Scale Issues (Critical — affects every workflow)
+
+**AI 3D models always output a ~1mm bounding box.** The model contains no real-world scale information. Always scale before slicing or ordering.
+
+**Quick CLI scale** (no extra tools needed):
+```bash
+# After generating, scale with Node.js inline — example for 120mm tall object
+node -e "
+const fs=require('fs'),src='./media/model.stl',dst='./media/model-print-ready.stl';
+const buf=fs.readFileSync(src),n=buf.readUInt32LE(80);
+let mx=0;
+for(let i=0;i<n;i++){const b=84+i*50+12;for(let v=0;v<3;v++){mx=Math.max(mx,Math.abs(buf.readFloatLE(b+v*12)),Math.abs(buf.readFloatLE(b+v*12+4)),Math.abs(buf.readFloatLE(b+v*12+8)))}}
+const sc=120/mx,out=Buffer.from(buf);
+for(let i=0;i<n;i++){const b=84+i*50+12;for(let f=0;f<9;f++)out.writeFloatLE(buf.readFloatLE(b+f*4)*sc,b+f*4)}
+fs.writeFileSync(dst,out);console.log('Scaled '+mx.toFixed(3)+'mm → 120mm, saved '+dst);
+"
+```
+
+Or open in PrusaSlicer → right-click model → Scale → set Z to 120mm → lock aspect ratio → Export as STL.
+
 ---
 
 ## Recommended Software

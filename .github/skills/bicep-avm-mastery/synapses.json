@@ -2,7 +2,7 @@
   "$schema": "../SYNAPSE-SCHEMA.json",
   "skillId": "bicep-avm-mastery",
   "version": "1.1.0",
-  "lastUpdated": "2026-03-04",
+  "lastUpdated": "2026-03-05",
   "inheritance": "inheritable",
   "connections": [],
   "schemaVersion": "2.1.0",

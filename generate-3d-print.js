@@ -421,7 +421,7 @@ async function sculpteoUpload(fileInfo, opts) {
     filename: fileInfo.name,
     contentType: "application/octet-stream",
   });
-  form.append("name", path.basename(fileInfo.name, path.extname(fileInfo.name)));
+  form.append("name", path.basename(fileInfo.name, path.extname(fileInfo.name)).substring(0, 64));
   form.append("unit", opts.unit || "mm");
   form.append("scale", String(opts.scale || 1.0));
 

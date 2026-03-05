@@ -1,0 +1,42 @@
+{
+  "prompt": null,
+  "model": "firtoz/trellis:e8f6c45206993f297372f5436b90350817bd9b4a0d52d2a76df50c1c8afa2b3c",
+  "modelName": "TRELLIS",
+  "type": "image-to-3d",
+  "referenceImage": "./media/2026-03-05T02-44-33_imagen4_a-miniature-Gothic-cathedral-pen-cup-cy.jpg",
+  "multiView": {
+    "front": null,
+    "back": null,
+    "left": null,
+    "right": null
+  },
+  "seed": null,
+  "format": null,
+  "faces": null,
+  "quality": null,
+  "steps": null,
+  "guidance": null,
+  "stlConversion": true,
+  "timestamp": "2026-03-05T03:08:52.478Z",
+  "elapsed": "113.7s",
+  "files": [
+    {
+      "name": "2026-03-05T03-08-51_trellis_20260305T024433imagen4aminiature_color_video.mp4",
+      "size": "0.18MB",
+      "type": "color_video",
+      "url": "https://replicate.delivery/yhqm/87gj4xUylvpnExSTfdwR6eBClKEKp5YZWpTJN8ikph9EXqNWA/output_color.mp4"
+    },
+    {
+      "name": "2026-03-05T03-08-51_trellis_20260305T024433imagen4aminiature_model_file.glb",
+      "size": "1.99MB",
+      "type": "model_file",
+      "url": "https://replicate.delivery/yhqm/qed8wPcdYTVnVqO6gVICuPvWWwbxCtGT5NyhdCvzTUYiL1GLA/output.glb"
+    },
+    {
+      "name": "2026-03-05T03-08-51_trellis_20260305T024433imagen4aminiature_model_file.stl",
+      "size": "1.71MB",
+      "type": "model_file_stl",
+      "url": "https://replicate.delivery/yhqm/qed8wPcdYTVnVqO6gVICuPvWWwbxCtGT5NyhdCvzTUYiL1GLA/output.glb"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "prompt": "human skull split open into two halves revealing a single glowing white sphere inside the cranial cavity, representing the amygdala, minimalist interior, dramatic side lighting, white background, ultra-detailed bone texture exterior",
+  "model": "google/imagen-4",
+  "modelName": "Imagen 4",
+  "aspectRatio": "default",
+  "resolution": "default",
+  "style": null,
+  "outputFormat": "default",
+  "seed": null,
+  "count": 1,
+  "mode": "text-to-image",
+  "referenceImage": null,
+  "timestamp": "2026-03-05T03:23:05.408Z",
+  "elapsed": "6.8s",
+  "files": [
+    {
+      "name": "2026-03-05T03-23-05_imagen4_human-skull-split-open-into-two-halves-r.jpg",
+      "size": "0.63MB",
+      "url": "https://replicate.delivery/xezq/cDTP5fAWpT29ASDZGeDbZJhwb1pSLzeh8MBXgTH6rgMzIVbsA/tmpuw18ar_i.jpg"
+    }
+  ]
+}

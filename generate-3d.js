@@ -29,7 +29,7 @@
  *   --faces <n>          Target face count for mesh simplification
  *   --quality <str>      Generation quality: low, medium, high (rodin)
  *   --material <str>     Material type: PBR (rodin)
- *   --meshmode <str>     Mesh face type: Quad, Triangle (rodin)
+ *   --meshmode <str>     Mesh face type: Quad, Raw (rodin)
  *   --tpose              Generate T/A pose for humans (rodin)
  *   --preview            Generate preview render (rodin)
  *   --steps <n>          Number of inference/denoising steps
@@ -97,7 +97,7 @@ function imageToDataUri(imagePath) {
 // ── Model Definitions ──────────────────────────────────────────────
 const MODELS = {
   trellis: {
-    id: "firtoz/trellis",
+    id: "firtoz/trellis:e8f6c45206993f297372f5436b90350817bd9b4a0d52d2a76df50c1c8afa2b3c",
     name: "TRELLIS",
     type: "image-to-3d",
     cost: "per-second GPU",
@@ -161,7 +161,7 @@ const MODELS = {
     },
   },
   hunyuan: {
-    id: "prunaai/hunyuan3d-2",
+    id: "prunaai/hunyuan3d-2:6dd3e3e1f8a29a38807e8f23aaf8953a0051996ccc8c1861f709a5b1ee6826b5",
     name: "Hunyuan3D-2",
     type: "image-to-3d",
     cost: "per-second GPU",
@@ -185,7 +185,7 @@ const MODELS = {
     },
   },
   hunyuan2mv: {
-    id: "tencent/hunyuan3d-2mv",
+    id: "tencent/hunyuan3d-2mv:71798fbc3c9f7b7097e3bb85496e5a797d8b8f616b550692e7c3e176a8e9e5db",
     name: "Hunyuan3D-2mv",
     type: "multiview-to-3d",
     cost: "per-second GPU",
@@ -215,7 +215,7 @@ const MODELS = {
     },
   },
   mvdream: {
-    id: "adirik/mvdream",
+    id: "adirik/mvdream:38af22609c9a779c2203c2009ff7451f115b44cde8d9a65ad132980714b82f34",
     name: "MVDream",
     type: "text-to-3d",
     cost: "per-second GPU",
@@ -235,7 +235,7 @@ const MODELS = {
     },
   },
   shape: {
-    id: "cjwbw/shap-e",
+    id: "cjwbw/shap-e:5957069d5c509126a73c7cb68abcddbb985aeefa4d318e7c63ec1352ce6da68c",
     name: "Shap-E",
     type: "multi",
     cost: "per-second GPU",
@@ -581,6 +581,20 @@ async function convertGlbToObj(glbPath, objPath) {
 }
 
 // ── Get Extension from URL ─────────────────────────────────────────
+// Normalize any Replicate output item to a plain URL string.
+// Handles: plain string, FileOutput (toString / .url property / .url() method), URL objects.
+function toUrlString(item) {
+  if (!item) return "";
+  if (typeof item === "string") return item;
+  // FileOutput / URL object with toString
+  const str = String(item);
+  if (str && str !== "[object Object]") return str;
+  // Fallback: .url property or .url() method
+  if (typeof item.url === "function") return String(item.url());
+  if (item.url) return String(item.url);
+  return "";
+}
+
 function getExtFromUrl(url, fallback = "glb") {
   if (url.includes(".stl")) return "stl";
   if (url.includes(".fbx")) return "fbx";
@@ -635,7 +649,7 @@ function showHelp() {
   console.log("\nRodin Options:");
   console.log("  --quality <str>      Quality: low, medium, high");
   console.log("  --material <str>     Material type (PBR)");
-  console.log("  --meshmode <str>     Mesh face: Quad or Triangle");
+  console.log("  --meshmode <str>     Mesh face: Quad or Raw");
   console.log("  --tpose              Generate T/A pose for humans");
   console.log("  --preview            Generate preview render");
   console.log("  --bbox <w,h,l>       Bounding box condition");
@@ -796,7 +810,7 @@ async function main() {
 
         const urls = Array.isArray(value) ? value : [value];
         for (let j = 0; j < urls.length; j++) {
-          const url = typeof urls[j] === "string" ? urls[j] : urls[j]?.url ? urls[j].url : String(urls[j]);
+          const url = toUrlString(urls[j]);
           if (!url || !url.startsWith("http")) continue;
 
           const ext = getExtFromUrl(url);
@@ -814,7 +828,7 @@ async function main() {
       // Array of URLs (mvdream, shape)
       const urls = Array.isArray(output) ? output : [output];
       for (let i = 0; i < urls.length; i++) {
-        const url = typeof urls[i] === "string" ? urls[i] : urls[i]?.url || String(urls[i]);
+        const url = toUrlString(urls[i]);
         if (!url || !url.startsWith("http")) continue;
 
         const ext = getExtFromUrl(url, opts.mesh ? "obj" : "gif");
@@ -829,7 +843,7 @@ async function main() {
       }
     } else {
       // Single URI output (rodin, hunyuan2mv)
-      const url = typeof output === "string" ? output : output?.url ? (typeof output.url === "function" ? output.url().toString() : output.url) : null;
+      const url = toUrlString(output) || null;
       if (!url) {
         console.log("Raw output:", JSON.stringify(output, null, 2));
         throw new Error("Could not extract output URL from model response");

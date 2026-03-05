@@ -1,0 +1,42 @@
+{
+  "prompt": null,
+  "model": "firtoz/trellis:e8f6c45206993f297372f5436b90350817bd9b4a0d52d2a76df50c1c8afa2b3c",
+  "modelName": "TRELLIS",
+  "type": "image-to-3d",
+  "referenceImage": "./media/2026-03-05T03-22-52_imagen4_a-realistic-human-skull-split-along-the.jpg",
+  "multiView": {
+    "front": null,
+    "back": null,
+    "left": null,
+    "right": null
+  },
+  "seed": null,
+  "format": null,
+  "faces": null,
+  "quality": null,
+  "steps": null,
+  "guidance": null,
+  "stlConversion": true,
+  "timestamp": "2026-03-05T03:24:36.177Z",
+  "elapsed": "55.0s",
+  "files": [
+    {
+      "name": "2026-03-05T03-24-35_trellis_20260305T032252imagen4arealistic_color_video.mp4",
+      "size": "0.21MB",
+      "type": "color_video",
+      "url": "https://replicate.delivery/yhqm/1OleDexkJdvzuUl04ARcnStFJtHWUB3MNKOCVhSy9AmzlqNWA/output_color.mp4"
+    },
+    {
+      "name": "2026-03-05T03-24-35_trellis_20260305T032252imagen4arealistic_model_file.glb",
+      "size": "1.81MB",
+      "type": "model_file",
+      "url": "https://replicate.delivery/yhqm/icTp1CqIgII9IdLhnPEiKjImiG7Ub7tBEnbULxL6Q85cpajF/output.glb"
+    },
+    {
+      "name": "2026-03-05T03-24-35_trellis_20260305T032252imagen4arealistic_model_file.stl",
+      "size": "1.23MB",
+      "type": "model_file_stl",
+      "url": "https://replicate.delivery/yhqm/icTp1CqIgII9IdLhnPEiKjImiG7Ub7tBEnbULxL6Q85cpajF/output.glb"
+    }
+  ]
+}

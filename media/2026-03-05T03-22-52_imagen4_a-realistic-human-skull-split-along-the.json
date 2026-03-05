@@ -1,0 +1,22 @@
+{
+  "prompt": "a realistic human skull split along the sagittal plane, two interlocking halves, detailed bone texture with suture lines and orbital ridges, closed position showing seamless join, white background, product photography, dramatic studio lighting",
+  "model": "google/imagen-4",
+  "modelName": "Imagen 4",
+  "aspectRatio": "default",
+  "resolution": "default",
+  "style": null,
+  "outputFormat": "default",
+  "seed": null,
+  "count": 1,
+  "mode": "text-to-image",
+  "referenceImage": null,
+  "timestamp": "2026-03-05T03:22:52.524Z",
+  "elapsed": "10.0s",
+  "files": [
+    {
+      "name": "2026-03-05T03-22-52_imagen4_a-realistic-human-skull-split-along-the.jpg",
+      "size": "0.69MB",
+      "url": "https://replicate.delivery/xezq/fQA620bGmkzPeU5c60e0oYadNwWFGe07e4VQn3nioZ3qhUtxC/tmp7ntepwpv.jpg"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
-  "version": "6.1.5",
-  "installedAt": "2026-03-04T19:54:45.619Z",
+  "version": "6.1.7",
+  "installedAt": "2026-03-05T02:39:14.440Z",
   "files": {
     ".github/agents/alex-azure.agent.md": {
       "type": "system",
@@ -40,7 +40,7 @@
     },
     ".github/copilot-instructions.md": {
       "type": "system",
-      "checksum": "b9b9f263d990d6b4d99c78b93fb30457"
+      "checksum": "6de9a526c20c4e72dd4789c848c4cd6f"
     },
     ".github/instructions/adversarial-oversight.instructions.md": {
       "type": "system",
@@ -102,6 +102,10 @@
       "type": "system",
       "checksum": "f7564272b78ff3b0670f983ffdc3a2c6"
     },
+    ".github/instructions/debugging-patterns.instructions.md": {
+      "type": "system",
+      "checksum": "2c1a9d51a3981fe55c157f5f46e26247"
+    },
     ".github/instructions/deep-thinking.instructions.md": {
       "type": "system",
       "checksum": "45e42966f64e8cc33e6c88524b91b8e0"
@@ -128,7 +132,7 @@
     },
     ".github/instructions/gamma-presentation.instructions.md": {
       "type": "system",
-      "checksum": "94989fc360be456b0335d211eb8da114"
+      "checksum": "46d2701ec06aecc678b2da92a1dedc0f"
     },
     ".github/instructions/global-knowledge-curation.instructions.md": {
       "type": "system",
@@ -194,6 +198,10 @@
       "type": "system",
       "checksum": "243d3a04849b6914f7fe6298219bb641"
     },
+    ".github/instructions/refactoring-patterns.instructions.md": {
+      "type": "system",
+      "checksum": "e16f4aaab710f0589ad64e9b1646a0b7"
+    },
     ".github/instructions/release-management.instructions.md": {
       "type": "system",
       "checksum": "e23e3c51e764fc659769e306590b432f"
@@ -206,9 +214,17 @@
       "type": "system",
       "checksum": "ca09f0af53af920922e0020816f0166e"
     },
+    ".github/instructions/root-cause-analysis.instructions.md": {
+      "type": "system",
+      "checksum": "6c1cfa86935d0feb61881e9b0a345611"
+    },
     ".github/instructions/secrets-management.instructions.md": {
       "type": "system",
       "checksum": "bddd121ff8d1cd560b400573ae055da0"
+    },
+    ".github/instructions/security-review.instructions.md": {
+      "type": "system",
+      "checksum": "0ea4e0fce8b63d0961ab33543814f607"
     },
     ".github/instructions/self-actualization.instructions.md": {
       "type": "system",
@@ -314,6 +330,10 @@
       "type": "system",
       "checksum": "75053a43c95e7dff79b04c5931880c58"
     },
+    ".github/prompts/debug.prompt.md": {
+      "type": "system",
+      "checksum": "67d5e28bb9ec6fa63a922da103cbd70b"
+    },
     ".github/prompts/diagramming-mastery-meditation.prompt.md": {
       "type": "system",
       "checksum": "e00fbd54f803bd9c58f04881b838d4b8"
@@ -353,6 +373,10 @@
     ".github/prompts/journey.prompt.md": {
       "type": "system",
       "checksum": "d94ef329ff6ae5d2e8868db50198d5bd"
+    },
+    ".github/prompts/knowledge.prompt.md": {
+      "type": "system",
+      "checksum": "ddad383c25155d0d9a9fe013971a4082"
     },
     ".github/prompts/learn.prompt.md": {
       "type": "system",
@@ -398,6 +422,10 @@
       "type": "system",
       "checksum": "a1f8556db375b4a07e25214ef32f3112"
     },
+    ".github/prompts/refactor.prompt.md": {
+      "type": "system",
+      "checksum": "11ff2d326a3a064ad61545ac12e3c9f5"
+    },
     ".github/prompts/release.prompt.md": {
       "type": "system",
       "checksum": "3392651d55baa70ea05530288f346921"
@@ -406,13 +434,25 @@
       "type": "system",
       "checksum": "a97847ef64aa692b3773db252ce6c073"
     },
+    ".github/prompts/root-cause-analysis.prompt.md": {
+      "type": "system",
+      "checksum": "589d292cb1c3eb743a941724c0ef7671"
+    },
     ".github/prompts/secrets.prompt.md": {
       "type": "system",
       "checksum": "3cb72972b6c0f04972143f1d5747bf9e"
     },
+    ".github/prompts/security-review.prompt.md": {
+      "type": "system",
+      "checksum": "2b399b970dc71b5a47f9f87d96329a5e"
+    },
     ".github/prompts/selfactualize.prompt.md": {
       "type": "system",
       "checksum": "a99f8b414f73bf196a7c72537df294db"
+    },
+    ".github/prompts/skill-building.prompt.md": {
+      "type": "system",
+      "checksum": "a6987dff79abd0eabf1a9245d5a50890"
     },
     ".github/prompts/tdd.prompt.md": {
       "type": "system",
@@ -465,6 +505,14 @@
     ".github/skills/academic-research/synapses.json": {
       "type": "system",
       "checksum": "9219b1f3eff91403266d3918704de9e4"
+    },
+    ".github/skills/agent-debug-panel/SKILL.md": {
+      "type": "system",
+      "checksum": "3aff0d0eddcce00ebb2acf578560d57b"
+    },
+    ".github/skills/agent-debug-panel/synapses.json": {
+      "type": "system",
+      "checksum": "3c9794e27dd6527c789c6aef17588f49"
     },
     ".github/skills/ai-agent-design/SKILL.md": {
       "type": "system",
@@ -880,7 +928,7 @@
     },
     ".github/skills/gamma-presentations/SKILL.md": {
       "type": "system",
-      "checksum": "ce77e5093734662dfb826507c0c3ece7"
+      "checksum": "a7a1d8d9915ee1dc6d4460bb3dfba0ca"
     },
     ".github/skills/gamma-presentations/synapses.json": {
       "type": "system",
@@ -901,6 +949,14 @@
     ".github/skills/global-knowledge/synapses.json": {
       "type": "system",
       "checksum": "26ff135dbec9d5505a99096f4029a774"
+    },
+    ".github/skills/global-knowledge-maintenance/SKILL.md": {
+      "type": "system",
+      "checksum": "fcecb54eadb919b6224b793328517257"
+    },
+    ".github/skills/global-knowledge-maintenance/synapses.json": {
+      "type": "system",
+      "checksum": "d96b29f1c0aa9aca94a0f671d48c5cf2"
     },
     ".github/skills/global-knowledge-sync/SKILL.md": {
       "type": "system",
@@ -1021,6 +1077,14 @@
     ".github/skills/markdown-mermaid/synapses.json": {
       "type": "system",
       "checksum": "6cff22ac660eec7a159547085ffcd4c9"
+    },
+    ".github/skills/master-alex-audit/SKILL.md": {
+      "type": "system",
+      "checksum": "9398a1feace48c64a5bda9119f2db398"
+    },
+    ".github/skills/master-alex-audit/synapses.json": {
+      "type": "system",
+      "checksum": "ad36174e3f748915eb28765cc09241ff"
     },
     ".github/skills/mcp-development/SKILL.md": {
       "type": "system",
@@ -1312,7 +1376,7 @@
     },
     ".github/skills/skill-activation/SKILL.md": {
       "type": "system",
-      "checksum": "c91348c7367d6d1ddace78539dee1886"
+      "checksum": "927c7da445e30840f3f265fe3e31a945"
     },
     ".github/skills/skill-activation/synapses.json": {
       "type": "system",
@@ -1386,6 +1450,14 @@
       "type": "system",
       "checksum": "c24eb7ff4762af5ee4a910d49aceef78"
     },
+    ".github/skills/terminal-image-rendering/SKILL.md": {
+      "type": "system",
+      "checksum": "61635c380220a17458bc17d8267fdcad"
+    },
+    ".github/skills/terminal-image-rendering/synapses.json": {
+      "type": "system",
+      "checksum": "f394f1feb17a1f9447fd419846ad8d4e"
+    },
     ".github/skills/testing-strategies/SKILL.md": {
       "type": "system",
       "checksum": "b152a647e79a93b500efbd5506a53253"
@@ -1452,7 +1524,7 @@
     },
     ".github/skills/vscode-extension-patterns/synapses.json": {
       "type": "system",
-      "checksum": "37f01140d959b6dd448d4cc894ada702"
+      "checksum": "93a29d25a5d0087a2241e91dd339540a"
     },
     ".github/skills/work-life-balance/SKILL.md": {
       "type": "system",

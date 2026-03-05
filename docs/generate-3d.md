@@ -40,7 +40,7 @@ node generate-3d.js --model trellis --image ./figurine.png --stl
 | `--faces <n>` | Target face count for mesh | — |
 | `--quality <str>` | Quality level (low, medium, high, extra-high) | — |
 | `--material <str>` | Material type (PBR, Shaded) | — |
-| `--meshmode <str>` | Mesh extraction mode | — |
+| `--meshmode <str>` | Mesh face type: `Quad` or `Raw` (Rodin only) | — |
 | `--tpose` | Generate in T-pose (for characters) | — |
 | `--preview` | Generate preview image | — |
 | `--steps <n>` | Diffusion steps | — |
