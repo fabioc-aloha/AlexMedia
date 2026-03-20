@@ -26,55 +26,56 @@ Get your token at [replicate.com/account/api-tokens](https://replicate.com/accou
 
 | Script | Models | Description | Docs |
 |--------|:------:|-------------|------|
-| `generate-video.js` | 17 | Text/image-to-video generation | [docs/generate-video.md](docs/generate-video.md) |
-| `generate-image.js` | 14 | Text/image-to-image generation | [docs/generate-image.md](docs/generate-image.md) |
-| `generate-voice.js` | 15 | Text-to-speech & voice cloning | [docs/generate-voice.md](docs/generate-voice.md) |
-| `generate-music.js` | 5 | AI music generation | [docs/generate-music.md](docs/generate-music.md) |
-| `generate-3d.js` | 6 | Text/image-to-3D model generation (STL for 3D printing) | [docs/generate-3d.md](docs/generate-3d.md) |
-| `generate-emoji.js` | 4 | Custom emoji/sticker generation | [docs/generate-emoji.md](docs/generate-emoji.md) |
-| `generate-edit-image.js` | 12 | Image editing & enhancement | [docs/generate-edit-image.md](docs/generate-edit-image.md) |
-| `generate-edit-video.js` | 10 | Video editing & processing | [docs/generate-edit-video.md](docs/generate-edit-video.md) |
-| `generate-3d-print.js` | 6 services | Upload to online 3D printing services & get quotes | [docs/generate-3d-print.md](docs/generate-3d-print.md) |
-| `generate-sticker-print.js` | 6 services | Order physical stickers & prints from production services | [docs/generate-sticker-print.md](docs/generate-sticker-print.md) |
+| `generate-video.js` | 17 | Text/image-to-video generation | [docs](docs/scripts/generate-video.md) |
+| `generate-image.js` | 14 | Text/image-to-image generation | [docs](docs/scripts/generate-image.md) |
+| `generate-voice.js` | 15 | Text-to-speech & voice cloning | [docs](docs/scripts/generate-voice.md) |
+| `generate-music.js` | 5 | AI music generation | [docs](docs/scripts/generate-music.md) |
+| `generate-3d.js` | 6 | Text/image-to-3D model generation (STL for 3D printing) | [docs](docs/scripts/generate-3d.md) |
+| `generate-emoji.js` | 4 | Custom emoji/sticker generation | [docs](docs/scripts/generate-emoji.md) |
+| `generate-edit-image.js` | 12 | Image editing & enhancement | [docs](docs/scripts/generate-edit-image.md) |
+| `generate-edit-video.js` | 10 | Video editing & processing | [docs](docs/scripts/generate-edit-video.md) |
+| `generate-3d-print.js` | 6 services | Upload to online 3D printing services & get quotes | [docs](docs/scripts/generate-3d-print.md) |
+| `generate-sticker-print.js` | 6 services | Order physical stickers & prints from production services | [docs](docs/scripts/generate-sticker-print.md) |
 
 ## Quick Start
 
 ```bash
 # Generate a video
-node generate-video.js "a cat playing piano"
+node scripts/generate-video.js "a cat playing piano"
+# or: npm run video -- "a cat playing piano"
 
 # Generate an image
-node generate-image.js "mountain landscape at sunset" --model flux2pro
+node scripts/generate-image.js "mountain landscape at sunset" --model flux2pro
 
 # Text-to-speech
-node generate-voice.js "Hello, how are you today?"
+node scripts/generate-voice.js "Hello, how are you today?"
 
 # Generate music
-node generate-music.js "epic orchestral theme" --model stableaudio --duration 60
+node scripts/generate-music.js "epic orchestral theme" --model stableaudio --duration 60
 
 # Create a 3D model
-node generate-3d.js "a medieval sword" --image ./sword.png
+node scripts/generate-3d.js "a medieval sword" --image ./sword.png
 
 # Generate emoji
-node generate-emoji.js "happy robot"
+node scripts/generate-emoji.js "happy robot"
 
 # Edit an image (remove background)
-node generate-edit-image.js --model rembg --image ./photo.jpg
+node scripts/generate-edit-image.js --model rembg --image ./photo.jpg
 
 # Edit a video (trim)
-node generate-edit-video.js --model trim --video ./clip.mp4 --start 5 --end 15
+node scripts/generate-edit-video.js --model trim --video ./clip.mp4 --start 5 --end 15
 
 # Get 3D printing quotes
-node generate-3d-print.js --file ./model.stl --service all
+node scripts/generate-3d-print.js --file ./model.stl --service all
 
 # Order physical stickers
-node generate-sticker-print.js --file ./sticker.png --service all --type die-cut
+node scripts/generate-sticker-print.js --file ./sticker.png --service all --type die-cut
 ```
 
 Every script supports `--help` for full usage info:
 
 ```bash
-node generate-video.js --help
+node scripts/generate-video.js --help
 ```
 
 ## All Models
@@ -208,10 +209,10 @@ Scripts save results to typed subfolders under `./media/`:
 
 | Scripts | Output folder |
 |---------|---------------|
-| `generate-image.js`, `generate-edit-image.js`, `generate-emoji.js` | `media/images/` |
-| `generate-video.js`, `generate-edit-video.js` | `media/video/` |
-| `generate-music.js`, `generate-voice.js` | `media/audio/` |
-| `generate-3d.js` | `media/3d/` |
+| `generate-image`, `generate-edit-image`, `generate-emoji` | `media/images/` |
+| `generate-video`, `generate-edit-video` | `media/video/` |
+| `generate-music`, `generate-voice` | `media/audio/` |
+| `generate-3d` | `media/3d/` |
 
 Each output includes the generated file and a JSON report with metadata (model, prompt, parameters, timing, cost).
 
@@ -219,44 +220,35 @@ Each output includes the generated file and a JSON report with metadata (model, 
 
 ```
 AlexMedia/
-├── generate-video.js          # Video generation (17 models)
-├── generate-image.js          # Image generation (14 models)
-├── generate-voice.js          # TTS & voice cloning (15 models)
-├── generate-music.js          # Music generation (5 models)
-├── generate-3d.js             # 3D model generation (6 models)
-├── generate-emoji.js          # Emoji generation (4 models)
-├── generate-edit-image.js     # Image editing (12 models)
-├── generate-edit-video.js     # Video editing (10 models)
-├── generate-3d-print.js       # 3D print service integration (6 services)
-├── generate-sticker-print.js  # Sticker print production (6 services)
-├── package.json
-├── .env                       # REPLICATE_API_TOKEN (not committed)
-├── docs/                      # Per-script documentation & workflow guides
-│   ├── generate-video.md
-│   ├── generate-image.md
-│   ├── generate-voice.md
-│   ├── generate-music.md
-│   ├── generate-3d.md
-│   ├── generate-emoji.md
-│   ├── generate-edit-image.md
-│   ├── generate-edit-video.md
-│   ├── generate-3d-print.md
-│   ├── generate-sticker-print.md
-│   ├── 3d-printing-services-guide.md
-│   ├── 3d-design-to-print-workflow.md
-│   ├── sticker-print-production-workflow.md
-│   ├── video-production-workflow.md
-│   ├── image-creation-workflow.md
-│   ├── audio-production-workflow.md
-│   └── emoji-sticker-workflow.md
+├── scripts/                   # Generation & editing CLI scripts
+│   ├── generate-video.js      # Video generation (17 models)
+│   ├── generate-image.js      # Image generation (14 models)
+│   ├── generate-voice.js      # TTS & voice cloning (15 models)
+│   ├── generate-music.js      # Music generation (5 models)
+│   ├── generate-3d.js         # 3D model generation (6 models)
+│   ├── generate-emoji.js      # Emoji generation (4 models)
+│   ├── generate-edit-image.js # Image editing (12 models)
+│   ├── generate-edit-video.js # Video editing (10 models)
+│   ├── generate-3d-print.js   # 3D print service integration (6 services)
+│   └── generate-sticker-print.js # Sticker print production (6 services)
+├── docs/
+│   ├── scripts/               # Per-script API reference
+│   └── workflows/             # End-to-end production guides
 ├── media/                     # Generated media (organized by type)
-│   ├── images/                # generate-image, generate-edit-image, generate-emoji
-│   ├── video/                 # generate-video, generate-edit-video
-│   ├── audio/                 # generate-music, generate-voice
-│   └── 3d/                   # generate-3d
-└── projects/                  # Named design projects
-    ├── pen-cup/               # Gothic Spire pen cup concept + assets
-    └── skull-amygdala/        # Split skull amygdala concept + assets
+│   ├── images/
+│   ├── video/
+│   ├── audio/
+│   └── 3d/
+├── assets/                    # Banners, reference images
+├── projects/                  # Named creative projects
+│   ├── alex-breakfast/        # Alex Finch Detective animated episode
+│   ├── alex-ui-icons/         # AI-generated UI icon set
+│   ├── fabio-linkedin/        # Professional headshot generation
+│   ├── pen-cup/               # Gothic Spire pen cup concept
+│   ├── skull-amygdala/        # Split skull amygdala concept
+│   └── sports-videos/         # Sports video compilation
+├── package.json
+└── .env                       # REPLICATE_API_TOKEN (not committed)
 ```
 
 ## Dependencies

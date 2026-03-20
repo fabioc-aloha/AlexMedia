@@ -76,7 +76,7 @@ foreach ($shot in $frameShots) {
     $beforeGen = Get-Date
   
     # Generate still image matching the shot's opening composition (ideoturbo: reliable, $0.03, ~7s)
-    node generate-image.js $shot.p --model ideoturbo --aspect 16:9
+    node scripts/generate-image.js $shot.p --model ideoturbo --aspect 16:9
     $exitCode = $LASTEXITCODE
   
     if ($exitCode -ne 0) {
@@ -126,11 +126,11 @@ foreach ($shot in $shots) {
   
     if ($useFrame) {
         Write-Host "   Frame: $frameFile"
-        node generate-video.js $shot.p --model $shot.m --duration $shot.d --image $frameFile
+        node scripts/generate-video.js $shot.p --model $shot.m --duration $shot.d --image $frameFile
     }
     else {
         Write-Host "   Frame: (none — text-to-video)"
-        node generate-video.js $shot.p --model $shot.m --duration $shot.d
+        node scripts/generate-video.js $shot.p --model $shot.m --duration $shot.d
     }
   
     $exitCode = $LASTEXITCODE
@@ -164,4 +164,4 @@ Write-Host "🎉 Phase 1 Complete: All video shots generated!"
 Write-Host "📁 Files saved to: $dest\"
 Write-Host ""
 Write-Host "🎯 Next: Generate title card (Shot 25)"
-Write-Host "   node generate-image.js ""Title card..."" --model ideoturbo --aspect 16:9"
+Write-Host "   node scripts/generate-image.js ""Title card..."" --model ideoturbo --aspect 16:9"

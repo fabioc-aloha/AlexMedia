@@ -1,8 +1,23 @@
 {
   "hotFiles": [],
   "stalledFiles": [
-    "github/episodic/peripheral/file-observations.json"
+    "README.md",
+    "alex-reference.png -> assets/alex-reference.png",
+    "docs/generate-3d-print.md -> docs/scripts/generate-3d-print.md",
+    "docs/generate-3d.md -> docs/scripts/generate-3d.md",
+    "docs/generate-edit-image.md -> docs/scripts/generate-edit-image.md",
+    "docs/generate-edit-video.md -> docs/scripts/generate-edit-video.md",
+    "docs/generate-emoji.md -> docs/scripts/generate-emoji.md",
+    "docs/generate-image.md -> docs/scripts/generate-image.md",
+    "docs/generate-music.md -> docs/scripts/generate-music.md",
+    "docs/generate-sticker-print.md -> docs/scripts/generate-sticker-print.md"
   ],
-  "todoHotspots": [],
-  "lastUpdated": 1773934332425
+  "todoHotspots": [
+    {
+      "file": "projects/azorean-rap/media/2026-03-20T02-26-21_music15_Brazilian-Portuguese-rap-from-Florianopo.json",
+      "todoCount": 1,
+      "scannedAt": 1773977336410
+    }
+  ],
+  "lastUpdated": 1773977336410
 }

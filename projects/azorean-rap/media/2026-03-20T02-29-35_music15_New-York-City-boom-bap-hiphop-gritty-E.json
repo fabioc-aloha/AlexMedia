@@ -1,0 +1,21 @@
+{
+  "prompt": "New York City boom bap hip-hop, gritty East Coast rap, raw street storytelling, emotional chorus, Bronx rapper, NYC rap anthem, hard drums",
+  "model": "minimax/music-1.5",
+  "modelName": "MiniMax Music 1.5",
+  "seed": null,
+  "format": null,
+  "lyrics": "[chorus]\nI aint gonna cry\nThis life wasnt made for me\nI aint gonna cry\nThis life wasnt made for me\n\n[verse]\nBorn in the Bronx yeah I rep my block no fear\nForty in my hand Im just drowning every tear\nMama dont cry everything I do for you\nWhen I was locked up you was there to see me through\n\n[chorus]\nI aint gonna cry\nThis life wasnt made for me\nI aint gonna cry\nThis life wasnt made for me\n\n[verse]\nIm the voice of every kid out on these streets with nothing\nNo food on the table every single day be hustling\n\n[chorus]\nI aint gonna cry\nThis life wasnt made for me",
+  "duration": null,
+  "lengthMs": null,
+  "vocals": false,
+  "referenceFiles": {
+    "song": null,
+    "voice": null,
+    "instrumental": null
+  },
+  "timestamp": "2026-03-20T02:29:36.179Z",
+  "elapsed": "48.7s",
+  "fileSize": "2.10MB",
+  "outputFile": "2026-03-20T02-29-35_music15_New-York-City-boom-bap-hiphop-gritty-E.mp3",
+  "audioUrl": "https://replicate.delivery/xezq/b33RQ4jUewXTIq9kaySU0XVlsT7RtXY7gJfLcziEhzxOMmSWA/tmptwwf82lv.mp3"
+}

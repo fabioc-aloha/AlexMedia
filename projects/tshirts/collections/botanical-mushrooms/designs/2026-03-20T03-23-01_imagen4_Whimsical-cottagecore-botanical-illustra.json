@@ -1,0 +1,22 @@
+{
+  "prompt": "Whimsical cottagecore botanical illustration of fantastical AI-dreamed mushrooms in a fairy garden setting. Oversized pastel-colored mushrooms with impossible features: one with a polka-dot cap morphing into butterflies at the edges, another with a braided stem with tiny glowing windows like a fairy house, a cluster of tiny mushrooms whose caps are shaped like upside-down teacups with painted china patterns, and a tall elegant mushroom with a stained glass umbrella cap. Soft watercolor palette of blush pink, sage green, lavender, and butter yellow. Surrounded by forget-me-nots and tiny ferns. Gentle morning light, hand-painted feel",
+  "model": "google/imagen-4",
+  "modelName": "Imagen 4",
+  "aspectRatio": "3:4",
+  "resolution": "default",
+  "style": null,
+  "outputFormat": "default",
+  "seed": null,
+  "count": 1,
+  "mode": "text-to-image",
+  "referenceImages": null,
+  "timestamp": "2026-03-20T03:23:01.493Z",
+  "elapsed": "8.4s",
+  "files": [
+    {
+      "name": "2026-03-20T03-23-01_imagen4_Whimsical-cottagecore-botanical-illustra.jpg",
+      "size": "1.46MB",
+      "url": "https://replicate.delivery/xezq/omdeza6Kl1Q4XyFnCWtZrSGLGQC2mZvDn1bkQw17MZzKfmSWA/tmpj36o6fb8.jpg"
+    }
+  ]
+}

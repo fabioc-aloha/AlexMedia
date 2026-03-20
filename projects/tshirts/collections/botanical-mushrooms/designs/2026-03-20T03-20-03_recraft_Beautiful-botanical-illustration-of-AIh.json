@@ -1,0 +1,22 @@
+{
+  "prompt": "Beautiful botanical illustration of AI-hallucinated mushrooms with impossible fractal gills, bioluminescent caps in electric blue and violet, delicate watercolor style on aged parchment background, scientific diagram labels in Latin nonsense text, detailed cross-section showing crystalline spore structures, hand-drawn ink outlines with soft color washes, museum-quality natural history plate",
+  "model": "recraft-ai/recraft-v4",
+  "modelName": "Recraft v4",
+  "aspectRatio": "3:4",
+  "resolution": "default",
+  "style": null,
+  "outputFormat": "default",
+  "seed": null,
+  "count": 1,
+  "mode": "text-to-image",
+  "referenceImages": null,
+  "timestamp": "2026-03-20T03:20:03.248Z",
+  "elapsed": "16.0s",
+  "files": [
+    {
+      "name": "2026-03-20T03-20-03_recraft_Beautiful-botanical-illustration-of-AIh.webp",
+      "size": "1.53MB",
+      "url": "https://replicate.delivery/xezq/Lo5KY6EWzBakJxljLNQUeuk53LC3he9m1MOWGhvTUU7j7mSWA/tmptt2gz5av.webp"
+    }
+  ]
+}

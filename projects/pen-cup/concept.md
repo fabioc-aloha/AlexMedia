@@ -87,23 +87,23 @@ Generate multiple reference angles before feeding to the 3D model generator.
 
 ```bash
 # Front-facing concept render
-node generate-image.js "a miniature Gothic cathedral pen cup, cylindrical, recursive nested arches on exterior walls, battlemented crown parapet, octagonal plinth base, white background, product photography, studio lighting, ultra-detailed" --model imagen4
+node scripts/generate-image.js "a miniature Gothic cathedral pen cup, cylindrical, recursive nested arches on exterior walls, battlemented crown parapet, octagonal plinth base, white background, product photography, studio lighting, ultra-detailed" --model imagen4
 
 # Side profile
-node generate-image.js "Gothic spire pen cup side view, recursive arches, tracery detail, matte black material, white background, architectural product render" --model nanapro
+node scripts/generate-image.js "Gothic spire pen cup side view, recursive arches, tracery detail, matte black material, white background, architectural product render" --model nanapro
 
 # Top-down showing crown
-node generate-image.js "top view of Gothic pen cup, castellated rim with pointed finials, circular opening, white background" --model nanapro
+node scripts/generate-image.js "top view of Gothic pen cup, castellated rim with pointed finials, circular opening, white background" --model nanapro
 ```
 
 ### Step 2 — 3D Model Generation (generate-3d.js)
 
 ```bash
 # Image-to-3D from best reference (Rodin — native STL, best architecture detail)
-node generate-3d.js --model rodin --image ./reference-pen-cup.png --quality high --material PBR --stl --meshmode Triangle
+node scripts/generate-3d.js --model rodin --image ./reference-pen-cup.png --quality high --material PBR --stl --meshmode Triangle
 
 # Alternative: Trellis (higher mesh fidelity, per-second billing)
-node generate-3d.js --model trellis --image ./reference-pen-cup.png --stl
+node scripts/generate-3d.js --model trellis --image ./reference-pen-cup.png --stl
 ```
 
 ### Step 3 — Mesh Inspection
@@ -117,10 +117,10 @@ node generate-3d.js --model trellis --image ./reference-pen-cup.png --stl
 
 ```bash
 # No-auth Sculpteo quote (BASF industrial printing)
-node generate-3d-print.js --file ./pen-cup.stl --service sculpteo --material plastic
+node scripts/generate-3d-print.js --file ./pen-cup.stl --service sculpteo --material plastic
 
 # All services comparison
-node generate-3d-print.js --file ./pen-cup.stl --service all
+node scripts/generate-3d-print.js --file ./pen-cup.stl --service all
 ```
 
 ---

@@ -1,0 +1,22 @@
+{
+  "prompt": "T-shirt graphic design, black background. Large bold white text in center reading 'AI CREATED ME THIS T-SHIRT' with subtle digital glitch effect on some letters. Below in smaller text: 'honestly, I didnt even pick the font'. Clean modern typography, professional print design.",
+  "model": "ideogram-ai/ideogram-v3-quality",
+  "modelName": "Ideogram v3 Quality",
+  "aspectRatio": "default",
+  "resolution": "default",
+  "style": null,
+  "outputFormat": "png",
+  "seed": null,
+  "count": 1,
+  "mode": "text-to-image",
+  "referenceImages": null,
+  "timestamp": "2026-03-20T02:52:48.523Z",
+  "elapsed": "9.9s",
+  "files": [
+    {
+      "name": "2026-03-20T02-52-48_ideoqual_Tshirt-graphic-design-black-background.png",
+      "size": "0.45MB",
+      "url": "https://replicate.delivery/xezq/tHYJCuOSyfUmKaXsOrZiTJjKlFa72wusFSd7f4JwbzEAimSWA/tmp5uxqroxu.png"
+    }
+  ]
+}

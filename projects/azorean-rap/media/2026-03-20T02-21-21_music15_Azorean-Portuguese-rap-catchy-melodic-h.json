@@ -1,0 +1,21 @@
+{
+  "prompt": "Azorean Portuguese rap, catchy melodic hook, emotional chorus, São Miguel Açores island, hip-hop with strong hook, Portuguese rap anthem from the islands",
+  "model": "minimax/music-1.5",
+  "modelName": "MiniMax Music 1.5",
+  "seed": null,
+  "format": null,
+  "lyrics": "[chorus]\nEu não vou chorar\nEsta vida não era para mim\nEu não vou chorar\nEsta vida não era para mim\n\n[verse]\nRabo de Peixe eu sou de Rabo de Peixe mas não tenhas medo\nO garrafão dá-me sede eu sou um grande bêbado\nMinha mãe não chora isso é tudo para ti\nQuanto eu tava na cadeia távas lá pra mim\n\n[chorus]\nEu não vou chorar\nEsta vida não era para mim\nEu não vou chorar\nEsta vida não era para mim\n\n[verse]\nEu sou a boca das crianças dos pequenos de Rabo de Peixe\nAqueles que não têm nada todo o dia na bebida\n\n[chorus]\nEu não vou chorar\nEsta vida não era para mim",
+  "duration": null,
+  "lengthMs": null,
+  "vocals": false,
+  "referenceFiles": {
+    "song": null,
+    "voice": null,
+    "instrumental": null
+  },
+  "timestamp": "2026-03-20T02:21:22.361Z",
+  "elapsed": "70.9s",
+  "fileSize": "2.34MB",
+  "outputFile": "2026-03-20T02-21-21_music15_Azorean-Portuguese-rap-catchy-melodic-h.mp3",
+  "audioUrl": "https://replicate.delivery/xezq/79hHnYk3ns6QOVtzDUl1ZwNBlCaXXrQm1JvvfeINMBNhEmSWA/tmp82c0ej3s.mp3"
+}

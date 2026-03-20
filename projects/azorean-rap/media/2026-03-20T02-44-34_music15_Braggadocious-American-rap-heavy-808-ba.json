@@ -1,0 +1,21 @@
+{
+  "prompt": "Braggadocious American rap, heavy 808 bass, triumphant horns, bold dramatic hip-hop, billionaire energy, deep male voice, East Coast swagger",
+  "model": "minimax/music-1.5",
+  "modelName": "MiniMax Music 1.5",
+  "seed": null,
+  "format": null,
+  "lyrics": "[chorus] I aint gonna cry This life was made for me I aint gonna cry My voice will never quit [verse] Born in Queens built towers to the sky Penthouse living way up high Mama said son you were born to win Gold everything just let me in [chorus] I aint gonna cry This life was made for me I aint gonna cry My voice will never quit [verse] Voice of the people hear them in the streets From the beaches to the executive seats They said I couldnt win but I proved them wrong Unbelievable tremendous thats my song",
+  "duration": null,
+  "lengthMs": null,
+  "vocals": false,
+  "referenceFiles": {
+    "song": null,
+    "voice": null,
+    "instrumental": null
+  },
+  "timestamp": "2026-03-20T02:44:35.151Z",
+  "elapsed": "105.5s",
+  "fileSize": "1.23MB",
+  "outputFile": "2026-03-20T02-44-34_music15_Braggadocious-American-rap-heavy-808-ba.mp3",
+  "audioUrl": "https://replicate.delivery/xezq/EWYcNTKnVEbWGdpMCLwwqa8RfBClLs5ikJSNS7MJj1qINTJLA/tmpl_ir1blp.mp3"
+}

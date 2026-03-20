@@ -1,0 +1,22 @@
+{
+  "prompt": "T-shirt print design, black background. Styled as a clothing care label tag. White rectangular tag shape in center. Inside the tag in clean small text: 'MATERIAL: 100%% AI GENERATED', 'CARE: MACHINE WASH COLD', 'WARNING: NO HUMANS WERE INVOLVED', 'ORIGIN: NEURAL NETWORK', 'STYLE: PROMPT-ENGINEERED'. Realistic care label typography. Minimalist, ironic humor.",
+  "model": "ideogram-ai/ideogram-v3-quality",
+  "modelName": "Ideogram v3 Quality",
+  "aspectRatio": "default",
+  "resolution": "default",
+  "style": null,
+  "outputFormat": "png",
+  "seed": null,
+  "count": 1,
+  "mode": "text-to-image",
+  "referenceImages": null,
+  "timestamp": "2026-03-20T02:53:24.701Z",
+  "elapsed": "10.4s",
+  "files": [
+    {
+      "name": "2026-03-20T02-53-24_ideoqual_Tshirt-print-design-black-background.png",
+      "size": "0.52MB",
+      "url": "https://replicate.delivery/xezq/5yGgT5K4kobWOF4Iwar2nB817TBkgqsKQre3feECWeJTKaKZB/tmplt0gyikb.png"
+    }
+  ]
+}

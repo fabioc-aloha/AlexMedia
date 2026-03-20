@@ -1,0 +1,22 @@
+{
+  "prompt": "T-shirt print design on transparent background. Bold modern sans-serif typography centered: 'AI CREATED ME THIS T-SHIRT' in clean white text. Minimalist, stark, confident. No decoration, just powerful type. Print-ready artwork for direct-to-garment printing.",
+  "model": "recraft-ai/recraft-v4",
+  "modelName": "Recraft v4",
+  "aspectRatio": "default",
+  "resolution": "default",
+  "style": "graphic_illustration",
+  "outputFormat": "png",
+  "seed": null,
+  "count": 1,
+  "mode": "text-to-image",
+  "referenceImages": null,
+  "timestamp": "2026-03-20T02:52:30.650Z",
+  "elapsed": "11.8s",
+  "files": [
+    {
+      "name": "2026-03-20T02-52-30_recraft_Tshirt-print-design-on-transparent-back.png",
+      "size": "0.23MB",
+      "url": "https://replicate.delivery/xezq/1DEbIVBYNRr3G5DtfuLvskqLnqEkgVTh72PCyplahf9uhmSWA/tmpj1l14f7q.webp"
+    }
+  ]
+}

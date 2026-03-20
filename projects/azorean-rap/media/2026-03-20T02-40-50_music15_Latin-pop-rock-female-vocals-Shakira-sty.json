@@ -1,0 +1,21 @@
+{
+  "prompt": "Latin pop rock female vocals Shakira style, Colombian cumbia fusion, powerful passionate singing, hip-shaking rhythm, emotional Spanish ballad with rock energy, world music",
+  "model": "minimax/music-1.5",
+  "modelName": "MiniMax Music 1.5",
+  "seed": null,
+  "format": null,
+  "lyrics": "[chorus] No voy a llorar Esta vida no era pa mi No voy a llorar Mi voz no se va a rendir [verse] Naci en las calles donde el sol quema la piel Barranquilla me enseno a ser fuerte y fiel Mama no llores que tu hija va a volver Con cicatrices pero lista pa vencer [chorus] No voy a llorar Esta vida no era pa mi No voy a llorar Mi voz no se va a rendir [verse] Soy la voz de los ninos sin hogar De los que luchan solo pa sonar La pobreza no me va a callar Mis caderas no mienten al cantar",
+  "duration": null,
+  "lengthMs": null,
+  "vocals": false,
+  "referenceFiles": {
+    "song": null,
+    "voice": null,
+    "instrumental": null
+  },
+  "timestamp": "2026-03-20T02:40:50.521Z",
+  "elapsed": "63.7s",
+  "fileSize": "2.98MB",
+  "outputFile": "2026-03-20T02-40-50_music15_Latin-pop-rock-female-vocals-Shakira-sty.mp3",
+  "audioUrl": "https://replicate.delivery/xezq/Usu3FrKEviIeOKL2CrTzdZN3peFQcJYHj6fyj4UNKiIgtMlsA/tmpwz4118_5.mp3"
+}

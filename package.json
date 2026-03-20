@@ -1,10 +1,19 @@
 {
   "name": "alexmedia",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "CLI toolkit for generating and editing media via Replicate",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "video": "node scripts/generate-video.js",
+    "image": "node scripts/generate-image.js",
+    "voice": "node scripts/generate-voice.js",
+    "music": "node scripts/generate-music.js",
+    "3d": "node scripts/generate-3d.js",
+    "emoji": "node scripts/generate-emoji.js",
+    "edit:image": "node scripts/generate-edit-image.js",
+    "edit:video": "node scripts/generate-edit-video.js",
+    "print:3d": "node scripts/generate-3d-print.js",
+    "print:sticker": "node scripts/generate-sticker-print.js",
+    "print:tshirt": "node scripts/generate-tshirt.js"
   },
   "keywords": [],
   "author": "",

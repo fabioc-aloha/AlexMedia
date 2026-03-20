@@ -94,16 +94,16 @@ It is a philosophical object. *Fear is what we keep hidden. Open the skull and t
 
 ```bash
 # Closed skull — full beauty shot
-node generate-image.js "a realistic human skull split along the sagittal plane, two interlocking halves, detailed bone texture with suture lines and orbital ridges, closed position showing seamless join, white background, product photography, dramatic studio lighting" --model imagen4
+node scripts/generate-image.js "a realistic human skull split along the sagittal plane, two interlocking halves, detailed bone texture with suture lines and orbital ridges, closed position showing seamless join, white background, product photography, dramatic studio lighting" --model imagen4
 
 # Open skull — revealing the sphere
-node generate-image.js "human skull split open into two halves revealing a single glowing white sphere inside the cranial cavity, representing the amygdala, minimalist interior, dramatic side lighting, white background, ultra-detailed bone texture exterior" --model imagen4
+node scripts/generate-image.js "human skull split open into two halves revealing a single glowing white sphere inside the cranial cavity, representing the amygdala, minimalist interior, dramatic side lighting, white background, ultra-detailed bone texture exterior" --model imagen4
 
 # The sphere alone
-node generate-image.js "a single perfect glossy white sphere 30mm diameter, smooth polished surface, soft studio lighting, subtle almond shape relief etching, white background, product photography" --model nanapro
+node scripts/generate-image.js "a single perfect glossy white sphere 30mm diameter, smooth polished surface, soft studio lighting, subtle almond shape relief etching, white background, product photography" --model nanapro
 
 # Interior cavity detail
-node generate-image.js "interior of a human skull half, smooth curved inner surface, hemispherical cradle depression for a sphere, detailed bone cross-section texture, dramatic lighting from above" --model nanapro
+node scripts/generate-image.js "interior of a human skull half, smooth curved inner surface, hemispherical cradle depression for a sphere, detailed bone cross-section texture, dramatic lighting from above" --model nanapro
 ```
 
 ### Step 2 — 3D Model Generation (generate-3d.js)
@@ -112,13 +112,13 @@ The skull is too complex for a single AI 3D generation pass. Strategy: generate 
 
 ```bash
 # Full skull base mesh (Trellis — highest geometric fidelity)
-node generate-3d.js --model trellis --image ./skull-closed-reference.png --stl
+node scripts/generate-3d.js --model trellis --image ./skull-closed-reference.png --stl
 
 # Sphere (simpler — generate or create in slicer directly)
-node generate-3d.js --model trellis --image ./sphere-reference.png --stl
+node scripts/generate-3d.js --model trellis --image ./sphere-reference.png --stl
 
 # Alternative: Rodin for skull detail
-node generate-3d.js --model rodin --image ./skull-closed-reference.png --quality high --material PBR --stl --meshmode Quad
+node scripts/generate-3d.js --model rodin --image ./skull-closed-reference.png --quality high --material PBR --stl --meshmode Quad
 ```
 
 ### Step 3 — Mesh Post-Processing (Manual — Required)
@@ -136,10 +136,10 @@ AI will generate a solid skull. Post-processing in Blender is necessary for the 
 
 ```bash
 # Quote skull halves
-node generate-3d-print.js --file ./skull-half-left.stl --service all
+node scripts/generate-3d-print.js --file ./skull-half-left.stl --service all
 
 # Quote sphere
-node generate-3d-print.js --file ./skull-amygdala-sphere.stl --service all
+node scripts/generate-3d-print.js --file ./skull-amygdala-sphere.stl --service all
 ```
 
 ---

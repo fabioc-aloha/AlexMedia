@@ -1,0 +1,22 @@
+{
+  "prompt": "Exquisite vintage botanical illustration plate titled 'FUNGI ARTIFICIALIS' showing a surreal collection of impossible mushroom species hallucinated by artificial intelligence. Features: a mushroom with a perfectly symmetrical mandala-patterned cap in deep crimson and gold, a transparent jellyfish-mushroom hybrid with trailing luminous tendrils, a mushroom colony where each cap displays a different impossible Escher-like pattern, and a towering mushroom with a cap made of interlocking gears and clockwork. Rendered in the style of Ernst Haeckel's Kunstformen der Natur, with meticulous crosshatching, precise stippling, elegant calligraphy labels, decorative art nouveau border frame",
+  "model": "google/imagen-4-ultra",
+  "modelName": "Imagen 4 Ultra",
+  "aspectRatio": "3:4",
+  "resolution": "default",
+  "style": null,
+  "outputFormat": "default",
+  "seed": null,
+  "count": 1,
+  "mode": "text-to-image",
+  "referenceImages": null,
+  "timestamp": "2026-03-20T03:21:11.072Z",
+  "elapsed": "14.1s",
+  "files": [
+    {
+      "name": "2026-03-20T03-21-10_imagen4u_Exquisite-vintage-botanical-illustration.jpg",
+      "size": "2.40MB",
+      "url": "https://replicate.delivery/xezq/fbQPpIUVJ9SrPig6a9rGMDHIU8VhLtnWVzHf0x0e7yGN5NlsA/tmp3gaf2mbh.jpg"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "prompt": "Texas Southern rap Houston chopped and screwed style, slow heavy bass, dirty south hip-hop, emotional chorus, raw street storytelling, H-Town rapper, DJ Screw influence",
+  "model": "minimax/music-1.5",
+  "modelName": "MiniMax Music 1.5",
+  "seed": null,
+  "format": null,
+  "lyrics": "[chorus]\nI aint gonna cry\nThis life wasnt meant for me\nI aint gonna cry\nThis life wasnt meant for me\n\n[verse]\nBorn down in Houston repping Southside no fear\nStyrofoam in my cup Im just sippin on these tears\nMama dont cry everything I did for you\nWhen I was locked up you was there to pull me through\n\n[chorus]\nI aint gonna cry\nThis life wasnt meant for me\nI aint gonna cry\nThis life wasnt meant for me\n\n[verse]\nIm the voice of every kid riding dirty with nothing\nNo plate on the table third ward stay hustling\n\n[chorus]\nI aint gonna cry\nThis life wasnt meant for me",
+  "duration": null,
+  "lengthMs": null,
+  "vocals": false,
+  "referenceFiles": {
+    "song": null,
+    "voice": null,
+    "instrumental": null
+  },
+  "timestamp": "2026-03-20T02:36:22.117Z",
+  "elapsed": "125.8s",
+  "fileSize": "2.54MB",
+  "outputFile": "2026-03-20T02-36-21_music15_Texas-Southern-rap-Houston-chopped-and-s.mp3",
+  "audioUrl": "https://replicate.delivery/xezq/kp4rKPxG4u5MH9bH0OJ6ADGk1nrhi0Vka7fcOmrUrQSSJTJLA/tmpfx5bw9qz.mp3"
+}

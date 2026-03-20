@@ -1,0 +1,22 @@
+{
+  "prompt": "Scientific botanical plate illustration: collection of impossible AI-hallucinated mushroom species arranged on cream paper. Include: a spiral-capped mushroom with golden Fibonacci geometry, a translucent glass-like mushroom revealing internal neural networks, a cluster of tiny mushrooms growing from a circuit board, and a massive mushroom with galaxy-pattern cap. Precise ink line work, muted earth-tone watercolors with pops of iridescent color, specimen labels with fake Latin binomial names, aged paper texture with foxing spots",
+  "model": "ideogram-ai/ideogram-v3-quality",
+  "modelName": "Ideogram v3 Quality",
+  "aspectRatio": "3:4",
+  "resolution": "default",
+  "style": null,
+  "outputFormat": "default",
+  "seed": null,
+  "count": 1,
+  "mode": "text-to-image",
+  "referenceImages": null,
+  "timestamp": "2026-03-20T03:20:24.284Z",
+  "elapsed": "11.2s",
+  "files": [
+    {
+      "name": "2026-03-20T03-20-24_ideoqual_Scientific-botanical-plate-illustration.png",
+      "size": "1.63MB",
+      "url": "https://replicate.delivery/xezq/zBAbLXl8e3UVN6hwss6J6siyWCvLNr39sh6XEk8PujV8dTJLA/tmpn7jjm8yu.png"
+    }
+  ]
+}

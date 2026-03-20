@@ -1,0 +1,22 @@
+{
+  "prompt": "T-shirt graphic design, black background. Cute friendly cartoon robot sitting at a computer, proudly pointing at a t-shirt on screen. The t-shirt on screen has text 'AI CREATED ME THIS T-SHIRT'. Colorful, fun, kawaii style illustration. Professional print quality.",
+  "model": "ideogram-ai/ideogram-v3-quality",
+  "modelName": "Ideogram v3 Quality",
+  "aspectRatio": "default",
+  "resolution": "default",
+  "style": null,
+  "outputFormat": "png",
+  "seed": null,
+  "count": 1,
+  "mode": "text-to-image",
+  "referenceImages": null,
+  "timestamp": "2026-03-20T02:53:06.219Z",
+  "elapsed": "10.1s",
+  "files": [
+    {
+      "name": "2026-03-20T02-53-06_ideoqual_Tshirt-graphic-design-black-background.png",
+      "size": "0.69MB",
+      "url": "https://replicate.delivery/xezq/8W8pOpM3HnJoFpusGeGu2fKNdtXtEXyVfA4LJO2wnLIlENlsA/tmpa46pjx7u.png"
+    }
+  ]
+}

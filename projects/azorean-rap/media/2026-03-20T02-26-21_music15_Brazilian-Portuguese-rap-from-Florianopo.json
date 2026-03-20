@@ -1,0 +1,21 @@
+{
+  "prompt": "Brazilian Portuguese rap from Florianopolis Santa Catarina, manezinho accent, tropical island hip-hop, raw street storytelling, emotional chorus hook, Brazilian rap anthem",
+  "model": "minimax/music-1.5",
+  "modelName": "MiniMax Music 1.5",
+  "seed": null,
+  "format": null,
+  "lyrics": "[chorus]\nEu nao vou chorar\nEssa vida nao era pra mim\nEu nao vou chorar\nEssa vida nao era pra mim\n\n[verse]\nSou la da Barra irmao sou manezinho da ilha\nGarrafao de cachaca sou eu e minha familia\nMinha mae nao chora isso eh tudo pra ti\nQuando eu tava trancado tu tava la pra mim\n\n[chorus]\nEu nao vou chorar\nEssa vida nao era pra mim\nEu nao vou chorar\nEssa vida nao era pra mim\n\n[verse]\nSou a voz das crianca la da Lagoa da Conceicao\nQuem nao tem nada todo dia na correria irmao\n\n[chorus]\nEu nao vou chorar\nEssa vida nao era pra mim",
+  "duration": null,
+  "lengthMs": null,
+  "vocals": false,
+  "referenceFiles": {
+    "song": null,
+    "voice": null,
+    "instrumental": null
+  },
+  "timestamp": "2026-03-20T02:26:21.992Z",
+  "elapsed": "42.8s",
+  "fileSize": "1.72MB",
+  "outputFile": "2026-03-20T02-26-21_music15_Brazilian-Portuguese-rap-from-Florianopo.mp3",
+  "audioUrl": "https://replicate.delivery/xezq/GM5drL0xMEoVFZVkDE3ylA7QtMcZ33tOmbdWPa6aeeAMJmSWA/tmpipe8mf6k.mp3"
+}

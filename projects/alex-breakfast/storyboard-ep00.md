@@ -661,7 +661,7 @@ $shots = @(
 
 for ($i = 0; $i -lt $shots.Count; $i++) {
   $s = $shots[$i]
-  node generate-video.js $s.p --model $s.m --duration $s.d --image $image
+  node scripts/generate-video.js $s.p --model $s.m --duration $s.d --image $image
   # Move and rename to shot-NN prefix so concat sorts correctly
   $latest = Get-ChildItem ".\media\video\*.mp4" | Sort-Object LastWriteTime | Select-Object -Last 1
   if ($latest) {
@@ -677,7 +677,7 @@ for ($i = 0; $i -lt $shots.Count; $i++) {
 Script: **`generate-image.js`**
 
 ```powershell
-node generate-image.js "Title card for a cartoon detective series. Warm amber and deep violet background with subtle glowing analytical runes and equations. Large stylized serif title text: ALEX FINCH DETECTIVE. Subtitle: Episode 00 Before the Fall. Silhouette of a 13-year-old boy with curly hair surrounded by orbiting glyphs as a central logo. Professional animation title card design. American cartoon aesthetic." --model ideoturbo --aspect 16:9
+node scripts/generate-image.js "Title card for a cartoon detective series. Warm amber and deep violet background with subtle glowing analytical runes and equations. Large stylized serif title text: ALEX FINCH DETECTIVE. Subtitle: Episode 00 Before the Fall. Silhouette of a 13-year-old boy with curly hair surrounded by orbiting glyphs as a central logo. Professional animation title card design. American cartoon aesthetic." --model ideoturbo --aspect 16:9
 # Move result: media/images/[timestamp].jpg → projects/alex-breakfast/media/shot-25_title.jpg
 ```
 
@@ -686,7 +686,7 @@ node generate-image.js "Title card for a cartoon detective series. Warm amber an
 Script: **`generate-voice.js`**
 
 ```powershell
-node generate-voice.js "Four things are wrong with this Tuesday morning. [pause:0.8] I'm eating cereal at the kitchen table, cataloging changes since yesterday. [pause:0.5] One: Mom rearranged the spice rack. Alphabetical instead of by frequency of use. Suspicious. [pause:0.5] Two: Maya's phone is face-down on the counter. Usually glued to her hand. Very suspicious. [pause:0.5] Three: The mail came early. Mr. Patterson never delivers before 9 AM on Tuesdays. Extremely suspicious. [pause:0.5] Four: There's a new dent in the garage door. Small. Fist-sized. About five feet up. [pause:1.2] But my brain won't settle. [pause:0.5] The dent. The spice rack. Early mail. [pause:0.8] Probably nothing. Probably coincidence. [pause:1.0] Detectives don't believe in coincidence. [pause:0.5] We believe in patterns." --model elevenv3
+node scripts/generate-voice.js "Four things are wrong with this Tuesday morning. [pause:0.8] I'm eating cereal at the kitchen table, cataloging changes since yesterday. [pause:0.5] One: Mom rearranged the spice rack. Alphabetical instead of by frequency of use. Suspicious. [pause:0.5] Two: Maya's phone is face-down on the counter. Usually glued to her hand. Very suspicious. [pause:0.5] Three: The mail came early. Mr. Patterson never delivers before 9 AM on Tuesdays. Extremely suspicious. [pause:0.5] Four: There's a new dent in the garage door. Small. Fist-sized. About five feet up. [pause:1.2] But my brain won't settle. [pause:0.5] The dent. The spice rack. Early mail. [pause:0.8] Probably nothing. Probably coincidence. [pause:1.0] Detectives don't believe in coincidence. [pause:0.5] We believe in patterns." --model elevenv3
 ```
 
 **Voice direction**: Dry. Precise. 13-year-old certainty — not precocious, *accurate*. Narrates like dictating case notes.
@@ -704,7 +704,7 @@ node generate-voice.js "Four things are wrong with this Tuesday morning. [pause:
 Script: **`generate-music.js`**
 
 ```powershell
-node generate-music.js "light acoustic detective jazz, morning warmth, ticking clock undertone, curious and gentle, children's mystery adventure underscore, acoustic guitar and soft piano, 2.5 minutes" --model music15
+node scripts/generate-music.js "light acoustic detective jazz, morning warmth, ticking clock undertone, curious and gentle, children's mystery adventure underscore, acoustic guitar and soft piano, 2.5 minutes" --model music15
 ```
 
 | Shots | Music cue |
@@ -741,7 +741,7 @@ Script: **`generate-edit-video.js --model avmerge`** (local FFmpeg, free)
 
 ```powershell
 Set-Location "C:\Development\AlexVideos"
-node generate-edit-video.js `
+node scripts/generate-edit-video.js `
   --video .\projects\alex-breakfast\media\raw-ep00.mp4 `
   --audio .\media\audio\[narration-timestamp]_elevenv3_Four-things-are-wrong.mp3 `
   --model avmerge
@@ -753,7 +753,7 @@ node generate-edit-video.js `
 Script: **`generate-edit-video.js --model audiomix`** (local FFmpeg, free — added this session)
 
 ```powershell
-node generate-edit-video.js `
+node scripts/generate-edit-video.js `
   --video .\projects\alex-breakfast\media\ep00-with-narration.mp4 `
   --audio .\media\audio\[narration-file].mp3 `
   --music .\media\audio\[music-file].mp3 `
@@ -770,7 +770,7 @@ Narration vol = 1.0, music vol = 0.25 (adjust `--music-volume` to taste)
 Script: **`generate-edit-video.js --model caption`** (~$0.07, AutoCaption AI)
 
 ```powershell
-node generate-edit-video.js `
+node scripts/generate-edit-video.js `
   --video .\projects\alex-breakfast\media\ep00-final.mp4 `
   --model caption
 ```

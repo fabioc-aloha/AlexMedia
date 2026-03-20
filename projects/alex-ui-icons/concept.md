@@ -190,6 +190,6 @@ projects/alex-ui-icons/
 
 1. **Review** existing icons in AlexMaster `mockups/icons/`
 2. **Identify** positions needing regeneration or new variants
-3. **Run** `node generate-icons.js --profile fluxico --only=<group>` for concept review
-4. **Approve** variants → run `node generate-icons.js --profile recraft-svg --only=<group>` for production
+3. **Run** `node scripts/generate-icons.js --profile fluxico --only=<group>` for concept review
+4. **Approve** variants → run `node scripts/generate-icons.js --profile recraft-svg --only=<group>` for production
 5. **Copy** approved SVGs to AlexMaster `platforms/vscode-extension/assets/`

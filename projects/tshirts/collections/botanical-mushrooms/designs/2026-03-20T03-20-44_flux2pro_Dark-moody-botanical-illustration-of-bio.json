@@ -1,0 +1,22 @@
+{
+  "prompt": "Dark moody botanical illustration of bioluminescent AI-hallucinated mushrooms on black background. Otherworldly species that could never exist in nature: mushrooms with geometric wireframe caps that glow neon green, mushrooms with pixel-dissolving edges, a mushroom whose stem is made of fiber optic cables emitting light, and a cluster of tiny mushrooms forming a QR code pattern. Highly detailed scientific illustration style, precise linework, luminous colors against deep black, specimen numbers and measurement scales in margins",
+  "model": "black-forest-labs/flux-2-pro",
+  "modelName": "FLUX 2 Pro",
+  "aspectRatio": "3:4",
+  "resolution": "default",
+  "style": null,
+  "outputFormat": "default",
+  "seed": null,
+  "count": 1,
+  "mode": "text-to-image",
+  "referenceImages": null,
+  "timestamp": "2026-03-20T03:20:45.186Z",
+  "elapsed": "10.3s",
+  "files": [
+    {
+      "name": "2026-03-20T03-20-44_flux2pro_Dark-moody-botanical-illustration-of-bio.webp",
+      "size": "0.16MB",
+      "url": "https://replicate.delivery/xezq/mYYrqf5yVjWSDKknwcafkVkPHY5rE5Q9n0uqPH79NlUN8mSWA/tmpt51876h3.webp"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "prompt": "Azorean Portuguese rap, raw street hip-hop, aggressive flow, São Miguel Açores, gritty boom bap, bass-heavy, Portuguese rap",
+  "model": "minimax/music-1.5",
+  "modelName": "MiniMax Music 1.5",
+  "seed": null,
+  "format": null,
+  "lyrics": "[verse]\nRabo de Peixe eu sou de Rabo de Peixe mas não tenhas medo\nO garrafão dá-me sede eu sou um grande bêbado\nOlha para a pistola eu nunca fui para a escola\nPasseando lá na rua vendendo a coca-cola\n\n[verse]\nEu já vou-me embora mas não é agora\nMeu coração corre sangue isso é uma vida louca\nMinha mãe não chora isso é tudo para ti\nQuanto eu tava na cadeia távas lá pra mim\n\n[chorus]\nEu não vou chorar\nEsta vida não era para mim\n\n[verse]\nEu sou a boca das crianças dos pequenos de Rabo de Peixe\nAqueles que não têm nada todo o dia levando lenha\nAqueles que não têm comida todo o dia na bebida",
+  "duration": null,
+  "lengthMs": null,
+  "vocals": false,
+  "referenceFiles": {
+    "song": null,
+    "voice": null,
+    "instrumental": null
+  },
+  "timestamp": "2026-03-20T02:19:10.577Z",
+  "elapsed": "48.8s",
+  "fileSize": "2.02MB",
+  "outputFile": "2026-03-20T02-19-10_music15_Azorean-Portuguese-rap-raw-street-hiph.mp3",
+  "audioUrl": "https://replicate.delivery/xezq/IeLDHeqiPMqm6kn6W6fU3eMxff7fKEZZFAGXZfrSjcudbCmSWA/tmp1lmo95vg.mp3"
+}

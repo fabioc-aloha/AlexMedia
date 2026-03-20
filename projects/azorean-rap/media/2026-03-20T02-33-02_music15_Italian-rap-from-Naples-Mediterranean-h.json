@@ -1,0 +1,21 @@
+{
+  "prompt": "Italian rap from Naples, Mediterranean hip-hop, raw street storytelling, emotional chorus, Napoli rapper, dark melodic Italian rap, piano and trap drums",
+  "model": "minimax/music-1.5",
+  "modelName": "MiniMax Music 1.5",
+  "seed": null,
+  "format": null,
+  "lyrics": "[chorus]\nIo non piangero\nQuesta vita non era per me\nIo non piangero\nQuesta vita non era per me\n\n[verse]\nSono nato a Napoli represento il mio quartiere\nIl garrafone in mano sto bevendo tutto il bicchiere\nMamma non piangere faccio tutto questo per te\nQuando stavo in galera tu eri sempre li per me\n\n[chorus]\nIo non piangero\nQuesta vita non era per me\nIo non piangero\nQuesta vita non era per me\n\n[verse]\nSono la voce dei bambini del quartiere senza niente\nNiente cibo ogni giorno nella strada sopravvivere\n\n[chorus]\nIo non piangero\nQuesta vita non era per me",
+  "duration": null,
+  "lengthMs": null,
+  "vocals": false,
+  "referenceFiles": {
+    "song": null,
+    "voice": null,
+    "instrumental": null
+  },
+  "timestamp": "2026-03-20T02:33:02.524Z",
+  "elapsed": "95.4s",
+  "fileSize": "1.72MB",
+  "outputFile": "2026-03-20T02-33-02_music15_Italian-rap-from-Naples-Mediterranean-h.mp3",
+  "audioUrl": "https://replicate.delivery/xezq/UGSQpecwqnQRD6RYn7myB8KmyrXxRphKjx6ZnpzeJFJdPmSWA/tmp85huilx9.mp3"
+}

@@ -1,0 +1,22 @@
+{
+  "prompt": "T-shirt graphic design, black background. Retro 8-bit pixel art style. The words 'AI CREATED ME THIS T-SHIRT' built out of colorful pixels, dissolving and assembling from scattered pixel blocks on the edges. Rainbow pixel gradient colors. Nostalgic gaming aesthetic, pixel art typography.",
+  "model": "ideogram-ai/ideogram-v3-quality",
+  "modelName": "Ideogram v3 Quality",
+  "aspectRatio": "default",
+  "resolution": "default",
+  "style": null,
+  "outputFormat": "png",
+  "seed": null,
+  "count": 1,
+  "mode": "text-to-image",
+  "referenceImages": null,
+  "timestamp": "2026-03-20T02:54:02.276Z",
+  "elapsed": "10.2s",
+  "files": [
+    {
+      "name": "2026-03-20T02-54-02_ideoqual_Tshirt-graphic-design-black-background.png",
+      "size": "0.52MB",
+      "url": "https://replicate.delivery/xezq/fGSufjBoaOvlepGwc2XnaGsDeNIDG7ObDNsGEvMXN5cpMaKZB/tmpd1b9e6zy.png"
+    }
+  ]
+}

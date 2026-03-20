@@ -1,0 +1,22 @@
+{
+  "prompt": "Detailed scientific botanical illustration of AI-hallucinated deep sea mushroom species discovered at 3000m depth. Specimens arranged on dark navy paper. Features: a mushroom with a cap made of overlapping iridescent scales like a pangolin, a tall thin mushroom with a helix-twisted stem and umbrella cap dripping with bioluminescent mucus, a cluster growing from a fossilized ammonite shell with caps shaped like radio dishes receiving signals from space, and a massive mushroom whose cross-section reveals concentric rings of different impossible colors like an agate stone. Rendered in precise copperplate engraving style with hand-tinted color, measurement annotations, depth pressure markers, and collection date stamps",
+  "model": "recraft-ai/recraft-v4",
+  "modelName": "Recraft v4",
+  "aspectRatio": "3:4",
+  "resolution": "default",
+  "style": null,
+  "outputFormat": "default",
+  "seed": null,
+  "count": 1,
+  "mode": "text-to-image",
+  "referenceImages": null,
+  "timestamp": "2026-03-20T03:23:33.635Z",
+  "elapsed": "21.6s",
+  "files": [
+    {
+      "name": "2026-03-20T03-23-33_recraft_Detailed-scientific-botanical-illustrati.webp",
+      "size": "1.09MB",
+      "url": "https://replicate.delivery/xezq/Q7mDy56Kw2JCKdGtkVwbTF4zQlXNSgckihIuEZOhiVeafmSWA/tmp4wt2nsks.webp"
+    }
+  ]
+}
