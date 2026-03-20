@@ -1,33 +1,33 @@
 {
-  "$schema": "../SYNAPSE-SCHEMA.json",
-  "skillId": "heir-sync-management",
-  "version": "1.0.0",
-  "lastUpdated": "2026-03-20",
-  "connections": [
-    {
-      "target": ".github/skills/distribution-security/SKILL.md",
-      "strength": 0.85,
-      "type": "complements",
-      "description": "PII protection and contamination prevention during sync",
-      "when": "Synchronizing Master to Heirs with security enforcement",
-      "yields": "distribution security complementary safeguards",
-      "bidirectional": true
-    },
-    {
-      "target": ".github/skills/architecture-audit/SKILL.md",
-      "strength": 0.7,
-      "type": "triggers",
-      "description": "Drift detection triggers architecture audit",
-      "when": "Heir drift detected during sync validation",
-      "yields": "architecture audit activation and drift analysis"
-    },
-    {
-      "target": ".github/skills/architecture-refinement/SKILL.md",
-      "strength": 0.6,
-      "type": "extends",
-      "description": "Sync management extends architecture refinement to heirs",
-      "when": "Promoting heir-developed capabilities back to Master",
-      "yields": "architecture refinement extended to promotion workflows"
-    }
-  ]
+    "$schema": "../SYNAPSE-SCHEMA.json",
+    "skillId": "heir-sync-management",
+    "version": "1.0.0",
+    "lastUpdated": "2026-03-20",
+    "connections": [
+        {
+            "target": ".github/skills/distribution-security/SKILL.md",
+            "strength": 0.85,
+            "type": "complements",
+            "description": "PII protection and contamination prevention during sync",
+            "when": "Synchronizing Master to Heirs with security enforcement",
+            "yields": "distribution security complementary safeguards",
+            "bidirectional": true
+        },
+        {
+            "target": ".github/skills/architecture-audit/SKILL.md",
+            "strength": 0.7,
+            "type": "triggers",
+            "description": "Drift detection triggers architecture audit",
+            "when": "Heir drift detected during sync validation",
+            "yields": "architecture audit activation and drift analysis"
+        },
+        {
+            "target": ".github/skills/architecture-refinement/SKILL.md",
+            "strength": 0.6,
+            "type": "extends",
+            "description": "Sync management extends architecture refinement to heirs",
+            "when": "Promoting heir-developed capabilities back to Master",
+            "yields": "architecture refinement extended to promotion workflows"
+        }
+    ]
 }
