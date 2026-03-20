@@ -14,8 +14,6 @@ description: "Mandatory adversarial review protocols for quality-critical operat
 
 - [.github/agents/alex-validator.agent.md] → (Critical, Executes, Required) - "Validator agent performs adversarial review"
 - [.github/instructions/code-review-guidelines.instructions.md] → (High, Implements, Forward) - "Code review follows adversarial checklist"
-- [.github/instructions/release-management.instructions.md] → (Critical, Gates, Bidirectional) - "Releases require validation gate"
-- [.github/instructions/heir-skill-promotion.instructions.md] → (High, Gates, Bidirectional) - "Skills require promotion readiness validation"
 - [.github/instructions/architecture-decision-records.instructions.md] → (Medium, Triggers, Forward) - "Major changes need ADR + validation"
 - [.github/instructions/empirical-validation.instructions.md] → (High, Strengthens, Bidirectional) - "Evidence-based validation methodology"
 - [.github/agents/alex-builder.agent.md] → (High, Handoff, Bidirectional) - "Builder → Validator workflow"
@@ -77,7 +75,7 @@ These operations **MUST** trigger Validator agent review:
 ### Standard Pattern: Builder → Validator → Merge
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#cce5ff', 'primaryTextColor': '#333', 'lineColor': '#666', 'edgeLabelBackground': '#fff'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#cce5ff', 'primaryTextColor': '#333', 'lineColor': '#666', 'edgeLabelBackground': '#ffffff'}}}%%
 flowchart TD
     BUILD["Builder  creates/implements"] --> REQUEST["Request  Validation"]
     REQUEST --> VALIDATOR["Validator  reviews adversarially"]
@@ -196,7 +194,6 @@ Domain-specific checklist based on operation type:
 ## Integration Points
 
 ### Release Management
-From [release-management.instructions.md]:
 
 **Add to Step 4.5** (after present findings to user, before version bump):
 ```text
@@ -210,7 +207,6 @@ Blocker: If Validator blocks (🔴), resolve issues before version bump.
 ```
 
 ### Skill Promotion
-From [heir-skill-promotion.instructions.md]:
 
 **Add to Step 4.5** (after quality gate score):
 ```text
@@ -280,7 +276,7 @@ Adversarial oversight succeeds when:
 ## Quick Reference: When to Invoke Validator
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#cce5ff', 'primaryTextColor': '#333', 'lineColor': '#666', 'edgeLabelBackground': '#fff'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#cce5ff', 'primaryTextColor': '#333', 'lineColor': '#666', 'edgeLabelBackground': '#ffffff'}}}%%
 flowchart TD
     TASK["Task or Change"] --> CRITICAL{"Critical operation?"}
     CRITICAL -->|Yes| MANDATORY["🔴 MANDATORY  Validator Review"]

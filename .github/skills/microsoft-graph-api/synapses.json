@@ -2,35 +2,69 @@
   "$schema": "../SYNAPSE-SCHEMA.json",
   "skillId": "microsoft-graph-api",
   "version": "1.1.0",
-  "lastUpdated": "2026-03-05",
-  "inheritance": "inheritable",
+  "lastUpdated": "2026-03-20",
   "connections": [
-    {
-      "target": ".github/skills/enterprise-integration/SKILL.md",
-      "type": "extends",
-      "strength": 0.95,
-      "reason": "Provides API reference for enterprise Graph integration"
-    },
-    {
-      "target": ".github/skills/vscode-extension-patterns/SKILL.md",
-      "type": "uses",
-      "strength": 0.7,
-      "reason": "VS Code auth session API for token acquisition"
-    },
     {
       "target": ".github/skills/localization/SKILL.md",
       "type": "complements",
       "strength": 0.5,
-      "reason": "User.Read scope provides preferredLanguage"
+      "reason": "User.Read scope provides preferredLanguage",
+      "when": "User.Read scope provides preferredLanguage",
+      "yields": "localization complementary techniques"
     },
     {
       "target": ".github/skills/performance-profiling/SKILL.md",
       "type": "uses",
       "strength": 0.6,
-      "reason": "Rate limiting and batching patterns"
+      "reason": "Rate limiting and batching patterns",
+      "when": "Rate limiting and batching patterns",
+      "yields": "performance profiling patterns and guidance"
     }
   ],
   "activationContexts": [
+    "microsoft graph",
+    "graph api",
+    "ms graph",
+    "Graph",
+    "graph.microsoft.com",
+    "/me/",
+    "/users/",
+    "/groups/",
+    "calendar events",
+    "presence api",
+    "mail api",
+    "planner",
+    "odata query",
+    "$select",
+    "$filter",
+    "$expand",
+    "Graph SDK",
+    "GraphServiceClient",
+    "Graph client",
+    "Azure AD",
+    "Microsoft identity",
+    "MSAL",
+    "OAuth",
+    "access token",
+    "bearer token",
+    "Graph permissions",
+    "delegated permissions",
+    "application permissions",
+    "User.Read",
+    "Mail.Read",
+    "Calendars.Read",
+    "/beta/",
+    "/v1.0/",
+    "Graph endpoint",
+    "Graph batching",
+    "rate limiting",
+    "throttling",
+    "429",
+    "delta query"
+  ],
+  "schemaVersion": "2.1.0",
+  "lastValidated": "2026-02-12",
+  "activationPatterns": [
     "microsoft graph",
     "graph api",
     "ms graph",
@@ -43,8 +77,6 @@
     "$select",
     "$filter"
   ],
-  "schemaVersion": "2.1.0",
-  "lastValidated": "2026-02-12",
   "activationBoost": [
     "microsoft graph",
     "graph api",

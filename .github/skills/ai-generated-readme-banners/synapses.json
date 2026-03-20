@@ -2,8 +2,7 @@
   "$schema": "../SYNAPSE-SCHEMA.json",
   "skillId": "ai-generated-readme-banners",
   "version": "1.1.0",
-  "lastUpdated": "2026-03-05",
-  "inheritance": "inheritable",
+  "lastUpdated": "2026-03-20",
   "connections": [
     {
       "target": ".github/skills/ai-character-reference-generation/SKILL.md",
@@ -11,6 +10,20 @@
       "strength": 0.85,
       "when": "using Replicate API for image generation with Flux/Ideogram",
       "yields": "Shared prompt engineering patterns, retry logic, safety filter handling"
+    },
+    {
+      "target": ".github/skills/flux-brand-finetune/SKILL.md",
+      "type": "extends",
+      "strength": 0.8,
+      "when": "user has trained a custom LoRA and wants to generate brand-consistent banners",
+      "yields": "Fine-tuned model inference with trigger words for on-brand banner generation"
+    },
+    {
+      "target": ".github/skills/image-handling/SKILL.md",
+      "type": "requires",
+      "strength": 0.9,
+      "when": "selecting banner format (SVG default vs raster fallback) and model routing",
+      "yields": "Correct format selection, model priority, and size optimization for banners"
     },
     {
       "target": ".github/skills/prompt-engineering/SKILL.md",
@@ -33,6 +46,45 @@
       "when": "enhancing documentation with visual elements",
       "yields": "Comprehensive visual documentation approach combining banners and diagrams"
     }
+  ],
+  "activationContexts": [
+    "readme banner",
+    "github banner",
+    "project branding",
+    "ideogram",
+    "ideogram v2",
+    "ultra-wide",
+    "cinematic banner",
+    "typography banner",
+    "photorealistic banner",
+    "visual branding",
+    "banner generation",
+    "replicate api",
+    "replicate",
+    "recraft",
+    "recraft svg",
+    "svg banner",
+    "vector banner",
+    "3:1 aspect ratio",
+    "layout variations",
+    "audience targeting",
+    "professional banner",
+    "rocket banner",
+    "brand colors",
+    "generate banner",
+    "create banner",
+    "make banner",
+    "header image",
+    "hero image",
+    "cover image",
+    "social banner",
+    "twitter banner",
+    "linkedin banner",
+    "og image",
+    "open graph",
+    "flux banner",
+    "ai banner",
+    "generate header"
   ],
   "schemaVersion": "2.1.0",
   "lastValidated": "2026-02-15",
@@ -58,6 +110,10 @@
     "banner generation",
     "replicate api",
     "replicate",
+    "recraft",
+    "recraft svg",
+    "svg banner",
+    "vector banner",
     "3:1 aspect ratio",
     "layout variations",
     "audience targeting",
@@ -79,28 +135,6 @@
     "ai banner",
     "generate header"
   ],
-  "when": {
-    "userIntent": [
-      "generate README banner",
-      "create project banner",
-      "visual branding for GitHub",
-      "replace ASCII art",
-      "professional README header",
-      "add typography to banner"
-    ],
-    "projectContext": [
-      "GitHub repository",
-      "project documentation",
-      "marketing materials",
-      "landing page",
-      "visual identity needs"
-    ],
-    "filePatterns": [
-      "README.md",
-      "**/generate-banner*.js",
-      "**/assets/banner*"
-    ]
-  },
   "yields": {
     "artifacts": [
       "photorealistic 3:1 banner images (1536x512)",

@@ -2,38 +2,39 @@
   "$schema": "../SYNAPSE-SCHEMA.json",
   "skillId": "api-design",
   "version": "1.2.0",
-  "lastUpdated": "2026-03-05",
-  "inheritance": "inheritable",
+  "lastUpdated": "2026-03-20",
   "connections": [
     {
       "target": ".github/skills/security-review/SKILL.md",
       "type": "Requires",
       "strength": 0.9,
-      "description": "APIs need security review"
+      "description": "APIs need security review",
+      "when": "API design depends on security review",
+      "yields": "security review required patterns and guidance"
     },
     {
       "target": ".github/skills/testing-strategies/SKILL.md",
       "type": "Relates",
       "strength": 0.9,
-      "description": "APIs need contract testing"
+      "description": "APIs need contract testing",
+      "when": "API design connects to testing strategies",
+      "yields": "testing strategies patterns and guidance"
     },
     {
       "target": ".github/skills/code-review/SKILL.md",
       "type": "Relates",
       "strength": 0.7,
-      "description": "API changes need careful review"
+      "description": "API changes need careful review",
+      "when": "API design connects to code review",
+      "yields": "code review patterns and guidance"
     },
     {
       "target": ".github/skills/architecture-audit/SKILL.md",
       "type": "Relates",
       "strength": 0.7,
-      "description": "API design is architectural decision"
-    },
-    {
-      "target": ".github/skills/vscode-extension-patterns/SKILL.md",
-      "type": "Relates",
-      "strength": 0.3,
-      "description": "Extension APIs follow similar patterns"
+      "description": "API design is architectural decision",
+      "when": "API design connects to architecture audit",
+      "yields": "architecture audit patterns and guidance"
     }
   ],
   "activationContexts": [
@@ -48,5 +49,16 @@
     "request response"
   ],
   "notes": "RESTful best practices, contract-first design, versioning",
-  "schemaVersion": "2.0.0"
+  "schemaVersion": "2.0.0",
+  "activationTriggers": [
+    "API design",
+    "REST API",
+    "endpoint",
+    "OpenAPI",
+    "Swagger",
+    "API versioning",
+    "HTTP methods",
+    "status codes",
+    "request response"
+  ]
 }

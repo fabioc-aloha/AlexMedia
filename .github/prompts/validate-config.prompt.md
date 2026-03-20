@@ -4,7 +4,6 @@ description: Validate VS Code extension manifest consistency: command registrati
 
 # Validate Extension Configuration
 
-> **Avatar**: Call `alex_cognitive_state_update` with `state: "reviewing"`. This updates the welcome sidebar avatar.
 
 Validate VS Code extension manifest configuration and command registration
 
@@ -22,7 +21,7 @@ You are reviewing a VS Code extension for configuration and manifest consistency
 
 1. **Run automated validation**:
    ```powershell
-   cd platforms/vscode-extension
+   # Navigate to extension directory if in multi-platform workspace
    .\scripts\validate-manifest.ps1
    ```
 
@@ -67,6 +66,3 @@ Alex:
    - [Specific fix for each issue]
 5. [Applies fixes if approved]
 6. Re-running validation... ✅ All checks pass
-
-
-> **Revert Avatar**: Call `alex_cognitive_state_update` with `state: "persona"` to reset to project-appropriate avatar.

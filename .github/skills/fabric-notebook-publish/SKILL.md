@@ -1,6 +1,6 @@
 ---
-name: "Fabric Notebook Publish"
-description: "Seamless notebook publishing from VS Code to Microsoft Fabric via Azure DevOps Git integration"
+name: fabric-notebook-publish
+description: Seamless notebook publishing from VS Code to Microsoft Fabric via Azure DevOps Git integration
 user-invokable: false
 ---
 
@@ -30,7 +30,7 @@ This skill enables seamless notebook publishing from VS Code to Microsoft Fabric
 ## Architecture
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#cce5ff', 'primaryTextColor': '#333', 'lineColor': '#666', 'edgeLabelBackground': '#fff'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#cce5ff', 'primaryTextColor': '#333', 'lineColor': '#666', 'edgeLabelBackground': '#ffffff'}}}%%
 flowchart LR
     subgraph LOCAL["VS Code"]
         NB[Notebooks]
@@ -168,10 +168,10 @@ git checkout -b FishBowl --track fabric/FishBowl
 
 ## Synapses
 
-- [fabric-notebook-push.instructions.md](../../instructions/fabric-notebook-push.instructions.md) → Core procedural memory
-- [git-workflow/SKILL.md](.github/skills/git-workflow/SKILL.md) → Git worktree management
-- [microsoft-fabric/SKILL.md](.github/skills/microsoft-fabric/SKILL.md) → Fabric platform knowledge
-- [api-design/SKILL.md](.github/skills/api-design/SKILL.md) → REST API token handling
+- fabric-notebook-push.instructions.md → Core procedural memory (not yet created)
+- [git-workflow/SKILL.md](..\git-workflow/SKILL.md) → Git worktree management
+- [microsoft-fabric/SKILL.md](..\microsoft-fabric/SKILL.md) → Fabric platform knowledge
+- [api-design/SKILL.md](..\api-design/SKILL.md) → REST API token handling
 
 ## Related Files
 

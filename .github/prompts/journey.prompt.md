@@ -1,12 +1,10 @@
 ---
 description: Start a curated learning journey for your role
 mode: agent
-tools: alex_cognitive_state_update
 ---
 
 # /journey - Curated Learning Progressions
 
-> **Avatar**: Call `alex_cognitive_state_update` with `state: "learning"`.
 
 Guide users through curated skill progressions tailored to their role.
 
@@ -105,7 +103,7 @@ Phase 4: Security
 **Goal**: Documentation that developers actually read.
 ```
 Phase 1: Foundations
-  - doc-hygiene → Anti-drift, living documents
+  - documentation-quality-assurance → Anti-drift, living documents
   - markdown-mermaid → Diagrams that explain
   
 Phase 2: Technical Depth
@@ -113,7 +111,7 @@ Phase 2: Technical Depth
   - documentation-quality-assurance → Audit, preflight, quality
   
 Phase 3: Publication
-  - writing-publication → Style, voice, audience
+  - academic-research → Style, voice, audience
   - md-to-word → Professional document export
 ```
 
@@ -133,7 +131,7 @@ Phase 3: Analysis
   - knowledge-synthesis → Cross-domain pattern extraction
   
 Phase 4: Publication
-  - academic-paper-drafting → Structure, argumentation, peer review
+  - academic-research → Structure, argumentation, peer review
 ```
 
 ### ai-engineer
@@ -229,5 +227,3 @@ You'll master 8 skills across 4 phases over 2-3 weeks:
 
 Ready to begin with **ui-ux-design**? I'll assess what you already know.
 ```
-
-> **Revert Avatar**: Call `alex_cognitive_state_update` with `state: "persona"` when journey paused/completed.

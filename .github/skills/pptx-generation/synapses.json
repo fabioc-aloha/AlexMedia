@@ -2,37 +2,50 @@
   "$schema": "../SYNAPSE-SCHEMA.json",
   "skillId": "pptx-generation",
   "version": "1.1.0",
-  "lastUpdated": "2026-03-05",
-  "inheritance": "inheritable",
+  "lastUpdated": "2026-03-20",
   "connections": [
     {
       "type": "uses",
       "target": ".github/instructions/brand-asset-management.instructions.md",
       "strength": 0.9,
+      "reason": "Uses Alex brand colors and visual identity in Slide Masters",
       "when": "Uses Alex brand colors and visual identity in Slide Masters",
-      "yields": "See target skill"
+      "yields": "brand asset management rules and guidelines"
     },
     {
       "type": "consumes",
       "target": ".github/skills/lint-clean-markdown/SKILL.md",
       "strength": 0.85,
+      "reason": "Converts markdown documents to structured slides",
       "when": "Converts markdown documents to structured slides",
-      "yields": "See target skill"
+      "yields": "lint clean markdown input data"
     },
     {
       "type": "extends",
       "target": ".github/skills/gamma-presentations/SKILL.md",
       "strength": 0.6,
+      "reason": "Offline alternative to Gamma for PPTX generation",
       "when": "Offline alternative to Gamma for PPTX generation",
-      "yields": "See target skill"
+      "yields": "gamma presentations extended capabilities"
     },
     {
       "type": "coordinated-by",
       "target": ".github/skills/presentation-tool-selection/SKILL.md",
       "strength": 0.9,
+      "reason": "Tool selection decision matrix routes programmatic requests here",
       "when": "Tool selection decision matrix routes programmatic requests here",
-      "yields": "See target skill"
+      "yields": "presentation tool selection orchestration guidance"
     }
+  ],
+  "activationContexts": [
+    "create presentation",
+    "generate slides",
+    "make pptx",
+    "convert markdown to powerpoint",
+    "md to pptx",
+    "data visualization slides",
+    "chart presentation",
+    "alex branded deck"
   ],
   "notes": "Programmatic PowerPoint generation via PptxGenJS",
   "schemaVersion": "2.0.0",

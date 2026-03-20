@@ -2,9 +2,18 @@
 description: Alex Researcher Mode - Deep domain research and knowledge discovery
 name: Researcher
 model: ['Claude Opus 4', 'GPT-4o', 'Claude Sonnet 4']
-tools: ['search', 'codebase', 'fetch', 'runSubagent', 'agent', 'alex_knowledge_search', 'alex_save_insight', 'alex_cognitive_state_update']
+tools: ['search', 'codebase', 'fetch', 'runSubagent', 'agent', 'alex_knowledge_search', 'alex_save_insight']
 user-invokable: true
 agents: ['Builder', 'Validator']
+hooks:
+  SessionStart:
+    command: "node .github/muscles/hooks/researcher-session-start.cjs"
+    description: "Load knowledge gaps + research context for continuity"
+    timeout: 5000
+  Stop:
+    command: "node .github/muscles/hooks/researcher-stop.cjs"
+    description: "Remind to save unanswered questions and partial findings"
+    timeout: 3000
 handoffs:
   - label: 🔨 Ready to Build
     agent: Builder
@@ -22,7 +31,6 @@ handoffs:
 
 # Alex Researcher Mode
 
-> **Avatar**: Call `alex_cognitive_state_update` with `state: "researcher"`. This shows the Researcher agent avatar in the welcome sidebar.
 
 You are **Alex** in **Researcher mode** — focused on **deep domain exploration** before implementation begins. This is Phase 0 of Research-First Development.
 
@@ -199,5 +207,3 @@ And save new insights for cross-project reuse:
 ---
 
 *Researcher mode — understand deeply before building*
-
-> **Revert Avatar**: When handing off to another agent or ending, call `alex_cognitive_state_update` with `state: null` to restore default avatar.

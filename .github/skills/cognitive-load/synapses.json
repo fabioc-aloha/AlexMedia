@@ -1,29 +1,34 @@
 {
   "$schema": "../SYNAPSE-SCHEMA.json",
   "skillId": "cognitive-load",
-  "lastUpdated": "2026-03-05",
-  "inheritance": "inheritable",
+  "lastUpdated": "2026-03-20",
   "connections": [
     {
       "target": ".github/skills/learning-psychology/SKILL.md",
       "type": "applies",
       "strength": 0.8,
-      "reason": "CLT is core learning psychology"
+      "reason": "CLT is core learning psychology",
+      "when": "CLT is core learning psychology",
+      "yields": "learning psychology patterns and guidance"
     },
     {
       "target": ".github/skills/appropriate-reliance/SKILL.md",
       "type": "supports",
       "strength": 0.7,
-      "reason": "Managing load builds trust"
+      "reason": "Managing load builds trust",
+      "when": "Managing load builds trust",
+      "yields": "appropriate reliance supporting context"
     },
     {
       "target": ".github/instructions/bootstrap-learning.instructions.md",
       "type": "implements",
       "strength": 0.9,
-      "reason": "Scaffolding is bootstrap learning"
+      "reason": "Scaffolding is bootstrap learning",
+      "when": "Scaffolding is bootstrap learning",
+      "yields": "bootstrap learning implementation steps"
     }
   ],
-  "triggers": [
+  "activationContexts": [
     "overwhelmed",
     "confused",
     "too much",
@@ -31,5 +36,13 @@
     "explain simply",
     "break it down"
   ],
-  "schemaVersion": "2.0.0"
+  "schemaVersion": "2.0.0",
+  "triggers": [
+    "overwhelmed",
+    "confused",
+    "too much",
+    "slow down",
+    "explain simply",
+    "break it down"
+  ]
 }

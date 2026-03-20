@@ -1,9 +1,8 @@
 {
   "$schema": "../SYNAPSE-SCHEMA.json",
   "skillId": "vscode-extension-patterns",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "lastUpdated": "2026-03-05",
-  "inheritance": "heir:vscode",
   "connections": [
     {
       "target": ".github/instructions/release-management.instructions.md",

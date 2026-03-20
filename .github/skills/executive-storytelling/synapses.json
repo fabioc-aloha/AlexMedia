@@ -2,9 +2,21 @@
   "$schema": "../SYNAPSE-SCHEMA.json",
   "skillId": "executive-storytelling",
   "version": "1.1.0",
-  "lastUpdated": "2026-03-05",
-  "inheritance": "inheritable",
-  "connections": [],
+  "lastUpdated": "2026-03-20",
+  "connections": [
+    {
+      "type": "when",
+      "when": "executive|c-suite|vp|scqa|pyramid|minto",
+      "target": ".github/skills/slide-design/SKILL.md",
+      "yields": [
+        "slide-design",
+        "gamma-presentations",
+        "coaching-techniques"
+      ],
+      "weight": 0.87,
+      "notes": "Surface slide tooling and coaching prompts for exec storytelling requests"
+    }
+  ],
   "activationContexts": [
     {
       "trigger": "executive|senior leadership|C-suite|VP|director",
@@ -24,7 +36,7 @@
     }
   ],
   "schemaVersion": "2.1.0",
-  "connectionCount": 5,
+  "connectionCount": 6,
   "synapses": [
     {
       "id": "EXEC-001",
@@ -56,7 +68,7 @@
     {
       "id": "EXEC-004",
       "source": "executive-storytelling",
-      "target": ".github/skills/airs-integration/SKILL.md",
+      "target": ".github/skills/airs-appropriate-reliance/SKILL.md",
       "type": "applies",
       "strength": 0.7,
       "description": "AIRS findings need executive framing for enterprise adoption",

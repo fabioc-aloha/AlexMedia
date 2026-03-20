@@ -3,8 +3,20 @@
   "skillId": "dissertation-defense",
   "version": "1.1.0",
   "lastUpdated": "2026-02-10",
-  "inheritance": "inheritable",
-  "connections": [],
+  "connections": [
+    {
+      "type": "when",
+      "when": "dissertation|defense|thesis|viva",
+      "target": ".github/skills/literature-review/SKILL.md",
+      "yields": [
+        "literature-review",
+        "citation-management",
+        "gamma-presentations"
+      ],
+      "weight": 0.88,
+      "notes": "When user mentions defense prep, recommend literature and citation helpers plus slide tooling"
+    }
+  ],
   "activationContexts": [
     "defense",
     "dissertation",
@@ -60,7 +72,7 @@
       "context": "Question handling and response techniques"
     },
     {
-      "target": ".github/skills/writing-publication/SKILL.md",
+      "target": ".github/skills/academic-research/SKILL.md",
       "type": "conceptual",
       "strength": "moderate",
       "direction": "incoming",

@@ -13,12 +13,9 @@ applyTo: "**/quality-gate*,**/scripts/quality*,**/*prepublish*,**/package.json"
 
 ## Synapses
 
-- [.github/instructions/release-management.instructions.md] (Critical, Implements, Bidirectional) - "Quality gates enforce release management rules automatically"
 - [.github/instructions/testing-strategies.instructions.md] (High, Extends, Bidirectional) - "Quality gates are the static analysis complement to behavioral tests"
 - [.github/skills/release-preflight/SKILL.md] (Critical, Automates, Bidirectional) - "Gates automate preflight checks that were previously manual-only"
 - [.github/instructions/vscode-extension-patterns.instructions.md] (High, Validates, Forward) - "Ensures extension packaging follows VS Code patterns"
-- [.github/instructions/extension-audit-methodology.instructions.md] (Medium, Complements, Forward) - "Audit findings become new quality gates"
-- [.github/instructions/cognitive-health-validation.instructions.md] (High, Validates, Bidirectional) - "Brain-QA 35-phase validation as pre-publish deep audit gate (v5.9.10 meditation insight)"
 
 ---
 
@@ -28,7 +25,7 @@ Prevent regressions by encoding quality checks into the build pipeline so packag
 
 ---
 
-## The 5-Gate Architecture
+## The 8-Gate Architecture
 
 | Gate | Name | What It Catches | File |
 |------|------|----------------|------|
@@ -37,6 +34,9 @@ Prevent regressions by encoding quality checks into the build pipeline so packag
 | 3 | Doc File Inclusion | Source code references to files not packaged in VSIX | `scripts/quality-gate.cjs` |
 | 4 | Table Integrity | Corrupted markdown tables in packaged documentation | `scripts/quality-gate.cjs` |
 | 5 | Walkthrough Sync | Whitelisted docs missing from Master→Heir sync script | `scripts/quality-gate.cjs` |
+| 6 | Activation Index | Skills missing from `memory-activation/SKILL.md` keyword index | `scripts/quality-gate.cjs` |
+| 7 | VSIX Size Budget | Package exceeds 7 MB (warn at 5.5 MB); fallback file walker if vsce unavailable | `scripts/quality-gate.cjs` |
+| 8 | Skill Activation Index | `audit-skill-activation-index.cjs` validates all skills are indexed | `scripts/quality-gate.cjs` |
 
 ---
 

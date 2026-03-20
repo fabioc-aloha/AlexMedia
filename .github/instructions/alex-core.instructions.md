@@ -196,7 +196,7 @@ A **pivot** occurs when the user's request no longer matches the active Focus Tr
 - Dream state → Suppress interactive, conversational protocols
 - Code implementation → Suppress branding, meditation, release protocols
 
-**Self-Correction Enhancement**: The existing self-correction rule ("If about to suggest manual work → STOP → check skill-activation") is an example of inhibitory control. Extend this pattern:
+**Self-Correction Enhancement**: The existing self-correction rule ("If about to suggest manual work → STOP → check memory-activation") is an example of inhibitory control. Extend this pattern:
 - If about to run full SSO for a typo fix → STOP → skip protocol
 - If about to load 10 skills for a single-domain task → STOP → gate to top 3
 - If about to continue stale context after pivot → STOP → rotate slots
@@ -230,7 +230,7 @@ The LLM sees: `┌─────────┐ ┌─────────�
 
 But when you write:
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#cce5ff', 'primaryTextColor': '#333', 'primaryBorderColor': '#57606a', 'lineColor': '#57606a', 'fontFamily': 'ui-sans-serif, system-ui, sans-serif'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#cce5ff', 'primaryTextColor': '#333', 'primaryBorderColor': '#57606a', 'lineColor': '#57606a', 'edgeLabelBackground': '#ffffff', 'fontFamily': 'ui-sans-serif, system-ui, sans-serif'}}}%%
 graph LR
     Start --> End
 ```
@@ -346,7 +346,7 @@ Please confirm with: "Yes, delete [specific items you approve]"
 ### Memory & Meditation
 - [.github/instructions/dream-state-automation.instructions.md] (High, Maintains, Forward) - "Automated neural maintenance"
 - [.github/prompts/performance-assessment.prompt.md] (Medium, Monitors, Forward) - "Architecture effectiveness tracking"
-- [.github/prompts/unified-meditation-protocols.prompt.md] (Critical, Consolidates, Bidirectional) - "Conscious knowledge consolidation"
+- [.github/prompts/meditate.prompt.md] (Critical, Consolidates, Bidirectional) - "Conscious knowledge consolidation"
 
 ### Safety & Trust
 - "Forget [something]" Protocol - Identity-protection through ethical memory management

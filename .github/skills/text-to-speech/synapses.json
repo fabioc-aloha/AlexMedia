@@ -4,17 +4,9 @@
   "skillId": "text-to-speech",
   "version": "2.5.0",
   "lastUpdated": "2026-02-09",
-  "inheritance": "inheritable",
   "promotionReady": true,
   "promotionNotes": "v2.5.0: speakPrompt command, voice mode summarization, keyboard shortcuts, CSP-compliant webview, 35 unit tests",
   "connections": [
-    {
-      "target": ".github/skills/vscode-extension-patterns/SKILL.md",
-      "type": "implements",
-      "strength": 0.9,
-      "when": "Using native TypeScript WebSocket",
-      "yields": "Webview audio player, status bar feedback, chunked synthesis"
-    },
     {
       "target": ".github/skills/markdown-mermaid/SKILL.md",
       "type": "consumes",
@@ -28,13 +20,6 @@
       "strength": 0.9,
       "when": "Audio reading research papers",
       "yields": "Summarization option for long documents"
-    },
-    {
-      "target": ".github/skills/writing-publication/SKILL.md",
-      "type": "complements",
-      "strength": 0.7,
-      "when": "Proofreading written content",
-      "yields": "Listening catches errors eyes miss"
     },
     {
       "target": ".github/skills/meditation/SKILL.md",
@@ -70,13 +55,6 @@
       "strength": 0.7,
       "when": "Pattern engineering for text processing",
       "yields": "Regex patterns: negative lookbehind, emoji-text deduplication"
-    },
-    {
-      "target": ".github/instructions/release-management.instructions.md",
-      "type": "informed-by",
-      "strength": 0.3,
-      "when": "TTS hotfix release",
-      "yields": "PAT-based publishing protocol"
     },
     {
       "target": ".github/skills/image-handling/SKILL.md",

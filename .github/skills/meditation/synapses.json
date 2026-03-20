@@ -1,16 +1,8 @@
 {
   "$schema": "../SYNAPSE-SCHEMA.json",
   "skillId": "meditation",
-  "lastUpdated": "2026-03-05",
-  "inheritance": "inheritable",
+  "lastUpdated": "2026-03-20",
   "connections": [
-    {
-      "target": ".github/skills/meditation-facilitation/SKILL.md",
-      "type": "guided-by",
-      "strength": 0.75,
-      "when": "user explicitly requests guided meditation",
-      "yields": "Four R's protocol, structured reflection prompts"
-    },
     {
       "target": ".github/skills/knowledge-synthesis/SKILL.md",
       "type": "triggers",
@@ -26,18 +18,11 @@
       "yields": "Comprehensive architecture review protocol"
     },
     {
-      "target": ".github/skills/architecture-health/SKILL.md",
-      "type": "uses",
-      "strength": 0.8,
-      "when": "validating synapses during meditation",
-      "yields": "Health check commands, validation patterns"
-    },
-    {
       "target": ".github/skills/brain-qa/SKILL.md",
-      "type": "extends",
+      "type": "uses",
       "strength": 0.85,
-      "when": "deep architecture validation needed",
-      "yields": "6-phase cognitive QA, Master-Heir sync validation"
+      "when": "validating synapses during meditation or deep architecture validation",
+      "yields": "Health check commands, 6-phase cognitive QA, Master-Heir sync validation"
     },
     {
       "target": ".github/instructions/skill-selection-optimization.instructions.md",
@@ -54,6 +39,43 @@
       "yields": "Clean architecture baseline, synapse validation"
     }
   ],
+  "activationContexts": [
+    "meditate",
+    "meditation",
+    "reflect",
+    "consolidate",
+    "what did we learn",
+    "session learnings",
+    "knowledge consolidation",
+    "synthesis",
+    "integrate knowledge",
+    "review session",
+    "capture insights",
+    "learning session",
+    "deep thought",
+    "end of session",
+    "wrap up",
+    "summarize learnings",
+    "extract patterns",
+    "save knowledge",
+    "memory update",
+    "cognitive maintenance",
+    "brain maintenance",
+    "neural cleanup",
+    "knowledge persistence",
+    "session notes",
+    "document learnings",
+    "insights from today",
+    "what we discovered",
+    "key takeaways",
+    "consolidate memory",
+    "update memory",
+    "store knowledge",
+    "architecture reflection",
+    "skill reflection",
+    "growth review"
+  ],
+  "schemaVersion": "2.0.0",
   "triggers": [
     "meditate",
     "reflect",
@@ -96,6 +118,5 @@
     "architecture reflection",
     "skill reflection",
     "growth review"
-  ],
-  "schemaVersion": "2.0.0"
+  ]
 }

@@ -1,35 +1,34 @@
 {
   "$schema": "../SYNAPSE-SCHEMA.json",
   "skillId": "vscode-environment",
-  "lastUpdated": "2026-03-05",
-  "inheritance": "inheritable",
+  "lastUpdated": "2026-03-20",
   "connections": [
     {
       "target": ".github/skills/project-scaffolding/SKILL.md",
       "type": "supports",
       "strength": 0.85,
-      "reason": "Environment is part of scaffolding"
-    },
-    {
-      "target": ".github/skills/vscode-extension-patterns/SKILL.md",
-      "type": "complements",
-      "strength": 0.7,
-      "reason": "Extension dev needs good environment"
+      "reason": "Environment is part of scaffolding",
+      "when": "Environment is part of scaffolding",
+      "yields": "project scaffolding supporting context"
     },
     {
       "target": ".github/skills/git-workflow/SKILL.md",
       "type": "enables",
       "strength": 0.75,
-      "reason": "Git extensions improve workflow"
+      "reason": "Git extensions improve workflow",
+      "when": "Git extensions improve workflow",
+      "yields": "git workflow capabilities and setup"
     },
     {
       "target": ".github/skills/debugging-patterns/SKILL.md",
       "type": "supports",
       "strength": 0.8,
-      "reason": "launch.json enables debugging"
+      "reason": "launch.json enables debugging",
+      "when": "launch.json enables debugging",
+      "yields": "debugging patterns supporting context"
     }
   ],
-  "triggers": [
+  "activationContexts": [
     "VS Code setup",
     "workspace settings",
     "extensions",
@@ -37,5 +36,13 @@
     "tasks.json",
     "dev environment"
   ],
-  "schemaVersion": "2.0.0"
+  "schemaVersion": "2.0.0",
+  "triggers": [
+    "VS Code setup",
+    "workspace settings",
+    "extensions",
+    "launch.json",
+    "tasks.json",
+    "dev environment"
+  ]
 }

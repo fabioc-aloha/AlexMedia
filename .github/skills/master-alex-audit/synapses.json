@@ -1,9 +1,8 @@
 {
   "$schema": "../SYNAPSE-SCHEMA.json",
   "skillId": "master-alex-audit",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "lastUpdated": "2026-03-05",
-  "inheritance": "master-only",
   "connections": [
     {
       "target": ".github/skills/architecture-audit/SKILL.md",

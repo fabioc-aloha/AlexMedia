@@ -2,7 +2,6 @@
   "$schema": "../SYNAPSE-SCHEMA.json",
   "skillId": "release-preflight",
   "lastUpdated": "2026-03-05",
-  "inheritance": "inheritable",
   "connections": [
     {
       "target": ".github/skills/brain-qa/SKILL.md",

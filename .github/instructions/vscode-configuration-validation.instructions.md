@@ -1,3 +1,7 @@
+---
+description: "VS Code extension configuration validation — package.json manifest and runtime config error diagnosis"
+---
+
 # VS Code Configuration Validation Instructions
 
 **Auto-loaded when**: Working with VS Code extension configuration, package.json manifest, or experiencing runtime configuration errors
@@ -37,7 +41,7 @@ ERR Unable to write to User Settings because <key> is not a registered configura
 
 **Run the validation script**:
 ```powershell
-cd platforms/vscode-extension
+# Navigate to extension directory if in multi-platform workspace
 .\scripts\validate-manifest.ps1
 ```
 
@@ -160,6 +164,17 @@ Is this configuration update critical to feature functionality?
 | Registered key with wrong scope | Setting not persisted correctly | Use `machine` for global, `resource` for workspace |
 | Configuration read without default | `undefined` causes crashes | Always provide fallback: `.get(key, defaultValue)` |
 | Updating unregistered critical config | Silent failure, feature broken | Register in package.json |
+| Persisting Windows backslash paths directly | Escaped settings values, comparison mismatches, or invalid JSON-like path handling | Normalize with `path.replace(/\\/g, '/')` before `config.update()` |
+
+**Windows path normalization pattern**:
+```typescript
+const normalizedPath = filePath.replace(/\\/g, '/');
+await vscode.workspace.getConfiguration('alex.example').update(
+  'path',
+  normalizedPath,
+  vscode.ConfigurationTarget.Global
+);
+```
 
 ---
 
@@ -232,7 +247,7 @@ Add to build pipeline:
 ```yaml
 - name: Validate Extension Manifest
   run: |
-    cd platforms/vscode-extension
+    # Navigate to extension directory if in multi-platform workspace
     pwsh -File scripts/validate-manifest.ps1
   shell: pwsh
 ```
@@ -241,9 +256,8 @@ Add to build pipeline:
 
 ## Related Skills
 
-- [extension-audit-methodology](extension-audit-methodology.instructions.md) — Dimension 6: Configuration validation
 - [vscode-extension-patterns](../skills/vscode-extension-patterns/SKILL.md) — Extension development patterns
-- [code-review](code-review.instructions.md) — Configuration API usage review
+- [code-review-guidelines](code-review-guidelines.instructions.md) — Configuration API usage review
 
 ---
 

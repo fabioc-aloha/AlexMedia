@@ -12,9 +12,22 @@ applyTo: "**/assets/**,**/*.svg,**/*.png,**/*.ico"
 
 | Level | Brand | Symbol | Usage |
 |-------|-------|--------|-------|
-| **Parent** | CorreaX | C split X mark | Footer attribution, legal |
-| **Product** | Alex | A Negative Space Rocket | All Alex-specific assets |
-| **Platform** | Per-heir | Logo variants | VS Code, M365, GitHub |
+| **Company** | CorreaX | CorreaX wordmark + CX geometric mark | Company identity, footer attribution, legal, publisher-level brand |
+| **Product family** | Alex | Alex product marks and product-brand messaging | Collection of Alex projects and products |
+| **Product / platform** | Per-heir Alex product | Logo variants by product context | VS Code extension, M365 agent, plugin, websites |
+| **UI surface** | Command Center and other Alex UIs | In-product icons, badges, tabs, avatars | Interface-level expression inside a product |
+
+### Hierarchy rule
+
+- CorreaX and CX logos represent the company brand.
+- Alex represents the product brand spanning multiple projects and products.
+- Command Center is one of several Alex UI surfaces, not a separate brand.
+
+### Reference rule
+
+- Use **LearnAlex** as the strongest reference for website-level on-brand UI within the CorreaX and Alex ecosystem.
+- Use sibling repos such as AlexAgent as examples of **Alex product branding**, not necessarily as the canonical source for full UI treatment.
+- When designing Command Center, translate the LearnAlex tone and token discipline into a denser, utility-first sidebar surface instead of copying website chrome literally.
 
 ## Core Brand Elements
 
@@ -24,6 +37,14 @@ applyTo: "**/assets/**,**/*.svg,**/*.png,**/*.ico"
 | **Subtitle Template** | "Take Your [NOUN] to New Heights" | ✅ LOCKED |
 | **Primary Icon** | `$(rocket)` codicon | ✅ LOCKED |
 | **Colors** | Azure blue (#0078d4) + thrust orange (#ff6b35) | ✅ LOCKED |
+
+## Command Center Micro-Asset Exception
+
+The Alex logo system and marketplace/banner branding are **not** the default style for Command Center UI micro-assets.
+
+- For extension-local tab icons, state avatars, persona icons, agent icons, and badges, use the CorreaX UI asset rules in `DK-correax-brand.md`.
+- Treat company marks as company-brand assets and Alex hero marks as product-brand assets, not the everyday visual language for sidebar micro-icons.
+- In-product assets must optimize for semantic clarity at 16px to 24px, with state and function taking priority over logo resemblance.
 
 ### Website Palette (alex.correax.com)
 
@@ -50,10 +71,8 @@ The brain anatomy page (`docs/alex-brain-anatomy.html`) uses GitHub's dark palet
 | Location | File | Type | Purpose |
 |----------|------|------|---------|
 | `.github/assets/banner.svg` | Animated | 8.62 KB | GitHub READMEs |
-| `platforms/vscode-extension/.github/assets/banner.svg` | Animated | 8.62 KB | Extension GitHub README |
-| `platforms/vscode-extension/assets/banner.svg` | Static | 3.42 KB | Marketplace (compatibility) |
-| `platforms/vscode-extension/assets/banner.png` | Static | 204 KB | Fallback PNG |
-| `assets/banner.png` | Static | 204 KB | Legacy/external references |
+| `assets/banner.svg` | Static | 3.42 KB | Marketplace (compatibility) |
+| `assets/banner.png` | Static | 204 KB | Fallback PNG |
 
 ### Logos
 
@@ -61,11 +80,9 @@ All logos use 30° rotation for dynamic launch angle.
 
 | Location | File | Size | Purpose |
 |----------|------|------|---------|
-| `platforms/vscode-extension/assets/logo.svg` | 32x32 | 1.04 KB | Extension icon source (30° rotation) |
-| `platforms/vscode-extension/assets/logo-mono.svg` | 24x24 | 0.64 KB | Activity bar (currentColor, 30° rotation) |
-| `platforms/vscode-extension/assets/icon.png` | 128x128 | 3.58 KB | Marketplace icon |
-| `platforms/m365-copilot/appPackage/color.png` | 192x192 | 10.61 KB | Teams color icon |
-| `platforms/m365-copilot/appPackage/outline.png` | 32x32 | 1.20 KB | Teams outline icon |
+| `assets/logo.svg` | 32x32 | 1.04 KB | Extension icon source (30° rotation) |
+| `assets/logo-mono.svg` | 24x24 | 0.64 KB | Activity bar (currentColor, 30° rotation) |
+| `assets/icon.png` | 128x128 | 3.58 KB | Marketplace icon |
 
 ## GK Premium Branding (v5.0)
 
@@ -171,7 +188,7 @@ The `--density 150` flag ensures crisp text rendering.
 
 **Purpose**: Branded visual assets for persona-specific welcome experiences  
 **Tool**: Ideogram v2 via Replicate API  
-**Location**: `alex_docs/alex2/` (8 persona images at 1024x1024)  
+**Location**: `.github/assets/` (persona images at 1024x1024)  
 **Cost**: $0.08 per image ($0.64 total for full set)
 
 ### Template-Based Generation Pattern
@@ -235,8 +252,6 @@ TYPOGRAPHY: Clean, no distortion, high contrast
 ## Synapses
 
 - [.github/skills/brand-asset-management/SKILL.md] (Critical, Implements, Bidirectional) - "Domain knowledge this procedure operationalizes"
-- [.github/instructions/release-management.instructions.md] (Medium, Integrates, Backward) - "Asset verification during release"
-- [.github/instructions/heir-skill-promotion.instructions.md] (Low, Documents, Forward) - "Heir branding alignment"
 
 ### External Knowledge
 - GI-premium-tier-visual-metaphor-pattern-2026-02-06 (High, Validates) - "Tiered branding pattern in Global Knowledge"

@@ -2,8 +2,7 @@
   "$schema": "../SYNAPSE-SCHEMA.json",
   "skillId": "proactive-assistance",
   "version": "1.1.0",
-  "lastUpdated": "2026-03-05",
-  "inheritance": "inheritable",
+  "lastUpdated": "2026-03-20",
   "connections": [
     {
       "target": ".github/skills/frustration-recognition/SKILL.md",
@@ -47,6 +46,12 @@
       "when": "user starting new task",
       "yields": "proactive time estimates before asked"
     }
+  ],
+  "activationContexts": [
+    "proactive-assistance",
+    "proactive assistance",
+    "proactive",
+    "assistance"
   ],
   "schemaVersion": "2.1.0",
   "lastValidated": "2026-02-11"

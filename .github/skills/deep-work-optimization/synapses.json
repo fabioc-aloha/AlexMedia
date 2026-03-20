@@ -2,9 +2,21 @@
   "$schema": "../SYNAPSE-SCHEMA.json",
   "skillId": "deep-work-optimization",
   "version": "1.1.0",
-  "lastUpdated": "2026-03-05",
-  "inheritance": "inheritable",
-  "connections": [],
+  "lastUpdated": "2026-03-20",
+  "connections": [
+    {
+      "type": "when",
+      "when": "deep work|focus|flow|time block",
+      "target": ".github/skills/frustration-recognition/SKILL.md",
+      "yields": [
+        "frustration-recognition",
+        "meeting-efficiency",
+        "skill-building"
+      ],
+      "weight": 0.8,
+      "notes": "Route deep work requests to adjacent skills that protect focus and build habits"
+    }
+  ],
   "activationContexts": [
     {
       "trigger": "deep work|focus session|concentration|undistracted",
@@ -28,7 +40,7 @@
     }
   ],
   "schemaVersion": "2.1.0",
-  "connectionCount": 6,
+  "connectionCount": 7,
   "synapses": [
     {
       "id": "DEEP-001",
@@ -69,7 +81,7 @@
     {
       "id": "DEEP-005",
       "source": "deep-work-optimization",
-      "target": ".github/skills/academic-paper-drafting/SKILL.md",
+      "target": ".github/skills/academic-research/SKILL.md",
       "type": "enables",
       "strength": 0.85,
       "description": "Academic writing requires sustained deep work sessions",
@@ -78,7 +90,7 @@
     {
       "id": "DEEP-006",
       "source": "deep-work-optimization",
-      "target": ".github/skills/airs-integration.session-calibration/SKILL.md",
+      "target": ".github/skills/airs-appropriate-reliance/SKILL.md",
       "type": "informs",
       "strength": 0.6,
       "description": "Deep work sessions benefit from appropriate reliance calibration",

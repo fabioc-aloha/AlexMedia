@@ -2,75 +2,98 @@
   "$schema": "../SYNAPSE-SCHEMA.json",
   "skillId": "ai-agent-design",
   "version": "1.2.0",
-  "lastUpdated": "2026-03-05",
-  "inheritance": "inheritable",
+  "lastUpdated": "2026-03-20",
   "connections": [
     {
       "target": ".github/skills/prompt-engineering/SKILL.md",
       "strength": 0.9,
-      "type": "REQUIRES",
+      "type": "requires",
+      "reason": "Agent prompts require sophisticated prompt engineering",
       "when": "Agent prompts require sophisticated prompt engineering",
-      "yields": "See target skill"
+      "yields": "prompt engineering required patterns and guidance"
     },
     {
       "target": ".github/skills/rag-architecture/SKILL.md",
       "strength": 0.9,
-      "type": "COMPLEMENTS",
+      "type": "complements",
+      "reason": "Agents often use RAG for knowledge retrieval",
       "when": "Agents often use RAG for knowledge retrieval",
-      "yields": "See target skill"
+      "yields": "RAG architecture complementary techniques"
     },
     {
       "target": ".github/skills/mcp-development/SKILL.md",
       "strength": 0.9,
-      "type": "COMPLEMENTS",
+      "type": "complements",
+      "reason": "MCP provides standardized tool interface for agents",
       "when": "MCP provides standardized tool interface for agents",
-      "yields": "See target skill"
+      "yields": "MCP development complementary techniques"
     },
     {
       "target": ".github/skills/llm-model-selection/SKILL.md",
       "strength": 0.7,
-      "type": "INFORMS",
+      "type": "informs",
+      "reason": "Agent design requires model selection for different components",
       "when": "Agent design requires model selection for different components",
-      "yields": "See target skill"
+      "yields": "LLM model selection contextual assessment"
     },
     {
       "target": ".github/skills/api-design/SKILL.md",
       "strength": 0.7,
-      "type": "COMPLEMENTS",
+      "type": "complements",
+      "reason": "Tool APIs must be well-designed for agent consumption",
       "when": "Tool APIs must be well-designed for agent consumption",
-      "yields": "See target skill"
+      "yields": "API design complementary techniques"
     },
     {
       "target": ".github/skills/anti-hallucination/SKILL.md",
       "strength": 0.9,
-      "type": "REQUIRES",
+      "type": "requires",
+      "reason": "Agents must detect and handle hallucinated tool calls",
       "when": "Agents must detect and handle hallucinated tool calls",
-      "yields": "See target skill"
+      "yields": "anti hallucination required patterns and guidance"
     },
     {
       "target": ".github/skills/error-recovery-patterns/SKILL.md",
       "strength": 0.9,
-      "type": "REQUIRES",
+      "type": "requires",
+      "reason": "Agents need robust error handling and recovery",
       "when": "Agents need robust error handling and recovery",
-      "yields": "See target skill"
+      "yields": "error recovery patterns required patterns and guidance"
     },
     {
       "target": ".github/skills/testing-strategies/SKILL.md",
       "strength": 0.7,
-      "type": "COMPLEMENTS",
+      "type": "complements",
+      "reason": "Agent testing requires specialized evaluation approaches",
       "when": "Agent testing requires specialized evaluation approaches",
-      "yields": "See target skill"
+      "yields": "testing strategies complementary techniques"
     },
     {
       "target": ".github/skills/foundry-agent-platform/SKILL.md",
       "strength": 0.9,
-      "bidirectional": true,
-      "type": "IMPLEMENTS",
+      "type": "implements",
+      "reason": "Foundry Agent Service is the cloud runtime for agent design patterns",
       "when": "Foundry Agent Service is the cloud runtime for agent design patterns",
-      "yields": "See target skill"
+      "yields": "foundry agent platform implementation steps"
     }
   ],
   "activationContexts": [
+    "agent",
+    "autonomous",
+    "multi-agent",
+    "tool use",
+    "function calling",
+    "ReAct",
+    "plan and execute",
+    "LangChain",
+    "LangGraph",
+    "AutoGen",
+    "CrewAI",
+    "orchestration",
+    "supervisor"
+  ],
+  "schemaVersion": "2.0.0",
+  "activationTriggers": [
     "agent",
     "autonomous",
     "multi-agent",
@@ -92,6 +115,5 @@
       "prompt-engineering",
       "api-design"
     ]
-  },
-  "schemaVersion": "2.0.0"
+  }
 }

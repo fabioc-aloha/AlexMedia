@@ -1,5 +1,5 @@
 ---
-applyTo: "**/*synapse*,**/*schema*,**/*connection*"
+applyTo: "**/*synapse*"
 description: "Single source of truth for synapse notation format"
 ---
 
@@ -156,7 +156,7 @@ In network diagrams, temporary skills are styled with:
 - **Border**: Dashed (stroke-dasharray: 5 5)
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#cce5ff', 'primaryTextColor': '#333', 'primaryBorderColor': '#57606a', 'lineColor': '#57606a', 'fontFamily': 'ui-sans-serif, system-ui, sans-serif'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#cce5ff', 'primaryTextColor': '#333', 'primaryBorderColor': '#57606a', 'lineColor': '#57606a', 'edgeLabelBackground': '#ffffff', 'fontFamily': 'ui-sans-serif, system-ui, sans-serif'}}}%%
 classDef temp fill:#f3e8ff,stroke:#7c3aed,stroke-dasharray:5 5
 class BT temp
 ```
@@ -188,7 +188,6 @@ Get-ChildItem .github/skills/*/synapses.json | ForEach-Object {
 2. Exclude those skill folders from the package
 3. Warn if any temporary skills would be included
 
-See [.github/instructions/release-management.instructions.md] for release checklist.
 
 ---
 

@@ -1,3 +1,7 @@
+---
+description: "AI-generated README banner creation for project branding and marketing assets"
+---
+
 # AI-Generated README Banners Instructions
 
 **Auto-loaded when**: Working with README files, project branding, marketing assets
@@ -35,25 +39,29 @@ Auto-load procedural steps for generating stunning 3:1 ultra-wide README banners
 
 ## Model Selection Decision Tree
 
-### Use Ideogram v2 When:
-- ✅ Typography needed (project title, tagline)
-- ✅ Fixed branding (text won't change)
-- ✅ Professional photorealistic quality required
-- ✅ Budget allows $0.08 per banner
-- ✅ Social sharing with embedded text
+### Default: Recraft v4 SVG (SVG Output)
+- ✅ **Default for all banner requests** — scalable, lightweight, editable
+- ✅ Text rendering supported natively
+- ✅ Theme-aware (can embed `prefers-color-scheme`)
+- ✅ Version-control friendly (meaningful diffs)
+- ✅ Editable post-generation (colors, text, layout)
 
-**Cost**: $0.08 per image, 10-20 second generation
+**Model**: `recraft-ai/recraft-v4-svg` | **Premium**: `recraft-ai/recraft-v4-pro-svg` ($0.30)
+
+### Use Ideogram v2/v3 When:
+- ✅ Photorealistic raster banner needed (not vector)
+- ✅ Complex photographic backgrounds required
+- ✅ Style reference images provided
+- ✅ Social sharing with embedded text (PNG preferred)
+
+**Cost**: $0.03 (v3 Turbo) to $0.09 (v3 Quality)
 
 ### Use Flux (Schnell/Pro) When:
-- ✅ Clean background only (add text via markdown)
-- ✅ Text changes frequently
-- ✅ Multi-language support needed
+- ✅ Raster-only, no text needed
+- ✅ Rapid iteration on visual concepts
 - ✅ Ultra-low budget ($0.003-$0.04)
-- ✅ Rapid iteration required
 
-**Cost**: $0.003 (Schnell) to $0.04 (Pro), 1-60 second generation
-
-**Recommendation**: For professional projects with stable branding, Ideogram v2 delivers exceptional ROI at $0.08.
+**Recommendation**: Default to Recraft v4 SVG. Fall back to Ideogram v3 Turbo for photorealistic raster, or Flux for text-free raster iteration.
 
 ---
 
@@ -85,7 +93,7 @@ const BRAND = {
 const BANNERS = [
   {
     id: 'primary-banner',
-    filename: 'banner-primary.png',
+    filename: 'banner-primary.svg',   // SVG default
     title: 'PROJECT NAME',        // Keep short (<15 chars for best typography)
     subtitle: 'Brief tagline',
     composition: 'centered',       // 'left', 'centered', 'right'
@@ -93,7 +101,7 @@ const BANNERS = [
   },
   {
     id: 'variant-developer',
-    filename: 'banner-dev.png',
+    filename: 'banner-dev.svg',       // SVG default
     title: 'Take Your CODE to New Heights',
     subtitle: 'Project Name',
     composition: 'left',
@@ -361,6 +369,19 @@ const output = await replicate.run('black-forest-labs/flux-schnell', {
 | Flux + Markdown | $0.003-0.04 | ⭐⭐⭐⭐ | Markdown | Multi-language |
 
 **Recommendation**: Ideogram v2 for professional projects ($0.08 exceptional ROI vs stock photos $10-$100).
+
+---
+
+## Banner Quality Review (VS Code 1.112+)
+
+After generating banners, use the built-in `view_image` tool to assess output quality before committing:
+
+- **Typography legibility**: Verify text is sharp, properly spelled, and readable at README scale
+- **Brand color accuracy**: Confirm palette matches project branding guidelines
+- **Composition balance**: Check visual weight distribution and element placement
+- **Artifact detection**: Look for AI artifacts — smeared text, misshapen objects, inconsistent edges
+
+For multi-variant generation, VS Code 1.112+'s image carousel enables side-by-side comparison without file switching.
 
 ---
 

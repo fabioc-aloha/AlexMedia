@@ -2,9 +2,21 @@
   "$schema": "../SYNAPSE-SCHEMA.json",
   "skillId": "slide-design",
   "version": "1.1.0",
-  "lastUpdated": "2026-03-05",
-  "inheritance": "inheritable",
-  "connections": [],
+  "lastUpdated": "2026-03-20",
+  "connections": [
+    {
+      "type": "when",
+      "when": "slide|deck|powerpoint|presentation|assertion-evidence",
+      "target": ".github/skills/gamma-presentations/SKILL.md",
+      "yields": [
+        "gamma-presentations",
+        "executive-storytelling",
+        "pptx-generation"
+      ],
+      "weight": 0.86,
+      "notes": "Surface slide generators and storytelling helpers when user talks about decks"
+    }
+  ],
   "activationContexts": [
     {
       "trigger": "slide design|presentation design|PowerPoint|deck",
@@ -26,7 +38,7 @@
     }
   ],
   "schemaVersion": "2.1.0",
-  "connectionCount": 4,
+  "connectionCount": 5,
   "synapses": [
     {
       "id": "SLIDE-001",

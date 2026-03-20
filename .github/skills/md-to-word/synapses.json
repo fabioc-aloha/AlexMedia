@@ -2,48 +2,88 @@
   "$schema": "../SYNAPSE-SCHEMA.json",
   "skillId": "md-to-word",
   "version": "2.2.0",
-  "lastUpdated": "2026-03-05",
-  "inheritance": "inheritable",
+  "lastUpdated": "2026-03-20",
   "connections": [
     {
       "target": ".github/skills/markdown-mermaid/SKILL.md",
       "type": "depends-on",
       "strength": 0.95,
-      "reason": "Mermaid diagrams must follow ATACCU before export to ensure quality"
+      "reason": "Mermaid diagrams must follow ATACCU before export to ensure quality",
+      "when": "Mermaid diagrams must follow ATACCU before export to ensure quality",
+      "yields": "markdown mermaid required patterns and guidance"
     },
     {
       "target": ".github/skills/brand-asset-management/SKILL.md",
       "type": "related",
       "strength": 0.7,
-      "reason": "SVG banners and visual assets should follow brand guidelines"
+      "reason": "SVG banners and visual assets should follow brand guidelines",
+      "when": "SVG banners and visual assets should follow brand guidelines",
+      "yields": "brand asset management related patterns and guidance"
     },
     {
       "target": ".github/skills/pptx-generation/SKILL.md",
       "type": "sibling",
       "strength": 0.85,
-      "reason": "Similar document export workflow for PowerPoint presentations"
+      "reason": "Similar document export workflow for PowerPoint presentations",
+      "when": "Similar document export workflow for PowerPoint presentations",
+      "yields": "PPTX generation trifecta patterns and guidance"
     },
     {
       "target": ".github/skills/svg-graphics/SKILL.md",
       "type": "supports",
       "strength": 0.6,
-      "reason": "SVG to PNG conversion enables Word compatibility"
+      "reason": "SVG to PNG conversion enables Word compatibility",
+      "when": "SVG to PNG conversion enables Word compatibility",
+      "yields": "SVG graphics supporting context"
     },
     {
       "target": ".github/skills/documentation-quality-assurance/SKILL.md",
       "type": "enables",
       "strength": 0.8,
-      "reason": "Enables professional document distribution to stakeholders"
+      "reason": "Enables professional document distribution to stakeholders",
+      "when": "Enables professional document distribution to stakeholders",
+      "yields": "documentation quality assurance capabilities and setup"
     },
     {
-      "target": ".github/skills/writing-publication/SKILL.md",
+      "target": ".github/skills/academic-research/SKILL.md",
       "type": "depends-on",
       "strength": 0.85,
-      "reason": "Research documents must follow Word-Compatible Research Writing Style before conversion"
+      "reason": "Research documents must follow Word-Compatible Research Writing Style before conversion",
+      "when": "Research documents must follow Word-Compatible Research Writing Style before conversion",
+      "yields": "academic research required patterns and guidance"
     }
   ],
+  "activationContexts": [
+    "convert to word",
+    "export docx",
+    "markdown to word",
+    "create word document",
+    "generate docx",
+    "word export",
+    "md to word",
+    "md to docx",
+    "markdown export",
+    "word document",
+    "docx",
+    ".docx",
+    "Microsoft Word",
+    "export document",
+    "stakeholder document",
+    "executive report",
+    "professional document",
+    "formatted document",
+    "pandoc",
+    "jszip",
+    "mermaid to png",
+    "export for sharing",
+    "shareable document",
+    "document generation",
+    "report generation",
+    "convert markdown",
+    "transform markdown"
+  ],
   "schemaVersion": "2.1.0",
-  "muscle": ".github/muscles/md-to-word.py",
+  "muscle": ".github/muscles/md-to-word.cjs",
   "when": [
     "User requests Word document export",
     "User says 'convert to word' or 'export docx'",
@@ -53,19 +93,11 @@
     "Preparing documents for executive review",
     "User wants PDF output from a research document (workflow: Word then Save As PDF)"
   ],
-  "yields": [
-    "Professional .docx document",
-    "PNG images from Mermaid diagrams (90% page fit)",
-    "Styled tables with Microsoft blue headers",
-    "Tables with smart pagination (no orphan headers)",
-    "Centered images preserving aspect ratio",
-    "Properly spaced bullet lists and headings"
-  ],
   "tools": {
     "required": [
       "pandoc",
       "mermaid-cli (mmdc)",
-      "python-docx"
+      "jszip"
     ],
     "optional": [
       "svgexport"
@@ -74,9 +106,9 @@
   "heir-adoption": {
     "priority": "high",
     "copy-files": [
-      ".github/muscles/md-to-word.py"
+      ".github/muscles/md-to-word.cjs"
     ],
-    "install": "winget install pandoc; npm i -g @mermaid-js/mermaid-cli; pip install python-docx"
+    "install": "winget install pandoc; npm i -g @mermaid-js/mermaid-cli"
   },
   "triggers": [
     "convert to word",
@@ -106,7 +138,7 @@
     "professional document",
     "formatted document",
     "pandoc",
-    "python-docx",
+    "jszip",
     "mermaid to png",
     "export for sharing",
     "shareable document",

@@ -1,20 +1,23 @@
 {
   "$schema": "../SYNAPSE-SCHEMA.json",
   "skillId": "git-workflow",
-  "lastUpdated": "2026-03-05",
-  "inheritance": "inheritable",
-  "connections": [
-    {
-      "target": ".github/skills/release-preflight/SKILL.md",
-      "type": "enables",
-      "strength": 0.9
-    },
-    {
-      "target": ".github/instructions/release-management.instructions.md",
-      "type": "supports",
-      "strength": 0.85
-    }
+  "lastUpdated": "2026-03-20",
+  "connections": [],
+  "activationContexts": [
+    "commit",
+    "git",
+    "branch",
+    "merge",
+    "recovery",
+    "undo",
+    "reset",
+    "rebase",
+    "pull request",
+    "PR",
+    "cherry-pick",
+    "conflict"
   ],
+  "schemaVersion": "2.0.0",
   "activationBoost": [
     "commit",
     "git",
@@ -34,6 +37,5 @@
     "PR",
     "cherry-pick",
     "conflict"
-  ],
-  "schemaVersion": "2.0.0"
+  ]
 }

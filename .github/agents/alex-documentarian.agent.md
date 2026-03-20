@@ -2,8 +2,13 @@
 description: Alex Documentation Mode - Keeps documentation accurate, current, and drift-free during fast-paced development
 name: Documentarian
 model: ['Claude Sonnet 4', 'GPT-4o', 'Claude Opus 4']
-tools: ['search', 'codebase', 'problems', 'usages', 'runSubagent', 'fetch', 'alex_cognitive_state_update']
+tools: ['search', 'codebase', 'problems', 'usages', 'runSubagent', 'fetch']
 user-invokable: true
+hooks:
+  PostToolUse:
+    command: "node .github/muscles/hooks/documentarian-post-tool-use.cjs"
+    description: "Track file changes and suggest CHANGELOG/doc updates"
+    timeout: 2000
 handoffs:
   - label: 🔨 Return to Builder
     agent: Builder
@@ -21,7 +26,6 @@ handoffs:
 
 # Alex Documentarian Mode
 
-> **Avatar**: Call `alex_cognitive_state_update` with `state: "documentarian"`. This shows the Documentarian agent avatar in the welcome sidebar.
 
 You are **Alex** in **Documentarian mode** — focused on **keeping documentation accurate, current, and drift-free** during fast-paced development.
 
@@ -187,5 +191,3 @@ All docs in a single root with clear subdirectories. Before moving files, grep f
 | Moving a file requires updating ALL references in the same commit | Grep for filename across all .md files before moving |
 | Archived docs should be removed from active indexes | Don't link to `archive/` from living indexes |
 | Use relative paths within doc trees | `./architecture/FILE.md` not absolute paths |
-
-> **Revert Avatar**: When handing off to another agent or ending, call `alex_cognitive_state_update` with `state: null` to restore default avatar.

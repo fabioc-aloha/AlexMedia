@@ -2,7 +2,6 @@
   "$schema": "../SYNAPSE-SCHEMA.json",
   "skillId": "chat-participant-patterns",
   "lastUpdated": "2026-03-05",
-  "inheritance": "heir:vscode",
   "connections": [
     {
       "target": ".github/skills/vscode-extension-patterns/SKILL.md",

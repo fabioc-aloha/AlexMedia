@@ -3,17 +3,7 @@
   "skillId": "documentation-quality-assurance",
   "version": "1.2.0",
   "lastUpdated": "2026-02-20T07:45:33.299Z",
-  "inheritance": "inheritable",
-  "connections": [
-    {
-      "target": ".github/skills/release-process/SKILL.md",
-      "strength": 0.85,
-      "type": "operational",
-      "when": "DoD Criterion #8 (CHANGELOG documents delta) relies on doc QA principles",
-      "yields": "See target skill",
-      "bidirectional": true
-    }
-  ],
+  "connections": [],
   "activationContexts": [
     "documentation audit",
     "doc quality",
@@ -27,20 +17,6 @@
   ],
   "notes": "Systematic documentation audit, drift detection, preflight validation, and multi-pass quality pipelines",
   "schemaVersion": "1.0",
-  "yields": [
-    {
-      "concept": "5-pass quality pipeline",
-      "whenNeeded": "reviewing large documentation suites systematically"
-    },
-    {
-      "concept": "count elimination rules",
-      "whenNeeded": "hardcoded numbers in docs drift from reality"
-    },
-    {
-      "concept": "comprehensive header pattern",
-      "whenNeeded": "operational docs lack at-a-glance context (regression checklists, deployment guides)"
-    }
-  ],
   "changelog": [
     {
       "version": "1.1.0",

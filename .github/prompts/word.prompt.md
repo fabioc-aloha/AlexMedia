@@ -5,7 +5,6 @@ agent: Alex
 
 # /word - Markdown to Word Export
 
-> **Avatar**: Call `alex_cognitive_state_update` with `state: "building"`. This updates the welcome sidebar avatar.
 
 Convert Markdown documents to professionally formatted Word files with perfect diagram sizing.
 
@@ -55,8 +54,4 @@ The script reads actual PNG dimensions and applies the most constraining limit w
 ```powershell
 winget install pandoc
 npm install -g @mermaid-js/mermaid-cli
-pip install python-docx
-
-> **Revert Avatar**: Call `alex_cognitive_state_update` with `state: "persona"` to reset to project-appropriate avatar.
-
 ```

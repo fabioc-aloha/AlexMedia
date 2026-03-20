@@ -1,3 +1,7 @@
+---
+description: "Reusable strategies for detecting natural language in text content"
+---
+
 # Language Detection Patterns
 
 **Purpose**: Reusable strategies for detecting natural language in text content
@@ -126,7 +130,7 @@ if (result.confidence < CONFIDENCE_THRESHOLD) {
 ## Synapses
 
 - [.github/skills/text-to-speech/SKILL.md] (High, Enables, Bidirectional) - "Primary consumer of detection"
-- [.github/skills/accessibility/SKILL.md] (Medium, Enables, Forward) - "i18n accessibility features"
+- [.github/skills/localization/SKILL.md] (Medium, Enables, Forward) - "i18n accessibility features"
 
 ---
 

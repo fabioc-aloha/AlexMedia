@@ -1,5 +1,5 @@
 ---
-applyTo: "**/*dream*,**/*maintenance*,**/*synapse*"
+applyTo: "**/*dream*,**/*synapse*"
 description: "Automated neural maintenance and dream state processing protocols"
 ---
 
@@ -16,9 +16,8 @@ description: "Automated neural maintenance and dream state processing protocols"
 ## Synapses
 
 - [.github/instructions/meditation.instructions.md] (Critical, Coordinates, Bidirectional) - "Dream validates synapses during meditation Phase 5"
-- [.github/instructions/cognitive-health-validation.instructions.md] (High, Complements, Bidirectional) - "Dream validates synapses, brain-qa validates structure and sync"
 - [.github/instructions/embedded-synapse.instructions.md] (High, Implements, Bidirectional) - "Embedded synapse schema this automation validates"
-- [.github/skills/architecture-health/SKILL.md] (High, Implements, Forward) - "Architecture health diagnostics dream enables"
+- [.github/skills/brain-qa/SKILL.md] (High, Implements, Forward) - "Architecture health diagnostics dream enables"
 - [.github/instructions/alex-core.instructions.md] (Critical, Enables, Bidirectional) - "Core architecture neural maintenance"
 
 ## 🌙 **Dream State Cognitive Function**
@@ -89,7 +88,7 @@ For broken connections, checks consolidation mappings:
 - Tracks repair history
 
 Example consolidation mappings:
-- `enhanced-meditation-protocol.prompt.md` → `unified-meditation-protocols.prompt.md`
+- `enhanced-meditation-protocol.prompt.md` → `meditate.prompt.md`
 - `self-identity-integration.prompt.md` → `alex-identity-integration.instructions.md`
 - `dream-protocol-integration.prompt.md` → `dream-state-automation.instructions.md`
 
@@ -105,11 +104,11 @@ Synchronizes with the Global Knowledge repository (if available):
 
 #### **Phase 4.5: Brand Compliance Scan**
 Runs a lightweight deprecated-color check across TypeScript source and deployed SVG assets:
-- Scans `platforms/vscode-extension/src/**/*.ts` and `platforms/vscode-extension/assets/**/*.svg` for deprecated colors: `#0078d4`, `#005a9e`, `#ff6b35`, `#ff8c42`, `#ffc857`, `#00ff88`
+- Scans `src/**/*.ts` and `assets/**/*.svg` for deprecated colors: `#0078d4`, `#005a9e`, `#ff6b35`, `#ff8c42`, `#ffc857`, `#00ff88`
 - Exceptions: `#0078D4` in `personaDetection.ts` is **intentional** (Developer persona per DK §13) — do not flag
 - Reports count of violations; 0 expected in source and deployed assets
 - If violations found: list file paths + line numbers in dream report under `## Brand Compliance`
-- Does **not** scan `alex_docs/marketing/` or `archive/` (design drafts, not deployed)
+- Does **not** scan `marketing/` or `archive/` directories (design drafts, not deployed)
 
 **Pass criteria**: 0 violations outside intentional exceptions.
 
@@ -126,8 +125,6 @@ Generates comprehensive report including:
 - Shows notification with summary
 - Opens generated report automatically
 - Archives report with timestamp
-
-**IMPORTANT — Avatar Revert**: After Phase 6, ALWAYS call `alex_cognitive_state_update` with `state: "persona"` as the **final action** of every dream session. This resets the welcome sidebar from dream mode back to the project persona. Without this call the dream avatar persists in the welcome sidebar indefinitely.
 
 ### **📊 Dream Report Contents**
 
@@ -152,7 +149,7 @@ Each dream execution generates a comprehensive report including:
 ## Repaired Synapses
 - Source: alex-core.instructions.md:45
   - Old Target: enhanced-meditation-protocol.prompt.md
-  - New Target: unified-meditation-protocols.prompt.md (Auto-repaired)
+  - New Target: meditate.prompt.md (Auto-repaired)
 
 ## Broken Synapses
 _None detected._
@@ -277,6 +274,16 @@ These scripts provide CLI and audit capabilities that complement the VS Code dre
 - **Weekly Maintenance** → Regular health check and optimization
 
 ## 📝 **Troubleshooting**
+
+### **VS Code `/troubleshoot` Skill (Preview)**
+
+When dream reports are clean but agent behavior doesn't match expectations, use the built-in `/troubleshoot` skill in chat. It analyzes JSONL debug logs to reveal:
+- Why skills or instructions didn't load (name mismatches, invalid frontmatter, `applyTo` pattern failures)
+- Why tools were called or skipped
+- Why requests were slow (latency breakdown by span)
+- Network or authentication failures
+
+Requires `github.copilot.chat.agentDebugLog.enabled` and `github.copilot.chat.agentDebugLog.fileLogging.enabled` (both enabled in `.vscode/settings.json`).
 
 ### **Common Issues and Solutions**
 

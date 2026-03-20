@@ -1,3 +1,7 @@
+---
+description: "Mermaid diagram creation, technical documentation visuals, diagram type selection, and rendering troubleshooting"
+---
+
 # Markdown & Mermaid Diagram Instructions
 
 **Auto-loaded when**: Creating Mermaid diagrams, writing technical documentation with visuals, choosing diagram types, or troubleshooting rendering issues
@@ -47,7 +51,8 @@ Produce correct, visually consistent Mermaid diagrams using the ATACCU protocol 
   'lineColor': '#57606a',
   'primaryColor': '#ddf4ff',
   'primaryBorderColor': '#0969da',
-  'primaryTextColor': '#1f2328'
+  'primaryTextColor': '#1f2328',
+  'edgeLabelBackground': '#ffffff'
 }}}%%
 ```
 
@@ -105,9 +110,11 @@ Red (error/risk):        fill:#ffebe9,stroke:#cf222e,color:#a40e26
 
 ## Quality Gate — Before Finalizing
 
-- [ ] `%%{init}%%` directive present
+- [ ] `%%{init}%%` directive present with `edgeLabelBackground: '#ffffff'`
 - [ ] Every node has a `classDef` applied
 - [ ] `linkStyle default stroke:#57606a` at end of flowcharts
 - [ ] No saturated colors (only GitHub Pastel v2)
+- [ ] Node labels use `<br/>` for line breaks (NOT `\n`)
 - [ ] `**Figure N:** *description*` caption below the code block
 - [ ] Rendered and visually verified (not just syntax-checked)
+- [ ] For exported PNG/SVG: verified via `view_image` — readable labels, correct palette, no clipped nodes (VS Code 1.112+)

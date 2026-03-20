@@ -1,44 +1,60 @@
 {
   "$schema": "../SYNAPSE-SCHEMA.json",
   "skillId": "architecture-refinement",
-  "lastUpdated": "2026-03-05",
-  "inheritance": "inheritable",
+  "lastUpdated": "2026-03-20",
   "connections": [
     {
       "target": ".github/instructions/bootstrap-learning.instructions.md",
       "type": "implements",
       "strength": 0.9,
+      "reason": "Operationalizes the extract-and-document phase of bootstrap learning",
       "when": "Operationalizes the extract-and-document phase of bootstrap learning",
-      "yields": "See target skill"
+      "yields": "bootstrap learning implementation steps"
     },
     {
-      "target": ".github/prompts/unified-meditation-protocols.prompt.md",
+      "target": ".github/prompts/meditate.prompt.md",
       "type": "feeds",
       "strength": 0.7,
+      "reason": "Documented patterns become consolidation fodder during meditation",
       "when": "Documented patterns become consolidation fodder during meditation",
-      "yields": "See target skill"
+      "yields": "meditate downstream processing"
     },
     {
       "target": ".github/skills/markdown-mermaid/SKILL.md",
       "type": "uses",
       "strength": 0.7,
+      "reason": "Documentation often includes diagrams",
       "when": "Documentation often includes diagrams",
-      "yields": "See target skill"
+      "yields": "markdown mermaid patterns and guidance"
     },
     {
       "target": ".github/skills/lint-clean-markdown/SKILL.md",
       "type": "requires",
       "strength": 0.9,
+      "reason": "All documentation must be lint-clean",
       "when": "All documentation must be lint-clean",
-      "yields": "See target skill"
+      "yields": "lint clean markdown required patterns and guidance"
+    },
+    {
+      "target": ".github/skills/localization/SKILL.md",
+      "type": "related",
+      "strength": 0.85,
+      "when": "architecture refinement relates to localization",
+      "yields": "localization related patterns and guidance"
     }
   ],
-  "notes": "Meta-skill for maintaining and evolving Alex's cognitive architecture",
-  "triggers": [
+  "activationContexts": [
     "session produced architecture-worthy insight",
     "file migration or consolidation completed",
     "human feedback corrected AI judgment",
     "new workflow pattern emerged"
   ],
-  "schemaVersion": "2.0.0"
+  "notes": "Meta-skill for maintaining and evolving Alex's cognitive architecture",
+  "schemaVersion": "2.0.0",
+  "triggers": [
+    "session produced architecture-worthy insight",
+    "file migration or consolidation completed",
+    "human feedback corrected AI judgment",
+    "new workflow pattern emerged"
+  ]
 }

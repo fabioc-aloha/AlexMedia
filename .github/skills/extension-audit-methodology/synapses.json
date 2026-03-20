@@ -1,9 +1,8 @@
 {
   "$schema": "../SYNAPSE-SCHEMA.json",
   "skillId": "extension-audit-methodology",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "lastUpdated": "2026-03-05",
-  "inheritance": "inheritable",
   "connections": [
     {
       "target": ".github/skills/code-review/SKILL.md",

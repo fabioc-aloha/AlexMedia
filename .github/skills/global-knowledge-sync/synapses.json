@@ -1,64 +1,62 @@
 {
   "$schema": "../SYNAPSE-SCHEMA.json",
   "skillId": "global-knowledge-sync",
-  "lastUpdated": "2026-03-05",
-  "inheritance": "universal",
+  "version": "1.1.0",
+  "lastUpdated": "2026-03-20",
   "connections": [
     {
       "target": ".github/skills/global-knowledge/SKILL.md",
       "type": "extends",
       "strength": 0.95,
-      "reason": "Sync operations extend core GK search capability"
-    },
-    {
-      "target": ".github/skills/meditation-facilitation/SKILL.md",
-      "type": "triggers",
-      "strength": 0.8,
-      "reason": "Meditation creates insights that sync promotes"
+      "reason": "Sync operations extend core GK search capability",
+      "when": "Sync operations extend core GK search capability",
+      "yields": "global knowledge extended capabilities"
     },
     {
       "target": ".github/skills/meditation/SKILL.md",
       "type": "integrates",
       "strength": 0.85,
-      "reason": "Dream protocol includes GK sync step"
+      "reason": "Dream protocol includes GK sync step",
+      "when": "Dream protocol includes GK sync step",
+      "yields": "meditation integration patterns"
     },
     {
       "target": ".github/skills/bootstrap-learning/SKILL.md",
       "type": "accelerates",
       "strength": 0.7,
-      "reason": "GK provides prior knowledge for new learning"
+      "reason": "GK provides prior knowledge for new learning",
+      "when": "GK provides prior knowledge for new learning",
+      "yields": "bootstrap learning acceleration techniques"
     },
     {
       "target": ".github/instructions/dream-state-automation.instructions.md",
       "type": "modifies",
       "strength": 0.75,
-      "reason": "Adds GK sync to dream checklist"
-    },
-    {
-      "target": ".github/skills/rubber-duck-debugging/SKILL.md",
-      "type": "accelerates",
-      "strength": 0.7,
-      "reason": "Problem Solving starter pattern includes rubber duck method"
+      "reason": "Adds GK sync to dream checklist",
+      "when": "Adds GK sync to dream checklist",
+      "yields": "dream state automation modification interface"
     },
     {
       "target": ".github/skills/skill-development/SKILL.md",
       "type": "enables",
       "strength": 0.85,
-      "reason": "Skill pull-sync enables heir wishlist fulfillment"
+      "reason": "Skill pull-sync enables heir wishlist fulfillment",
+      "when": "Skill pull-sync enables heir wishlist fulfillment",
+      "yields": "skill development capabilities and setup"
     }
   ],
-  "schemaVersion": "2.0.0",
-  "externalRepository": "fabioc-aloha/Alex-Global-Knowledge",
-  "triggers": [
-    "saveinsight",
-    "save insight",
-    "promote to global",
-    "sync knowledge",
+  "activationContexts": [
+    "global-knowledge-sync",
     "global knowledge sync",
-    "gk sync",
-    "checkskills",
-    "check skills",
-    "pullskill",
-    "pull skill"
+    "global",
+    "knowledge",
+    "sync"
+  ],
+  "schemaVersion": "2.0.0",
+  "when": [
+    "User wants to save an insight to global knowledge",
+    "User searches for cross-project patterns",
+    "Dream protocol reaches GK sync step",
+    "User wants to promote a local skill to GK"
   ]
 }

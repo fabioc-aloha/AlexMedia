@@ -1,3 +1,8 @@
+---
+description: "Copilot Chat action button patterns for interactive follow-up actions in chat responses"
+applyTo: "**/chat/**/*.ts,**/*participant*.ts"
+---
+
 # Copilot Chat Action Buttons Pattern
 
 **Discovery Date**: February 4, 2026  
@@ -87,4 +92,4 @@ After completing this task, call:
 ## Synapses
 
 - **External Implementation**: VS Code extension chat participant module (1.0, bidirectional) - "stream.button() and followupProvider implementation"
-- [.github/prompts/unified-meditation-protocols.prompt.md](../prompts/unified-meditation-protocols.prompt.md) (0.9, enhancement, outgoing) - "action suggestions in meditation"
+- [.github/prompts/meditate.prompt.md](../prompts/meditate.prompt.md) (0.9, enhancement, outgoing) - "action suggestions in meditation"

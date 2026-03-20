@@ -1,7 +1,6 @@
 ---
 name: "architecture-health"
 description: "Diagnose cognitive architecture health — synapse integrity, memory balance, connection density, and drift detection"
-applyTo: "**/*synapse*,**/*health*,**/*connection*,**/*architecture*"
 ---
 
 # Architecture Health Skill
@@ -38,7 +37,7 @@ hub    = skill with 8+ connections (potential bottleneck)
 leaf   = skill with 1 connection (normal for specialized skills)
 ```
 
-**Healthy network**: Most skills are leaves (1-3) with a few hubs (meditation, architecture-health, skill-activation). Orphans indicate missing integration.
+**Healthy network**: Most skills are leaves (1-3) with a few hubs (meditation, self-actualization, memory-activation). Orphans indicate missing integration.
 
 ### Memory Balance Assessment
 
@@ -62,6 +61,7 @@ leaf   = skill with 1 connection (normal for specialized skills)
 | Terminology drift | Old terms ("DK files") in active files | Grep + replace |
 | Count drift | Hardcoded numbers stale by next session | Replace with references |
 | Inheritance drift | Catalog says "master-only" but synapses.json says "inheritable" | Trust synapses.json |
+| Runtime loading drift | Skill/instruction exists on disk but doesn't load in agent | Use `/troubleshoot` to analyze JSONL debug logs — reveals name mismatches, invalid frontmatter, or silent loader skips |
 
 ## Health Report Template
 

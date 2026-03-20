@@ -1,7 +1,9 @@
 ---
-name: "Gamma Presentations Skill"
-description: "Generate professional presentations using the Gamma API with expert storytelling consulting based on Duarte methodology."
-applyTo: "**/*presentation*,**/*slides*,**/*deck*,**/*gamma*,**/*pitch*"
+name: gamma-presentations
+description: >-
+  Generate professional presentations using the Gamma API with expert storytelling consulting based on Duarte
+  methodology.
+applyTo: '**/*presentation*,**/*slides*,**/*deck*,**/*gamma*,**/*pitch*'
 ---
 
 # Gamma Presentations Skill
@@ -9,8 +11,6 @@ applyTo: "**/*presentation*,**/*slides*,**/*deck*,**/*gamma*,**/*pitch*"
 > Generate professional presentations with expert storytelling consulting based on Duarte methodology.
 
 > ⚠️ **Staleness Watch** (Last validated: Mar 2026 — API v1.0 GA): Check [developers.gamma.app](https://developers.gamma.app/) for endpoint changes and pricing updates.
-
-> 📖 **Full Documentation**: The complete user guide with Duarte methodology, consulting workflow, and illustrations reference is available in Master Alex at `alex_docs/features/GAMMA-PRESENTATIONS.md`.
 
 ---
 
@@ -320,16 +320,18 @@ Gamma provides a hosted MCP server (Claude, Make, Zapier, Workato, N8N).
 
 ## CLI Script
 
-**Location:** `.github/muscles/gamma-generator.js`
+**Location:** `.github/muscles/gamma-generator.cjs`
 
 ```bash
 # From file with export + auto-open
-node .github/muscles/gamma-generator.js -f README.md -e pptx --open
+node .github/muscles/gamma-generator.cjs -f README.md -e pptx --open -n 12 -d 16x9
 
 # Draft workflow (no credits)
-node .github/muscles/gamma-generator.js -t "AI Ethics" --draft --open
-node .github/muscles/gamma-generator.js -f exports/ai-ethics-draft.md -e pptx --open
+node .github/muscles/gamma-generator.cjs -t "AI Ethics" --draft --open
+node .github/muscles/gamma-generator.cjs -f exports/ai-ethics-draft.md -e pptx --open -n 12 -d 16x9
 ```
+
+> ⚠️ **Critical**: For file-based generation, always pass both `--slides` and `--dimensions 16x9`. Without `--slides`, Gamma can condense multiple sections into fewer slides. Without `--dimensions`, Gamma may default to fluid layout.
 
 | Option | Short | Description |
 |--------|-------|-------------|
@@ -352,5 +354,4 @@ node .github/muscles/gamma-generator.js -f exports/ai-ethics-draft.md -e pptx --
 
 ## Related
 
-- `alex_docs/features/GAMMA-PRESENTATIONS.md` — Full user guide + Duarte methodology (Master Alex only)
 - [.github/instructions/gamma-presentation.instructions.md](../../instructions/gamma-presentation.instructions.md) — Auto-activation rules

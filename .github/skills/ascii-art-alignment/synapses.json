@@ -1,39 +1,54 @@
 {
   "$schema": "../SYNAPSE-SCHEMA.json",
   "skillId": "ascii-art-alignment",
-  "lastUpdated": "2026-03-05",
-  "inheritance": "inheritable",
+  "lastUpdated": "2026-03-20",
   "connections": [
     {
       "target": ".github/skills/markdown-mermaid/SKILL.md",
       "type": "complements",
       "strength": 0.9,
-      "bidirectional": true,
+      "reason": "ASCII for precise control, Mermaid for auto-layout",
       "when": "ASCII for precise control, Mermaid for auto-layout",
-      "yields": "See target skill"
+      "yields": "markdown mermaid complementary techniques"
     },
     {
       "target": ".github/skills/lint-clean-markdown/SKILL.md",
       "type": "related",
       "strength": 0.7,
+      "reason": "Both require attention to character-level detail",
       "when": "Both require attention to character-level detail",
-      "yields": "See target skill"
+      "yields": "lint clean markdown related patterns and guidance"
     },
     {
-      "target": ".github/skills/writing-publication/SKILL.md",
+      "target": ".github/skills/academic-research/SKILL.md",
       "type": "supports",
       "strength": 0.7,
+      "reason": "Visual diagrams enhance documentation quality",
       "when": "Visual diagrams enhance documentation quality",
-      "yields": "See target skill"
+      "yields": "academic research supporting context"
+    },
+    {
+      "target": ".github/skills/graphic-design/SKILL.md",
+      "type": "complements",
+      "strength": 0.65,
+      "when": "Combining ascii art alignment with graphic design",
+      "yields": "graphic design complementary techniques"
     }
   ],
-  "notes": "Create perfectly aligned ASCII diagrams",
-  "triggers": [
+  "activationContexts": [
     "ASCII diagram misaligned",
     "box drawing characters",
     "text-based UI mockup",
     "lines don't match up",
     "right border jagged"
   ],
-  "schemaVersion": "2.0.0"
+  "notes": "Create perfectly aligned ASCII diagrams",
+  "schemaVersion": "2.0.0",
+  "triggers": [
+    "ASCII diagram misaligned",
+    "box drawing characters",
+    "text-based UI mockup",
+    "lines don't match up",
+    "right border jagged"
+  ]
 }

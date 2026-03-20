@@ -1,7 +1,6 @@
 {
   "$schema": "../SYNAPSE-SCHEMA.json",
   "schemaVersion": "2.1.0",
-  "inheritance": "inheritable",
   "skillId": "skill-building",
   "version": "1.0.0",
   "lastUpdated": "2026-02-10",
@@ -29,7 +28,7 @@
       "context": "Skills created by heirs need sync management for promotion"
     },
     {
-      "target": ".github/skills/skill-activation/SKILL.md",
+      "target": ".github/skills/memory-activation/SKILL.md",
       "type": "procedural",
       "strength": "strong",
       "direction": "outgoing",

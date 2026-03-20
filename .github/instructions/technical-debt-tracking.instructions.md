@@ -13,7 +13,6 @@ applyTo: "**/*TODO*,**/*FIXME*,**/*debt*"
 
 ## Synapses
 
-- [.github/instructions/release-management.instructions.md] → (Medium, Coordinates, Forward) - "Debt review before major releases"
 - [.github/instructions/deep-thinking.instructions.md] → (Medium, Supports, Forward) - "Debt analysis requires systematic thinking"
 - [CHANGELOG.md] → (Low, Documents, Forward) - "Debt payoff should be documented"
 
@@ -53,7 +52,7 @@ Cognitive debt applies to Alex's cognitive architecture — the accumulated deca
 | Broken synapses | Pointing to `architecture` instead of `architecture-audit` | `brain-qa` Phase 1 |
 | Aspirational references | Connecting to skills never created | Remove or create the skill |
 | Heir divergence | Master-Heir synapses out of sync | `brain-qa` Phase 4-6 |
-| Unindexed skills | Skills exist but not in skill-activation | `brain-qa` Phase 2 |
+| Unindexed skills | Skills exist but not in memory-activation | `brain-qa` Phase 2 |
 | Semantic overlap | Multiple triggers for same concept | `brain-qa` Phase 3 |
 
 **Detection**: Run `brain-qa` skill or `Alex: Dream` command

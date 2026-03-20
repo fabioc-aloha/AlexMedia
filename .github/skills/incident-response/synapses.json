@@ -1,29 +1,34 @@
 {
   "$schema": "../SYNAPSE-SCHEMA.json",
   "skillId": "incident-response",
-  "lastUpdated": "2026-03-05",
-  "inheritance": "inheritable",
+  "lastUpdated": "2026-03-20",
   "connections": [
     {
       "target": ".github/skills/root-cause-analysis/SKILL.md",
       "type": "triggers",
       "strength": 0.65,
-      "reason": "Post-mortem requires RCA"
+      "reason": "Post-mortem requires RCA",
+      "when": "Post-mortem requires RCA",
+      "yields": "root cause analysis activation and procedures"
     },
     {
       "target": ".github/skills/error-recovery-patterns/SKILL.md",
       "type": "uses",
       "strength": 0.8,
-      "reason": "Recovery patterns during resolution"
+      "reason": "Recovery patterns during resolution",
+      "when": "Recovery patterns during resolution",
+      "yields": "error recovery patterns patterns and guidance"
     },
     {
       "target": ".github/skills/debugging-patterns/SKILL.md",
       "type": "applies",
       "strength": 0.8,
-      "reason": "Debug during investigation phase"
+      "reason": "Debug during investigation phase",
+      "when": "Debug during investigation phase",
+      "yields": "debugging patterns patterns and guidance"
     }
   ],
-  "triggers": [
+  "activationContexts": [
     "incident",
     "outage",
     "production issue",
@@ -32,5 +37,14 @@
     "on-call",
     "post-mortem"
   ],
-  "schemaVersion": "2.0.0"
+  "schemaVersion": "2.0.0",
+  "triggers": [
+    "incident",
+    "outage",
+    "production issue",
+    "P1",
+    "P2",
+    "on-call",
+    "post-mortem"
+  ]
 }

@@ -12,15 +12,13 @@ description: "Procedural steps for knowledge consolidation meditation sessions"
 
 ## Synapses
 
-- [.github/prompts/unified-meditation-protocols.prompt.md] (Critical, Implements, Bidirectional) - "Comprehensive meditation workflow this instruction supports"
+- [.github/prompts/meditate.prompt.md] (Critical, Implements, Bidirectional) - "Comprehensive meditation workflow this instruction supports"
 - [.github/instructions/dream-state-automation.instructions.md] (High, Coordinates, Bidirectional) - "Dream precedes meditation; Phase 5 validates via Dream"
 - [.github/instructions/alex-core.instructions.md] (Critical, Enables, Bidirectional) - "Core architecture optimization through meditation"
 - [.github/instructions/embedded-synapse.instructions.md] (High, Validates, Bidirectional) - "Connection strengthening through meditation"
 - [.github/instructions/skill-selection-optimization.instructions.md] (High, Uses, Forward) - "Pre-meditation resource planning for complex sessions"
 - [.github/skills/meditation/SKILL.md] (Critical, Implements, Bidirectional) - "Domain knowledge this procedure operationalizes"
 - [.github/instructions/self-actualization.instructions.md] (Medium, Integrates, Bidirectional) - "Self-actualization may trigger meditation for consolidation"
-- [.github/instructions/roadmap-maintenance.instructions.md] (Medium, Updates, Forward) - "Meditation insights may inform roadmap priorities"
-- [.github/instructions/cognitive-health-validation.instructions.md] (High, Integrates, Bidirectional) - "Phase 5.2 enhanced with brain-qa master-heir sync validation"
 
 ---
 
@@ -89,7 +87,7 @@ Every meditation session MUST complete ALL three before concluding:
 3. Verify newly added synapses are valid (target files exist)
 4. Confirm bidirectional connections have reciprocal entries
 5. If issues found → repair before concluding
-6. **IMPORTANT — Avatar Revert**: Call `alex_cognitive_state_update` with `state: "persona"` as the **final step** of every meditation session. This resets the welcome sidebar from meditation mode back to the project persona. Skipping this leaves the meditation avatar stuck permanently.
+6. **Runtime check**: If new skills/instructions were created, type `/troubleshoot` in chat to verify they loaded correctly — catches name mismatches, invalid frontmatter, or `applyTo` patterns that VS Code's loader silently skipped
 
 ---
 
@@ -104,7 +102,7 @@ Every meditation session MUST complete ALL three before concluding:
 
 Meditation is a complex operation (3+ phases). Before starting:
 1. SSO auto-activates to survey needed skills
-2. Pre-load: architecture-health, knowledge-synthesis, global-knowledge
+2. Pre-load: brain-qa, knowledge-synthesis, global-knowledge
 3. If synapse health unknown, run dream first
 
 ---

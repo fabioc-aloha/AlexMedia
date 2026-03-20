@@ -2,8 +2,7 @@
   "$schema": "../SYNAPSE-SCHEMA.json",
   "skillId": "skill-development",
   "version": "1.1.0",
-  "lastUpdated": "2026-03-05",
-  "inheritance": "inheritable",
+  "lastUpdated": "2026-03-20",
   "connections": [
     {
       "target": ".github/skills/skill-building/SKILL.md",
@@ -62,12 +61,18 @@
       "yields": "identity context for skill development narrative"
     },
     {
-      "target": ".github/skills/global-knowledge-sync/SKILL.md",
+      "target": ".github/skills/global-knowledge/SKILL.md",
       "type": "Depends",
       "strength": 0.9,
       "when": "heirs checking for new skills or pull-syncing",
       "yields": "skill-registry.json access via GK repo"
     }
+  ],
+  "activationContexts": [
+    "skill-development",
+    "skill development",
+    "skill",
+    "development"
   ],
   "schemaVersion": "2.1.0",
   "lastValidated": "2026-02-11"

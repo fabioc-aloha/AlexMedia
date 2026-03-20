@@ -2,7 +2,6 @@
   "$schema": "../../schemas/synapse-schema-v2.json",
   "skillId": "global-knowledge-maintenance",
   "lastUpdated": "2026-03-05",
-  "inheritance": "master-only",
   "connections": [
     {
       "target": ".github/muscles/brain-qa.ps1",

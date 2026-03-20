@@ -2,29 +2,35 @@
   "$schema": "../SYNAPSE-SCHEMA.json",
   "skillId": "terminal-image-rendering",
   "version": "1.1.0",
-  "lastUpdated": "2026-03-05",
-  "inheritance": "inheritable",
+  "lastUpdated": "2026-03-20",
   "connections": [
     {
       "target": ".github/skills/brand-asset-management/SKILL.md",
       "type": "complements",
       "strength": 0.7,
-      "reason": "Preview brand assets inline in terminal"
+      "reason": "Preview brand assets inline in terminal",
+      "when": "Preview brand assets inline in terminal",
+      "yields": "brand asset management complementary techniques"
     },
     {
       "target": ".github/skills/image-handling/SKILL.md",
       "type": "complements",
       "strength": 0.65,
-      "reason": "Terminal preview after image generation"
-    },
-    {
-      "target": ".github/skills/vscode-extension-patterns/SKILL.md",
-      "type": "uses",
-      "strength": 0.6,
-      "reason": "VS Code terminal settings configuration"
+      "reason": "Terminal preview after image generation",
+      "when": "Terminal preview after image generation",
+      "yields": "image handling complementary techniques"
     }
   ],
   "activationContexts": [
+    "terminal image",
+    "kitty",
+    "imgcat",
+    "inline image",
+    "terminal preview"
+  ],
+  "schemaVersion": "2.1.0",
+  "lastValidated": "2026-03-04",
+  "activationPatterns": [
     "terminal image",
     "display image in terminal",
     "kitty graphics",
@@ -33,8 +39,6 @@
     "terminal.integrated.enableImages",
     "render image inline"
   ],
-  "schemaVersion": "2.1.0",
-  "lastValidated": "2026-03-04",
   "triggers": [
     "terminal image",
     "kitty",

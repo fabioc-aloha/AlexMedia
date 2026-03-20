@@ -5,7 +5,6 @@ description: Learning effectiveness evaluation and performance assessment
 
 # Performance Assessment Protocol
 
-> **Avatar**: Call `alex_cognitive_state_update` with `state: "meditation"`. This updates the welcome sidebar avatar.
 
 ## Learning Effectiveness Evaluation
 
@@ -46,8 +45,7 @@ Use this assessment regularly to maintain peak cognitive performance and identif
 - [.github/instructions/alex-core.instructions.md] (High, Monitors, Bidirectional) - "Core architecture performance assessment"
 - [.github/instructions/bootstrap-learning.instructions.md] (High, Evaluates, Bidirectional) - "Learning effectiveness measurement"
 - [.github/instructions/embedded-synapse.instructions.md] (High, Monitors, Forward) - "Network effectiveness evaluation"
-- [.github/prompts/unified-meditation-protocols.prompt.md] (High, Triggers, Forward) - "Post-meditation effectiveness evaluation"
+- [.github/prompts/meditate.prompt.md] (High, Triggers, Forward) - "Post-meditation effectiveness evaluation"
 - [.github/prompts/alex-initialization.prompt.md] (High, Triggers, Forward) - "Post-initialization system check"
 
 
-> **Revert Avatar**: Call `alex_cognitive_state_update` with `state: "persona"` to reset to project-appropriate avatar.
